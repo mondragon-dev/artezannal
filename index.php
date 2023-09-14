@@ -98,6 +98,22 @@
     .mobile-menu .menu-backdrop {
         background: #DE6529;
     }
+
+    #bannerDesktop{
+        display: block;
+    }
+    #bannerMobile{
+        display: none;
+    }
+
+    @media only screen and (min-device-width : 320px) and (max-width: 967px) {
+        #bannerDesktop{
+            display: none;
+        }
+        #bannerMobile{
+            display: block;
+        }
+    }
 </style>
 
 </head>
@@ -292,7 +308,7 @@
 
 
         <!-- banner-section -->
-        <section class="banner-style-one">
+        <section class="banner-style-one" id="bannerDesktop">
             <div class="pattern-layer" style="background-image: url(assets/images/shape/shape-1.png);"></div>
             <div class="banner-carousel owl-theme owl-carousel">
                 <div class="slide-item">
@@ -338,6 +354,51 @@
                             </div>
                             <figure class="image-box imgae-3"><img src="assets/images/banner/banner3.png" alt=""></figure>
                         </div> 
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- banner-section end -->
+
+        <!-- banner-section mobile-->
+        <section class="banner-style-three alternet-2" id="bannerMobile">
+            <div class="large-container">
+                <div class="row clearfix">
+                    <div class="col-lg-8 col-md-12 col-sm-12 carousel-column">
+                        <div class="carousel-content">
+                            <div class="banner-carousel owl-theme owl-carousel owl-dots-none">
+                                <div class="slide-item" style="background-image: url(assets/images/resource/slider1.png);">
+                                    <div class="pattern-layer" style="background-image: url(assets/images/shape/shape-8.png);"></div>
+                                    <div class="content-box" style="min-height: 280px;">
+                                        <h1><!--Discover & Shop The Trend--></h1>
+                                        <p><!--New Modern Stylist Fashionable Men's Wear Jeans Shirt.--></p>
+                                        <div class="btn-box">
+                                            <!--<a href="index.html">Explore Now<i class="flaticon-right-1"></i></a>-->
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="slide-item" style="background-image: url(assets/images/resource/slider2.png);">
+                                    <div class="pattern-layer" style="background-image: url(assets/images/shape/shape-8.png);"></div>
+                                    <div class="content-box" style="min-height: 280px;">
+                                        <h1><!--Discover & Shop The Trend--></h1>
+                                        <p><!--New Modern Stylist Fashionable Men's Wear Jeans Shirt.--></p>
+                                        <div class="btn-box">
+                                            <!--<a href="index.html">Explore Now<i class="flaticon-right-1"></i></a>-->
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="slide-item" style="background-image: url(assets/images/resource/slider3.png);">
+                                    <div class="pattern-layer" style="background-image: url(assets/images/shape/shape-8.png);"></div>
+                                    <div class="content-box" style="min-height: 280px;">
+                                        <h1><!--Discover & Shop The Trend--></h1>
+                                        <p><!--New Modern Stylist Fashionable Men's Wear Jeans Shirt.--></p>
+                                        <div class="btn-box">
+                                            <!--<a href="index.html">Explore Now<i class="flaticon-right-1"></i></a>-->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
