@@ -25,6 +25,31 @@
 <link href="assets/css/style.css" rel="stylesheet">
 <link href="assets/css/responsive.css" rel="stylesheet">
 <style>
+    .main-header .logo-box {
+        padding: 0px 0px;
+    }
+    .sticky-header .logo-box .logo {
+        padding: 0px 0px !important;
+    }
+    .main-header .header-top {
+        background-color: #2D3364;
+    }
+    .main-header .header-top .price-box span::before {
+      color: white;
+    }
+    .main-header .language .lang-dropdown {
+      background: #2D3364;
+      border: 1px solid #f0f0f0;
+    }
+    .main-header .language .lang-dropdown li a {
+      color: white;
+    }
+    .main-header .header-top .price-box .price-list {
+      background: #2D3364;
+    }
+    .main-header .header-top .price-box .price-list li a {
+      color: white;
+    }
     .main-menu .navigation > li > a span {
         background: #DE6529;
     }
@@ -126,22 +151,22 @@
                     <div class="top-inner clearfix">
                         <div class="top-left pull-left">
                             <ul class="info clearfix">
-                                <li><i class="flaticon-email"></i><a href="mailto:soporte@artezannal.com">soporte@artezannal.com</a></li>
-                                <li><i class="flaticon-global"></i> CDMX México</li>
+                                <li><i class="flaticon-email" style="color:white;"></i><a href="mailto:soporte@artezannal.com" style="color:white;">soporte@artezannal.com</a></li>
+                                <li style="color:white;"><i class="flaticon-global" style="color:white;"></i> CDMX México</li>
                             </ul>
                         </div>
                         <div class="top-right pull-right">
-                            <ul class="social-links clearfix">
-                                <li><a href="index.php"><i class="fab fa-facebook-f"></i></a></li>
-                                <li><a href="index.php"><i class="fab fa-twitter"></i></a></li>
-                                <li><a href="index.php"><i class="fab fa-vimeo-v"></i></a></li>
-                                <li><a href="index.php"><i class="fab fa-google-plus-g"></i></a></li>
+                            <ul class="social-links clearfix" style="color:white;">
+                                <li><a href="index.php"><i class="fab fa-facebook-f" style="color:white;"></i></a></li>
+                                <li><a href="index.php"><i class="fab fa-twitter" style="color:white;"></i></a></li>
+                                <li><a href="index.php"><i class="fab fa-vimeo-v" style="color:white;"></i></a></li>
+                                <li><a href="index.php"><i class="fab fa-google-plus-g" style="color:white;"></i></a></li>
                             </ul>
                             <div class="language">
                                 <div class="lang-btn">
-                                    <span class="flag"><img src="assets/images/icons/spain.png" alt="" title="Español"></span>
-                                    <span class="txt">Español</span>
-                                    <span class="arrow fa fa-angle-down"></span>
+                                    <span class="flag"><img src="assets/images/icons/mexico.png" alt="" title="Español"></span>
+                                    <span class="txt" style="color:white;">Español</span>
+                                    <span class="arrow fa fa-angle-down" style="color:white;"></span>
                                 </div>
                                 <div class="lang-dropdown">
                                     <ul>
@@ -149,8 +174,8 @@
                                     </ul>
                                 </div>
                             </div>
-                            <div class="price-box">
-                                <span>MXN</span>
+                            <div class="price-box" style="color:white;">
+                                <span style="color:white;">MXN</span>
                                 <ul class="price-list clearfix">
                                     <li><a href="index.php">MXN</a></li>
                                     <li><a href="index.php">USD</a></li>
@@ -179,8 +204,7 @@
                                             <ul>
                                                 <li><a href="#">Sobre nosotros</a></li>
                                                 <li><a href="#">Nuestros servicios</a></li>
-                                                <li><a href="#">Nuestor esquipo</a></li>
-                                                <li><a href="#">Testimoniales</a></li>
+                                                <li><a href="#">Nuestro equipo</a></li>
                                             </ul>
                                         </li>
                                         <li class="dropdown"><a href="index.php">Productos<span>Nuevo</span></a>
@@ -275,14 +299,14 @@
                     <div class="auto-container">
                         <div class="content-inner">
                             <div class="content-box">
-                                <h1>Hasta <br /><span>50%</span> de descuento</h1>
+                                <!--<h1>Hasta <br /><span>50%</span> de descuento</h1>
                                 <h3>Catálogo de verano - 2023</h3>
                                 <p>Nuevo estilo moderno.</p>
                                 <div class="btn-box">
                                     <a href="index.php" class="theme-btn-one">Explorar ahora<i class="flaticon-right-1"></i></a>
-                                </div>
+                                </div>-->
                             </div>
-                            <figure class="image-box image-1"><img src="assets/images/banner/banner-image-1.png" alt=""></figure>
+                            <figure class="image-box image-1"><img src="assets/images/banner/banner1.png" alt=""></figure>
                         </div> 
                     </div>
                 </div>
@@ -290,14 +314,14 @@
                     <div class="auto-container">
                         <div class="content-inner">
                             <div class="content-box">
-                                <h1>Hasta <br /><span>50%</span> de descuento</h1>
+                                <!--<h1>Hasta <br /><span>50%</span> de descuento</h1>
                                 <h3>Catálogo de verano - 2023</h3>
                                 <p>Nuevo estilo moderno.</p>
                                 <div class="btn-box">
                                     <a href="index.php" class="theme-btn-one">Explorar ahora<i class="flaticon-right-1"></i></a>
-                                </div>
+                                </div>-->
                             </div>
-                            <figure class="image-box image-2"><img src="assets/images/banner/banner-image-2.png" alt=""></figure>
+                            <figure class="image-box image-2"><img src="assets/images/banner/banner2.jpg" alt=""></figure>
                         </div> 
                     </div>
                 </div>
@@ -305,14 +329,14 @@
                     <div class="auto-container">
                         <div class="content-inner">
                             <div class="content-box">
-                                <h1>Hasta <br /><span>50%</span> de descuento</h1>
+                                <!--<h1>Hasta <br /><span>50%</span> de descuento</h1>
                                 <h3>Catálogo de verano - 2023</h3>
                                 <p>Nuevo estilo moderno.</p>
                                 <div class="btn-box">
                                     <a href="index.php" class="theme-btn-one">Explorar ahora<i class="flaticon-right-1"></i></a>
-                                </div>
+                                </div>-->
                             </div>
-                            <figure class="image-box imgae-3"><img src="assets/images/banner/banner-image-3.png" alt=""></figure>
+                            <figure class="image-box imgae-3"><img src="assets/images/banner/banner3.png" alt=""></figure>
                         </div> 
                     </div>
                 </div>
