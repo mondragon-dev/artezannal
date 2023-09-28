@@ -235,7 +235,11 @@
                                             <div class="megamenu">
                                                 <div class="row clearfix">
                                                     <?php
+
+                                                        $arrayCategorias = array();
+
                                                         while($dat_c = mysqli_fetch_array($res_c)){
+                                                            $arrayCategorias[] = $dat_c[categoria];
                                                     ?>
                                                             <div class="col-lg-3 column">
                                                                 <ul>
@@ -245,7 +249,7 @@
                                                                         $res_s = mysqli_query($link, $sql_s);
                                                                         while($dat_s = mysqli_fetch_array($res_s)){
                                                                     ?>
-                                                                            <li><a href="#">Categoria 01</a></li>
+                                                                            <li><a href="#"><?php echo $dat_s[subcategoria]; ?></a></li>
                                                                     <?
                                                                         }
                                                                     ?>
@@ -433,30 +437,22 @@
                     <span class="separator" style="background-image: url(assets/images/icons/separator-1.png);"></span>
                 </div>
                 <div class="row clearfix">
-                    <div class="col-lg-3 col-md-6 col-sm-12 category-block">
-                        <div class="category-block-one wow fadeInUp animated animated" data-wow-delay="00ms" data-wow-duration="1500ms">
-                            <figure class="image-box"><img src="assets/images/resource/category-1.png" alt=""></figure>
-                            <h5><a href="index.html">Categoria 1</a></h5>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-12 category-block">
-                        <div class="category-block-one wow fadeInUp animated animated" data-wow-delay="200ms" data-wow-duration="1500ms">
-                            <figure class="image-box"><img src="assets/images/resource/category-2.png" alt=""></figure>
-                            <h5><a href="index.html">Categoria 2</a></h5>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-12 category-block">
-                        <div class="category-block-one wow fadeInUp animated animated" data-wow-delay="400ms" data-wow-duration="1500ms">
-                            <figure class="image-box"><img src="assets/images/resource/category-3.png" alt=""></figure>
-                            <h5><a href="index.html">categoria 3</a></h5>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-12 category-block">
-                        <div class="category-block-one wow fadeInUp animated animated" data-wow-delay="600ms" data-wow-duration="1500ms">
-                            <figure class="image-box"><img src="assets/images/resource/category-4.png" alt=""></figure>
-                            <h5><a href="index.html">Categoria 4</a></h5>
-                        </div>
-                    </div>
+
+                    <?php
+                        for($xx = 0; $xx <= 3; $xx++){
+                    ?>
+
+                            <div class="col-lg-3 col-md-6 col-sm-12 category-block">
+                                <div class="category-block-one wow fadeInUp animated animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+                                    <figure class="image-box"><img src="assets/images/resource/category-1.png" alt=""></figure>
+                                    <h5><a href="#"><?php echo $arrayCategorias[$xx]; ?></a></h5>
+                                </div>
+                            </div>
+
+                    <?php
+                        }
+                    ?>
+
                 </div>
             </div>
         </section>
