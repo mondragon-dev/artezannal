@@ -470,9 +470,15 @@
                 <div class="sortable-masonry">
                     <div class="filters">
                         <ul class="filter-tabs filter-btns centred clearfix">
-                            <li class="active filter" data-role="button" data-filter=".best_seller">Categoria 1</li>
-                            <li class="filter" data-role="button" data-filter=".new_arraivals">Categoria 2</li>
-                            <li class="filter" data-role="button" data-filter=".top_rate">Categoria 3</li>
+                            <?php
+                                for($xx = 0; $xx < count($arrayCategorias); $xx++){
+                            ?>
+                                    <li class="<?php if($xx == 0){ ?>active <?php } ?>filter" data-role="button" data-filter=".best_seller">
+                                        <?php echo $arrayCategorias[$xx]; ?>
+                                    </li>
+                            <?php
+                                }
+                            ?>
                         </ul>
                     </div>
                     <div class="items-container row clearfix">
@@ -838,11 +844,13 @@
                                         </div>
                                         <div class="widget-content">
                                             <ul class="links-list clearfix">
-                                                <li><a href="index.php">Categoria 01</a></li>
-                                                <li><a href="index.php">Categoria 02</a></li>
-                                                <li><a href="index.php">Categoria 03</a></li>
-                                                <li><a href="index.php">Categoria 04</a></li>
-                                                <li><a href="index.php">Categoria 05</a></li>
+                                                <?php
+                                                    for($xx = 0; $xx < count($arrayCategorias); $xx++){
+                                                ?>
+                                                        <li><a href="#"><?php echo $arrayCategorias[$xx]; ?></a></li>
+                                                <?php
+                                                    }
+                                                ?>
                                             </ul>
                                         </div>
                                     </div>
