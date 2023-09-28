@@ -482,24 +482,34 @@
                         </ul>
                     </div>
                     <div class="items-container row clearfix">
-                        <div class="col-lg-3 col-md-6 col-sm-12 shop-block masonry-item small-column best_seller new_arraivals top_rate">
-                            <div class="shop-block-one">
-                                <div class="inner-box">
-                                    <figure class="image-box">
-                                        <img src="assets/images/resource/shop/shop-1.jpg" alt="">
-                                        <ul class="info-list clearfix">
-                                            <li><a href="index.html"><i class="flaticon-heart"></i></a></li>
-                                            <li><a href="product-details.html">Agregar</a></li>
-                                            <li><a href="assets/images/resource/shop/shop-1.jpg" class="lightbox-image" data-fancybox="gallery"><i class="flaticon-search"></i></a></li>
-                                        </ul>
-                                    </figure>
-                                    <div class="lower-content">
-                                        <a href="product-details.html">Producto 1</a>
-                                        <span class="price">$70.30</span>
+                        <?php
+
+                            $sql_p = "SELECT * FROM productos";
+                            $res_p = mysqli_query($link,$sql_p);
+                            while($dat_p = mysqli_fetch_array($res_p)){
+
+                        ?>
+                                <div class="col-lg-3 col-md-6 col-sm-12 shop-block masonry-item small-column best_seller new_arraivals top_rate">
+                                    <div class="shop-block-one">
+                                        <div class="inner-box">
+                                            <figure class="image-box">
+                                                <img src="assets/images/resource/shop/shop-1.jpg" alt="">
+                                                <ul class="info-list clearfix">
+                                                    <li><a href="index.html"><i class="flaticon-heart"></i></a></li>
+                                                    <li><a href="product-details.html">Agregar</a></li>
+                                                    <li><a href="assets/images/resource/shop/shop-1.jpg" class="lightbox-image" data-fancybox="gallery"><i class="flaticon-search"></i></a></li>
+                                                </ul>
+                                            </figure>
+                                            <div class="lower-content">
+                                                <a href="#"><?php echo $dat_p['producto'] ?></a>
+                                                <span class="price">$<?php echo $dat_p['precio'] ?></span>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
+                        <?
+                            }
+                        ?>
                         <div class="col-lg-3 col-md-6 col-sm-12 shop-block masonry-item small-column best_seller">
                             <div class="shop-block-one">
                                 <div class="inner-box">
