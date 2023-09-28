@@ -1,3 +1,11 @@
+<?php
+
+    include('includes/headers.php');
+
+    $sql_c = "SELECT categoria FROM categorias";
+    $res_c = mysqli_query($link,$sql_c);
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -226,16 +234,22 @@
                                         <li class="dropdown"><a href="index.php">Productos<span>Nuevo</span></a>
                                             <div class="megamenu">
                                                 <div class="row clearfix">
-                                                    <div class="col-lg-12 column">
-                                                        <ul>
-                                                            <li><h4>Categorias</h4></li>
-                                                            <li><a href="#">Categoria 01</a></li>
-                                                            <li><a href="#">Categoria 02</a></li>
-                                                            <li><a href="#">Categoria 03</a></li>
-                                                            <li><a href="#">Categoria 04</a></li>
-                                                            <li><a href="#">Categoria 05</a></li>
-                                                        </ul>
-                                                    </div>
+                                                    <?php
+                                                        while($dat_c = mysqli_fetch_array($res_c)){
+                                                    ?>
+                                                            <div class="col-lg-3 column">
+                                                                <ul>
+                                                                    <li><h4><?php echo $dat_c[categoria] ?></h4></li>
+                                                                    <li><a href="#">Categoria 01</a></li>
+                                                                    <li><a href="#">Categoria 02</a></li>
+                                                                    <li><a href="#">Categoria 03</a></li>
+                                                                    <li><a href="#">Categoria 04</a></li>
+                                                                    <li><a href="#">Categoria 05</a></li>
+                                                                </ul>
+                                                            </div>
+                                                    <?
+                                                        }
+                                                    ?>
                                                 </div>                                           
                                             </div>
                                         </li>   
