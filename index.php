@@ -2,7 +2,7 @@
 
     include('includes/headers.php');
 
-    $sql_c = "SELECT categoria FROM categorias";
+    $sql_c = "SELECT id, categoria FROM categorias";
     $res_c = mysqli_query($link,$sql_c);
 
 ?>
@@ -240,11 +240,15 @@
                                                             <div class="col-lg-3 column">
                                                                 <ul>
                                                                     <li><h4><?php echo $dat_c[categoria] ?></h4></li>
-                                                                    <li><a href="#">Categoria 01</a></li>
-                                                                    <li><a href="#">Categoria 02</a></li>
-                                                                    <li><a href="#">Categoria 03</a></li>
-                                                                    <li><a href="#">Categoria 04</a></li>
-                                                                    <li><a href="#">Categoria 05</a></li>
+                                                                    <?php
+                                                                        $sql_s = "SELECT subcategoria FROM subcategorias WHERE categoria_id = '".$dat_c[id]."' ";
+                                                                        $res_s = mysqli_query($link, $sql_s);
+                                                                        while($dat_s = mysqli_fetch_array($res_s)){
+                                                                    ?>
+                                                                            <li><a href="#">Categoria 01</a></li>
+                                                                    <?
+                                                                        }
+                                                                    ?>
                                                                 </ul>
                                                             </div>
                                                     <?
