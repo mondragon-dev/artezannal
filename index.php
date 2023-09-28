@@ -488,16 +488,20 @@
                             $res_p = mysqli_query($link,$sql_p);
                             while($dat_p = mysqli_fetch_array($res_p)){
 
+                                $sql_i = "SELECT * FROM productos_imagenes WHERE producto_id = '".$dat_p['id']."' limit 0,1 ";
+                                $res_i = mysqli_query($link,$sql_i);
+                                $dat_i = mysqli_fetch_array($res_i);
+
                         ?>
                                 <div class="col-lg-3 col-md-6 col-sm-12 shop-block masonry-item small-column best_seller new_arraivals top_rate">
                                     <div class="shop-block-one">
                                         <div class="inner-box">
                                             <figure class="image-box">
-                                                <img src="assets/images/resource/shop/shop-1.jpg" alt="">
+                                                <img src="<?php echo URL_ADMINEC."/storage/images/productos/".$dat_i['imagen']; ?>" alt="" style="height:350px">
                                                 <ul class="info-list clearfix">
                                                     <li><a href="index.html"><i class="flaticon-heart"></i></a></li>
                                                     <li><a href="product-details.html">Agregar</a></li>
-                                                    <li><a href="assets/images/resource/shop/shop-1.jpg" class="lightbox-image" data-fancybox="gallery"><i class="flaticon-search"></i></a></li>
+                                                    <li><a href="<?php echo URL_ADMINEC."/storage/images/productos/".$dat_i['imagen']; ?>" class="lightbox-image" data-fancybox="gallery"><i class="flaticon-search"></i></a></li>
                                                 </ul>
                                             </figure>
                                             <div class="lower-content">

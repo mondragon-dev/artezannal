@@ -17,6 +17,7 @@
 			define('DB_PASSWORD', '7yPs20e*6');
 			define('DB_DATABASE', 'adminec');
 			define('URL_PROJECT', 'https://qa.artezannal.com');
+			define('URL_PROJECT', 'https://admin.artezannal.com');
 
 		break;
 
@@ -26,6 +27,7 @@
 			define('DB_PASSWORD', '');
 			define('DB_DATABASE', 'adminec');
 			define('URL_PROJECT', 'http://localhost/artezannal');
+			define('URL_ADMINEC', 'http://127.0.0.1:8000');
 
 		break;
 
