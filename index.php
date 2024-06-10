@@ -879,7 +879,7 @@
                                                 <li><a href="index.php">Sobre nosotros</a></li>
                                                 <li><a href="index.php">Nuestros servicios</a></li>
                                                 <li><a href="index.php">Todos los productos</a></li>
-                                                <li><a href="index.php">Términos y condiciones</a></li>
+                                                <li><a href="files/aviso_de_privacidad.pdf" target="_blank">Aviso de privacidad</a></li>
                                             </ul>
                                         </div>
                                     </div>
