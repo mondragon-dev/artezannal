@@ -112,6 +112,28 @@
     .main-footer .footer-top {
         background: #2D3364;
     }
+    .mobile-menu .menu-box {
+        background-color: white;
+    }
+    .mobile-menu .navigation li > a {
+        color: #2D3364;
+    }
+    @media only screen and (max-width: 599px) {
+        .banner-style-two .content-box {
+            background-size: inherit;
+        }
+        .productos{
+            margin-left: 0px !important;
+            margin-right: 0px !important;
+        }
+        .quienes{
+            margin-left: 0px !important;
+            margin-right: 0px !important;
+        }
+        .service-block-one .inner-box {
+            padding-left: 20px;
+        }
+    }
 </style>
 </head>
 
@@ -219,7 +241,7 @@
             <div class="menu-backdrop"></div>
             <div class="close-btn"><i class="fas fa-times"></i></div>
             <nav class="menu-box">
-                <div class="nav-logo"><a href="index.html"><img src="assets/images/logo-2.png" alt="" title=""></a></div>
+                <div class="nav-logo"><a href="index.html"><img src="assets/images/logoAZ.png" alt="" title=""></a></div>
                 <div class="menu-outer"><!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header--></div>
                 <div class="contact-info">
                     <h4>Contact Info</h4>
@@ -262,7 +284,7 @@
                     <h2>Productos</h2>
                     <span class="separator" style="background-image: url(assets/images/icons/separator-1.png);"></span>
                 </div>
-                <div class="row clearfix" style="margin-left: 150px; margin-right: 150px;">
+                <div class="row clearfix productos" style="margin-left: 150px; margin-right: 150px;">
                     <div class="col-lg-4 col-md-6 col-sm-12 category-block">
                         <div class="category-block-one wow fadeInUp animated animated" data-wow-delay="00ms" data-wow-duration="1500ms">
                             <figure class="image-box"><img src="assets/images/resource/producto1.png" alt=""></figure>
@@ -283,7 +305,7 @@
                     </div>
                 </div>
                 <br>
-                <div class="row clearfix" style="margin-left: 150px; margin-right: 150px;">
+                <div class="row clearfix productos" style="margin-left: 150px; margin-right: 150px;">
                     <div class="col-lg-4 col-md-6 col-sm-12 category-block">
                         <div class="category-block-one wow fadeInUp animated animated" data-wow-delay="00ms" data-wow-duration="1500ms">
                             <figure class="image-box"><img src="assets/images/resource/producto4.png" alt=""></figure>
@@ -317,15 +339,15 @@
                                 <div class="inner-box" style="text-align:center;">
                                     <h1 style="color: white;">Quiénes somos</h1>
                                     <br>
-                                    <p style="text-align:justify;margin-right: 200px;margin-left: 200px; color: white; font-size: 18px;">
+                                    <p class="quienes" style="text-align:justify;margin-right: 200px;margin-left: 200px; color: white; font-size: 18px;">
                                         Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
                                     </p>
                                     <br>
-                                    <p style="text-align:justify;margin-right: 200px;margin-left: 200px; color: white; font-size: 18px;">
+                                    <p class="quienes" style="text-align:justify;margin-right: 200px;margin-left: 200px; color: white; font-size: 18px;">
                                         Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi.
                                     </p>
                                     <br>
-                                    <p style="text-align:justify;margin-right: 200px;margin-left: 200px; color: white; font-size: 18px;">
+                                    <p class="quienes" style="text-align:justify;margin-right: 200px;margin-left: 200px; color: white; font-size: 18px;">
                                         Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar. 
                                     </p>
                                 </div>
@@ -344,7 +366,7 @@
                     <h2>Socios</h2>
                     <span class="separator" style="background-image: url(assets/images/icons/separator-1.png);"></span>
                 </div>
-                <div class="row clearfix" style="margin-left: 150px; margin-right: 150px;">
+                <div class="row clearfix productos" style="margin-left: 150px; margin-right: 150px;">
                     <div class="col-lg-4 col-md-6 col-sm-12 category-block">
                         <div class="category-block-one wow fadeInUp animated animated" data-wow-delay="00ms" data-wow-duration="1500ms">
                             <figure class="image-box box2"><img src="assets/images/resource/socio1.png" alt=""></figure>
