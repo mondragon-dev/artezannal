@@ -129,10 +129,8 @@
 			</div>
 
 			<div class="video-bg-wrapper">
-				<video preload="auto" loop class="video-bg js-video-bg" poster="images/bg-preview.jpg" muted>
+				<video autoplay loop muted playsinline class="video-bg js-video-bg" poster="images/bg-preview.jpg">
 			        <source src="video/artezannal.mp4" type="video/mp4">
-			        <source src="video/background.webm" type="video/webm">
-			        <source src="video/background.ogv" type="video/ogg">
 			    </video>
 			</div>
 
