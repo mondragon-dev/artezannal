@@ -6,14 +6,14 @@
 	<meta name="viewport" content="width=device-width, user-scalable=no">
 
 	<meta http-equiv="Content-type" content="text/html; charset=UTF-8"/>
-	<link href='http://fonts.googleapis.com/css?family=Playfair+Display+SC:400italic,700italic&amp;subset=latin,cyrillic' rel='stylesheet' type='text/css'>
-	<link href='http://fonts.googleapis.com/css?family=Fira+Sans:300,400,500,700&amp;subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Playfair+Display+SC:400italic,700italic&amp;subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Fira+Sans:300,400,500,700&amp;subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
  	<link href="css/mobilemenu.css" rel="stylesheet">
 	<link href="css/font-awesome.min.css" rel="stylesheet">
 	<link href="css/simple-line-icons.css" rel="stylesheet">
 	<link href="css/foundation.min.css" rel="stylesheet">
 	<link href="css/jquery.fancybox.css" rel="stylesheet">
-	<link href="css/style.min.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
 
 	<!-- Theme color -->
 	<link href="css/less/colors/blue.min.css" rel="stylesheet">
@@ -23,6 +23,9 @@
 
 	<script src="js/lib/modernizr.js"></script>
 	<script src="https://maps.googleapis.com/maps/api/js"></script>
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
 	<style type="text/css">
 		.logo-wrapper .logo-image {
   			width: 150%;
@@ -31,6 +34,9 @@
 		.menu-item a {
   			color: #130a56;
   			font-weight: 800;
+		}
+		.menu-item a:hover{
+			color: #D54212;
 		}
 		.prod-item .image-block {
 		  border-radius: 50%;
@@ -73,6 +79,148 @@
 		.button {
   			background-color: #1e8d8d;
 		}
+		.img-banner{
+			position: absolute;
+			right: 50px;
+			bottom: 0px;
+			width: 20%;
+		}
+		
+
+		
+
+
+
+		.card-wrapper {
+  max-width: 90%;
+  margin: 0 60px 35px;
+  padding: 20px 10px;
+  overflow: hidden;
+}
+
+.card-list .card-item {
+  list-style: none;
+}
+
+.card-list .card-item .card-link {
+  display: block;
+  background: #fff;
+  padding: 18px;
+  user-select: none;
+  border-radius: 12px;
+  text-decoration: none;
+  border: 2px solid transparent;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.05);
+  transition: 0.2s ease;
+}
+
+.card-list .card-item .card-link:active {
+  cursor: grabbing;
+}
+
+.card-list .card-item .card-link:hover {
+  border-color: #5372F0;
+}
+
+.card-list .card-link .card-image {
+  width: 100%;
+  border-radius: 10px;
+  /*aspect-ratio: 16 / 9;*/
+  object-fit: cover;
+  max-height: 300px;
+  max-width: 300px;
+}
+
+.card-list .card-link .badge {
+  color: #5372F0;
+  width: fit-content;
+  padding: 8px 16px;
+  font-size: 0.95rem;
+  border-radius: 50px;
+  font-weight: 500;
+  background: #DDE4FF;
+  margin: 16px 0 18px;
+}
+
+.card-list .card-link .badge-designer {
+  color: #B22485;
+  background: #F7DFF5;
+}
+
+.card-list .card-link .badge-marketer {
+  color: #B25A2B;
+  background: #FFE3D2;
+}
+
+.card-list .card-link .badge-gamer {
+  color: #205C20;
+  background: #D6F8D6;
+}
+
+.card-list .card-link .badge-editor {
+  color: #856404;
+  background: #fff3cd;
+}
+
+.card-list .card-link .card-title {
+	margin-top: 20px;
+  color: #130a56;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.card-precio {
+	margin-top: 10px;
+  color: #D54212;;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.card-list .card-link .card-button {
+  height: 35px;
+  width: 35px;
+  color: #5372F0;
+  margin: 30px 0 5px;
+  background: none;
+  cursor: pointer;
+  border-radius: 50%;
+  border: 2px solid #5372F0;
+  transform: rotate(-45deg);
+  transition: 0.4s ease;
+}
+
+.card-list .card-link:hover .card-button {
+  color: #fff;
+  background: #5372F0;
+}
+
+.card-wrapper .swiper-pagination-bullet {
+  height: 13px;
+  width: 13px;
+  opacity: 0.5;
+  background: #5372F0;
+}
+
+.card-wrapper .swiper-pagination-bullet-active {
+  opacity: 1;
+}
+
+.card-wrapper .swiper-slide-button {
+  color: #5372F0;
+  margin-top: -35px;
+}
+
+/* Responsive media query code for small screens */
+@media (max-width: 768px) {
+  .card-wrapper {
+    margin: 0 10px 25px;
+  }
+
+  .card-wrapper .swiper-slide-button {
+    display: none;
+  }
+}
+
 	</style>
 </head>
 <body data-currency="$">
@@ -95,16 +243,16 @@
 						<nav class="js-navs-list">
 							<ul class="menu-page">
 								<li class="menu-item">
-									<a href="/">Inicio</a>
+									<a href="/"><font size="+1">Inicio</font></a>
 								</li>
 								<li class="menu-item">
-									<a href="#productos">Productos</a>
+									<a href="#productos"><font size="+1">Productos</font></a>
 								</li>
 								<li class="menu-item">
-									<a href="#quienes-somos">Quiénes somos</a>
+									<a href="#quienes-somos"><font size="+1">Quiénes somos</font></a>
 								</li>
 								<li class="menu-item">
-									<a href="#contacto">Contacto</a>
+									<a href="#contacto"><font size="+1">Contacto</font></a>
 								</li>
 							</ul>
 						</nav>
@@ -128,10 +276,13 @@
 				</div>
 			</div>
 
-			<div class="video-bg-wrapper">
-				<video autoplay loop muted playsinline class="video-bg js-video-bg" poster="images/bg-preview.jpg">
-			        <source src="video/artezannal.mp4" type="video/mp4">
-			    </video>
+			<div>
+				<div class="video-bg-wrapper">
+					<video autoplay loop muted playsinline class="video-bg js-video-bg" poster="images/bg-preview.jpg">
+				        <source src="video/artezannal.mp4" type="video/mp4">
+				    </video>
+				</div>
+				<img src="assets/images/circulo_grande.png" class="img-banner">
 			</div>
 
 			<div class="mobile-menu-wrapper">
@@ -145,7 +296,7 @@
 
 		<section role="main">	
 
-			<section class="our-products l-section-padding" id="productos">
+			<section class="our-products l-section-padding" id="productos" style="display:none">
 				<div class="row">
 					<div class="columns large-12">
 						<h2 class="l-section-title"><span class="title-text">Productos</span></h2>
@@ -154,6 +305,7 @@
 				<div class="row">
 					<div class="column-large-12">
 						<div class="hidden-container">
+
 							<div class="row">
 								<div class="columns large-12 medium-12">
 									<div class="added-products">
@@ -198,8 +350,116 @@
 
 					</div>
 				</div>
-			</section>		
+			</section>	
 
+			<section>
+				<div class="row">
+					<div class="columns large-12">
+						<center>
+							<br><br><br>
+							<h3><span style="font-size:24px; font-weight:bold; letter-spacing: 0.25em;">Productos</span></h3>
+							<br><br><br>
+						</center>
+					</div>
+				</div>
+   				
+
+
+				<div class="container swiper">
+    <div class="card-wrapper">
+      <!-- Card slides container -->
+      <ul class="card-list swiper-wrapper">
+        <li class="card-item swiper-slide">
+          <a href="javascript:void(0)" class="card-link" style="text-align:center;">
+            <img src="images/products/01.jpg" alt="Card Image" class="card-image" style="border-radius: 50%;">
+            <h2 class="card-title">Anillo de plata</h2>
+            <h2 class="card-precio">$252.00</h2>
+            <br>
+            <div class="checkit-btn-block">
+            	<span class="checkit-btn l-dis-ib button" style="border-width: 1px;background-color:#fff;color: #130a56;">Agregar al carrito</span>
+            </div>
+          </a>
+        </li>
+        <li class="card-item swiper-slide">
+          <a href="javascript:void(0)" class="card-link" style="text-align:center;">
+            <img src="images/products/02.jpg" alt="Card Image" class="card-image" style="border-radius: 50%;">
+            <h2 class="card-title">Vasija de porcelana</h2>
+            <h2 class="card-precio">$300.00</h2>
+            <br>
+            <div class="checkit-btn-block">
+            	<span class="checkit-btn l-dis-ib button" style="border-width: 1px;background-color:#fff;color: #130a56;">Agregar al carrito</span>
+            </div>
+          </a>
+        </li>
+        <li class="card-item swiper-slide">
+          <a href="javascript:void(0)" class="card-link" style="text-align:center;">
+            <img src="images/products/03.jpg" alt="Card Image" class="card-image" style="border-radius: 50%;">
+            <h2 class="card-title">Mezcal artesanal</h2>
+            <h2 class="card-precio">$550.00</h2>
+            <br>
+            <div class="checkit-btn-block">
+            	<span class="checkit-btn l-dis-ib button" style="border-width: 1px;background-color:#fff;color: #130a56;">Agregar al carrito</span>
+            </div>
+          </a>
+        </li>
+        <li class="card-item swiper-slide">
+          <a href="javascript:void(0)" class="card-link" style="text-align:center;">
+            <img src="images/products/04.jpg" alt="Card Image" class="card-image" style="border-radius: 50%;">
+            <h2 class="card-title">Anillo de coco</h2>
+            <h2 class="card-precio">$180.00</h2>
+            <br>
+            <div class="checkit-btn-block">
+            	<span class="checkit-btn l-dis-ib button" style="border-width: 1px;background-color:#fff;color: #130a56;">Agregar al carrito</span>
+            </div>
+          </a>
+        </li>
+        <li class="card-item swiper-slide">
+          <a href="javascript:void(0)" class="card-link" style="text-align:center;">
+            <img src="images/products/05.jpg" alt="Card Image" class="card-image" style="border-radius: 50%;">
+            <h2 class="card-title">Jabón de castilla</h2>
+            <h2 class="card-precio">$200.00</h2>
+            <br>
+            <div class="checkit-btn-block">
+            	<span class="checkit-btn l-dis-ib button" style="border-width: 1px;background-color:#fff;color: #130a56;">Agregar al carrito</span>
+            </div>
+          </a>
+        </li>
+        <li class="card-item swiper-slide">
+          <a href="javascript:void(0)" class="card-link" style="text-align:center;">
+            <img src="images/products/06.jpeg" alt="Card Image" class="card-image" style="border-radius: 50%;">
+            <h2 class="card-title">Congante de macrame</h2>
+            <h2 class="card-precio">$190.00</h2>
+            <br>
+            <div class="checkit-btn-block">
+            	<span class="checkit-btn l-dis-ib button" style="border-width: 1px;background-color:#fff;color: #130a56;">Agregar al carrito</span>
+            </div>
+          </a>
+        </li>
+        <li class="card-item swiper-slide">
+          <a href="javascript:void(0)" class="card-link" style="text-align:center;">
+            <img src="images/products/07.jpg" alt="Card Image" class="card-image" style="border-radius: 50%;">
+            <h2 class="card-title">Mochila</h2>
+            <h2 class="card-precio">$320.00</h2>
+            <br>
+            <div class="checkit-btn-block">
+            	<span class="checkit-btn l-dis-ib button" style="border-width: 1px;background-color:#fff;color: #130a56;">Agregar al carrito</span>
+            </div>
+          </a>
+        </li>
+      </ul>
+
+       <!-- Pagination -->
+      <div class="swiper-pagination"></div>
+
+      <!-- Navigation Buttons -->
+      <div class="swiper-slide-button swiper-button-prev"></div>
+      <div class="swiper-slide-button swiper-button-next"></div>
+    </div>
+  </div>
+
+
+</section>
+<br><br>
 			<section class="our-partners l-section-padding" id="companies" style="display: none;">
 				<div class="row">
 					<div class="columns large-12">
@@ -255,41 +515,23 @@
 
 			<section class="why-we" id="quienes-somos">
 				<div class="row">
-					<div class="columns large-12">
-						<h2 class="l-section-title l-white"><span class="title-text" style="color:#fff">Quiénes somos</span></h2>
+					<div class="columns large-6">
+						<span class="title-text" style="color:#fff;font-size:24px">Quiénes somos</span>
+						<p style="text-align:justify; color: #fff; font-size: 16px;line-height: 1.8em; margin-top: 20px;">
+							Bienvenidos a nuestra plataforma, donde nos dedicamos a promover a las empresas que elaboran y comercializan productos artesanales mexicanos de la más calidad. Creemos en el valor de hacer las cosas a mano y en el talento de nuestros artesanos. Únete a nosotros para descubrir y apoyar lo mejor de la producción local y ¡Juntos hagámos crecer a nuestra comunidad!
+						</p>
+						<p style="text-align:justify; color: #fff; font-size: 16px;line-height: 1.8em; margin-top: 20px;">
+							Los invitamos a conocer los productos, a confiar y creer en la calidad de lo nacional y compartir con otros el gusto por la riqueza que existe en nuesto pais.
+						</p>
 					</div>
-				</div>
-				<div class="row" style="max-width: 80%">
-					<div class="columns large-12 medium-12 small-12">
-						<div class="why-facts-list">
+					<div class="columns large-6">
 
-							<div class="why-eleme-block l-dis-ib left-info-block">
-								<div class="why-us-item">
-									<div class="item-desc-block">
-										<h4 class="item-title">Bienvenidos a nuestra plataforma, donde nos dedicamos a promover a las empresas que elaboran y comercializan productos artesanales mexicanos de la más calidad. Creemos en el valor de hacer las cosas a mano y en el talento de nuestros artesanos. Únete a nosotros para descubrir y apoyar lo mejor de la producción local y ¡Juntos hagámos crecer a nuestra comunidad!</h4>									
-										<p class="item-description"></p>
-									</div>
-									<div class="item-icon-block"><span class="item-icon" data-icon="&#xe055;"></span></div>
-								</div>
+						<div class="why-us-image" style="width:100% !important">
+								<div class="left-image" style="background-image: url(images/nosotros/01.png); border-radius: 50%; max-width: 400px; max-height: 400px;"></div>
+								<img src="images/nosotros/02.png" alt="" style="border-radius: 50%; max-width: 400px; max-height: 400px;">
+								<div class="right-image" style="background-image: url(images/nosotros/03.png); border-radius: 50%; max-width: 400px; max-height: 400px;"></div>
 							</div>
 
-							<div class="why-eleme-block l-dis-ib right-info-block">
-								<div class="why-us-item">
-									<div class="item-desc-block">
-										<h4 class="item-title">Los invitamos a conocer los productos, a confiar y creer en la calidad de lo nacional y compartir con otros el gusto por la riqueza que existe en nuesto pais.</h4>
-										<p class="item-description"></p>
-									</div>
-									<div class="item-icon-block"><span class="item-icon" data-icon="&#xe034;"></span></div>
-								</div>
-							</div>
-
-							<div class="why-us-image">
-								<div class="left-image" style="background-image: url(images/nosotros/01.png)"></div>
-								<img src="images/nosotros/02.png" alt="">
-								<div class="right-image" style="background-image: url(images/nosotros/03.png)"></div>
-							</div>
-
-						</div>
 					</div>
 				</div>
 			</section>
@@ -303,27 +545,27 @@
 									<div class="about-team">
 										
 										<div class="team-member-info">
-											<h1 style="font-size: 100px;margin-bottom: -40px;">"</h1>
-											<h3 class="team-name" style="font-size:24px">Alexa Garza, CA</h3>
-											<p class="team-post" style="font-size:16px; line-height: 24px;">“Excelentes productos, lo que más me gusta es la puntualidad en la entrega y lo bonito de los empaques."</p>
+											<img src="images/comillas.png" style="width:60px;margin-top:30px;margin-bottom:30px;">
+											<h3 class="team-name" style="font-size:24px; color:#130a56; margin-bottom:30px">Alexa Garza, CA</h3>
+											<p class="team-post" style="font-size:16px; line-height: 24px; color:#130a56; margin-bottom:30px">“Excelentes productos, lo que más me gusta es la puntualidad en la entrega y lo bonito de los empaques."</p>
 										</div>
 									</div>
 								</div>
 								<div class="column large-4 medium-4 small-12">
 									<div class="about-team">
 										<div class="team-member-info" >
-											<h1 style="font-size: 100px;margin-bottom: -40px;">"</h1>
-											<h3 class="team-name" style="font-size:24px">Ana Lucía, CDMX</h3>
-											<p class="team-post" style="font-size:16px; line-height: 24px;">"Amo lo natural y éste sitio ha sido mi mejor aliado para encontrar los productos que más necesito."</p>
+											<img src="images/comillas.png" style="width:60px;margin-top:30px;margin-bottom:30px;">
+											<h3 class="team-name" style="font-size:24px; color:#130a56; margin-bottom:30px">Ana Lucía, CDMX</h3>
+											<p class="team-post" style="font-size:16px; line-height: 24px; color:#130a56; margin-bottom:30px">"Amo lo natural y éste sitio ha sido mi mejor aliado para encontrar los productos que más necesito."</p>
 										</div>
 									</div>
 								</div>
 								<div class="column large-4 medium-4 small-12">
 									<div class="about-team">
 										<div class="team-member-info" >
-											<h1 style="font-size: 100px;margin-bottom: -40px;">"</h1>
-											<h3 class="team-name" style="font-size:24px">Arturo Cervantes, CDMX</h3>
-											<p class="team-post" style="font-size:16px; line-height: 24px;">“Una grata experiencia recibir mis productos de manera personalizada, cuidan hasta los más pequeños detalles.”</p>
+											<img src="images/comillas.png" style="width:60px;margin-top:30px;margin-bottom:30px;">
+											<h3 class="team-name" style="font-size:24px; color:#130a56; margin-bottom:30px">Arturo Cervantes, CDMX</h3>
+											<p class="team-post" style="font-size:16px; line-height: 24px; color:#130a56; margin-bottom:30px">“Una grata experiencia recibir mis productos de manera personalizada, cuidan hasta los más pequeños detalles.”</p>
 										</div>
 									</div>
 								</div>
@@ -624,5 +866,40 @@
 	</div>
 
 	<script data-main="js/script.js" src="js/lib/require.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+	<script type="text/javascript">
+		new Swiper('.card-wrapper', {
+    loop: true,
+    spaceBetween: 30,
+
+    // Pagination bullets
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+        dynamicBullets: true
+    },
+
+    // Navigation arrows
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+
+    // Responsive breakpoints
+    breakpoints: {
+        0: {
+            slidesPerView: 1
+        },
+        768: {
+            slidesPerView: 2
+        },
+        1024: {
+            slidesPerView: 3
+        }
+    }
+});
+	</script>
+
 </body>
 </html>

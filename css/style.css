@@ -1,3 +1,7 @@
+@font-face {
+  font-family: 'MyWebFont';
+  src: url('../fonts/21798841561.ttf');
+}
 /*------------------------------------------------------------------
 [Table of contents]
 
@@ -167,19 +171,19 @@ button,
 input,
 textarea,
 label {
-  font-family: 'Fira Sans', sans-serif;
+  font-family: 'MyWebFont', sans-serif;
 }
 input {
   outline: none;
 }
 ::-webkit-input-placeholder {
-  font-family: 'Fira Sans', sans-serif;
+  font-family: 'MyWebFont', sans-serif;
 }
 :-moz-placeholder {
-  font-family: 'Fira Sans', sans-serif;
+  font-family: 'MyWebFont', sans-serif;
 }
 :-ms-input-placeholder {
-  font-family: 'Fira Sans', sans-serif;
+  font-family: 'MyWebFont', sans-serif;
 }
 section {
   position: relative;
