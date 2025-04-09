@@ -11,8 +11,8 @@
 
 		case 'qa.artezannal.com':
 
-			define('DB_USER', 'rt25');
-			define('DB_PASSWORD', 'Csot~8907');
+			define('DB_USER', 'qaartezannal');
+			define('DB_PASSWORD', '*8bl9Gt74');
 			define('DB_DATABASE', 'qaartezannal');
 
 		break;
