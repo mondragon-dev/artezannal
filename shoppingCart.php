@@ -1,6 +1,13 @@
 <?php 
-	session_start(); 
+
+	include('config/config.php');
+	include('config/db.php');
+
 	$sessionID = session_id();
+
+	$sql = "SELECT * FROM carrito_compras AS C LEFT JOIN productos as P ON C.producto_id = P.id WHERE session_id = '".$sessionID."' ";
+	$res = mysqli_query($link,$sql);
+
 ?>
 
 <!doctype html>
@@ -40,7 +47,7 @@
   			max-width: 150%;
 		}
 		.menu-item a {
-  			color: #130a56;
+  			color: #fff;
   			font-weight: 800;
 		}
 		.menu-item a:hover{
@@ -345,6 +352,10 @@
   }
 }
 
+.menu-wrapper {
+  top: 0px;
+}
+
 	</style>
 </head>
 <body data-currency="$">
@@ -354,13 +365,14 @@
 			<img src="images/logoIndex.png" alt="" class="logo-image">
 		</div>
 	</div>
-	<div class="page-content">
+	<div class="page-content" style="background-image: url(images/fondoFooter.png);">
 		<header class="header">
-			<div class="menu-wrapper">
+			<div class="menu-wrapper" style="background-image: url(images/fondoFooter.png);">
+				<br><br>
 				<div class="row">
 					<div class="column large-2">
-						<div class="logo-wrapper">
-							<img src="images/logoIndex.png" alt="" class="logo-image">
+						<div class="logo-wrapper" onclick="javascript:window.location='index.php'" style="cursor:pointer">
+							<img src="images/logo_artezannal_bco.png" alt="" class="logo-image">
 						</div>
 					</div>
 					<div class="column large-10">
@@ -384,31 +396,6 @@
 				</div>
 			</div>
 
-			<div class="header-container">
-				<div class="header-wrapper">
-					<div class="header-content">
-						<div class="row">
-							<div class="columns large-12 medium-12 small-12">
-								<div class="page-quote-block">
-									<h2 class="page-quote js-slidedown-reveal"></h2>
-									<h4 class="quote-comment js-slidedown-reveal"></h4>
-									<span class="theme-bg-c js-procede-btn button js-slidedown-reveal" style="visibility: hidden;"></span>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<div>
-				<div class="video-bg-wrapper">
-					<video autoplay loop muted playsinline class="video-bg js-video-bg" poster="images/bg-preview.jpg">
-				        <source src="video/artezannal.mp4" type="video/mp4">
-				    </video>
-				</div>
-				<img src="assets/images/circulo_grande.png" class="img-banner">
-			</div>
-
 			<div class="mobile-menu-wrapper">
 				<div class="toggle-btn-block js-toggle-menu">
 					<div class="toggle-btn"></div>
@@ -419,278 +406,64 @@
 		</header>
 
 		<section role="main">	
-
-			<section class="our-products l-section-padding" id="productos" style="display:none">
-				<div class="row">
-					<div class="columns large-12">
-						<h2 class="l-section-title"><span class="title-text">Productos</span></h2>
-					</div>
-				</div>
-				<div class="row">
-					<div class="column-large-12">
-						<div class="hidden-container">
-
-							<div class="row">
-								<div class="columns large-12 medium-12">
-									<div class="added-products">
-										<p class="l-inline-block"></p>
-										<div class="shopping-cart l-inline-block">
-											<i data-icon="&#xe04e;"></i>
-											<span class="products-number"><span class="js-product-count">0</span></span>
-										</div>
-									</div>
-								</div>
-							</div>
-
-							<div class="row">
-								<div class="columns large-12 medium-12 small-12">
-									<div class="product-presentation-wrapper">
-										<div class="product-presentation-content js-products-container">
-											<div class="category-list">
-												<dl class="select">
-												    <dt>
-												        <a href="#"><span data-icon="&#xe067;"></span></a>
-												    </dt>
-												    <dd></dd>
-												</dl>
-											</div>
-											<div class="slider-preloader">
-												<div id="preloader-container">
-													<div class="preloader-center">
-														<div class="preloader-view">
-															<div></div>
-															<div></div>
-															<div></div>
-														</div>
-													</div>
-												</div>
-											</div>
-											
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-
-					</div>
-				</div>
-			</section>	
-
-			<section>
-				<div class="row">
-					<div class="columns large-12">
-						<center>
-							<br><br><br>
-							<h3><span style="font-size:24px; font-weight:bold; letter-spacing: 0.25em;">Productos</span></h3>
-							<br><br><br>
-						</center>
-					</div>
-				</div>
-   				
-
-
-				<div class="container swiper">
-    <div class="card-wrapper">
-      <!-- Card slides container -->
-      <ul class="card-list swiper-wrapper">
-        <li class="card-item swiper-slide">
-          <a href="javascript:void(0)" class="card-link" style="text-align:center;">
-            <img src="images/products/01.jpg" alt="Card Image" class="card-image" style="border-radius: 50%;">
-            <h2 class="card-title">Anillo de plata</h2>
-            <h2 class="card-precio">$252.00</h2>
-            <br>
-            <div class="checkit-btn-block">
-            	<span class="checkit-btn l-dis-ib button" style="border-width: 1px;background-color:#fff;color: #130a56;" data-toggle="modal" data-target="#myModal2" onclick="agregarCarrito(1)">Agregar al carrito</span>
-            </div>
-          </a>
-        </li>
-        <li class="card-item swiper-slide">
-          <a href="javascript:void(0)" class="card-link" style="text-align:center;">
-            <img src="images/products/02.jpg" alt="Card Image" class="card-image" style="border-radius: 50%;">
-            <h2 class="card-title">Vasija de porcelana</h2>
-            <h2 class="card-precio">$300.00</h2>
-            <br>
-            <div class="checkit-btn-block">
-            	<span class="checkit-btn l-dis-ib button" style="border-width: 1px;background-color:#fff;color: #130a56;" data-toggle="modal" data-target="#myModal2" onclick="agregarCarrito(2)">Agregar al carrito</span>
-            </div>
-          </a>
-        </li>
-        <li class="card-item swiper-slide">
-          <a href="javascript:void(0)" class="card-link" style="text-align:center;">
-            <img src="images/products/03.jpg" alt="Card Image" class="card-image" style="border-radius: 50%;">
-            <h2 class="card-title">Mezcal artesanal</h2>
-            <h2 class="card-precio">$550.00</h2>
-            <br>
-            <div class="checkit-btn-block">
-            	<span class="checkit-btn l-dis-ib button" style="border-width: 1px;background-color:#fff;color: #130a56;" data-toggle="modal" data-target="#myModal2" onclick="agregarCarrito(3)">Agregar al carrito</span>
-            </div>
-          </a>
-        </li>
-        <li class="card-item swiper-slide">
-          <a href="javascript:void(0)" class="card-link" style="text-align:center;">
-            <img src="images/products/04.jpg" alt="Card Image" class="card-image" style="border-radius: 50%;">
-            <h2 class="card-title">Anillo de coco</h2>
-            <h2 class="card-precio">$180.00</h2>
-            <br>
-            <div class="checkit-btn-block">
-            	<span class="checkit-btn l-dis-ib button" style="border-width: 1px;background-color:#fff;color: #130a56;" data-toggle="modal" data-target="#myModal2" onclick="agregarCarrito(4)">Agregar al carrito</span>
-            </div>
-          </a>
-        </li>
-        <li class="card-item swiper-slide">
-          <a href="javascript:void(0)" class="card-link" style="text-align:center;">
-            <img src="images/products/05.jpg" alt="Card Image" class="card-image" style="border-radius: 50%;">
-            <h2 class="card-title">Jabón de castilla</h2>
-            <h2 class="card-precio">$200.00</h2>
-            <br>
-            <div class="checkit-btn-block">
-            	<span class="checkit-btn l-dis-ib button" style="border-width: 1px;background-color:#fff;color: #130a56;" data-toggle="modal" data-target="#myModal2" onclick="agregarCarrito(5)">Agregar al carrito</span>
-            </div>
-          </a>
-        </li>
-        <li class="card-item swiper-slide">
-          <a href="javascript:void(0)" class="card-link" style="text-align:center;">
-            <img src="images/products/06.jpeg" alt="Card Image" class="card-image" style="border-radius: 50%;">
-            <h2 class="card-title">Colgante de macrame</h2>
-            <h2 class="card-precio">$190.00</h2>
-            <br>
-            <div class="checkit-btn-block">
-            	<span class="checkit-btn l-dis-ib button" style="border-width: 1px;background-color:#fff;color: #130a56;" data-toggle="modal" data-target="#myModal2" onclick="agregarCarrito(6)">Agregar al carrito</span>
-            </div>
-          </a>
-        </li>
-        <li class="card-item swiper-slide">
-          <a href="javascript:void(0)" class="card-link" style="text-align:center;">
-            <img src="images/products/07.jpg" alt="Card Image" class="card-image" style="border-radius: 50%;">
-            <h2 class="card-title">Mochila</h2>
-            <h2 class="card-precio">$320.00</h2>
-            <br>
-            <div class="checkit-btn-block">
-            	<span class="checkit-btn l-dis-ib button" style="border-width: 1px;background-color:#fff;color: #130a56;" data-toggle="modal" data-target="#myModal2" onclick="agregarCarrito(7)">Agregar al carrito</span>
-            </div>
-          </a>
-        </li>
-      </ul>
-
-       <!-- Pagination -->
-      <div class="swiper-pagination"></div>
-
-      <!-- Navigation Buttons -->
-      <div class="swiper-slide-button swiper-button-prev"></div>
-      <div class="swiper-slide-button swiper-button-next"></div>
-    </div>
-  </div>
-
-
-</section>
-<br><br>
-			<section class="our-partners l-section-padding" id="companies" style="display: none;">
-				<div class="row">
-					<div class="columns large-12">
-						<div class="partners-carousel">
-							<ul class="slides">
-								<li>
-									<div class="partners-item">
-										<a href="#">
-											<img src="http://placehold.it/220x40" alt=""/>
-										</a>
-									</div>
-								</li>
-								<li>
-									<div class="partners-item">
-										<a href="#">
-											<img src="http://placehold.it/220x40" alt=""/>
-										</a>
-									</div>
-								</li>
-								<li>
-									<div class="partners-item">
-										<a href="#">
-											<img src="http://placehold.it/220x40" alt=""/>
-										</a>
-									</div>
-								</li>
-								<li>
-									<div class="partners-item">
-										<a href="#">
-											<img src="http://placehold.it/220x40" alt=""/>
-										</a>
-									</div>
-								</li>
-								<li>
-									<div class="partners-item">
-										<a href="#">
-											<img src="http://placehold.it/220x40" alt=""/>
-										</a>
-									</div>
-								</li>
-								<li>
-									<div class="partners-item">
-										<a href="#">
-											<img src="http://placehold.it/220x40" alt=""/>
-										</a>
-									</div>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</section>
-
-			<section class="why-we" id="quienes-somos">
-				<div class="row">
-					<div class="columns large-6">
-						<span class="title-text" style="color:#fff;font-size:24px">Quiénes somos</span>
-						<p style="text-align:justify; color: #fff; font-size: 16px;line-height: 1.8em; margin-top: 20px;">
-							Bienvenidos a nuestra plataforma, donde nos dedicamos a promover a las empresas que elaboran y comercializan productos artesanales mexicanos de la más calidad. Creemos en el valor de hacer las cosas a mano y en el talento de nuestros artesanos. Únete a nosotros para descubrir y apoyar lo mejor de la producción local y ¡Juntos hagámos crecer a nuestra comunidad!
-						</p>
-						<p style="text-align:justify; color: #fff; font-size: 16px;line-height: 1.8em; margin-top: 20px;">
-							Los invitamos a conocer los productos, a confiar y creer en la calidad de lo nacional y compartir con otros el gusto por la riqueza que existe en nuesto pais.
-						</p>
-					</div>
-					<div class="columns large-6">
-
-						<div class="why-us-image" style="width:100% !important">
-								<div class="left-image" style="background-image: url(images/nosotros/01.png); border-radius: 50%; max-width: 400px; max-height: 400px;"></div>
-								<img src="images/nosotros/02.png" alt="" style="border-radius: 50%; max-width: 400px; max-height: 400px;">
-								<div class="right-image" style="background-image: url(images/nosotros/03.png); border-radius: 50%; max-width: 400px; max-height: 400px;"></div>
-							</div>
-
-					</div>
-				</div>
-			</section>
-
-			<section class="members l-section-padding" id="team-members">
+			<br><br>
+			<br><br>
+			<br><br>
+			<br><br>
+			<section class="members l-section-padding" id="team-members" style="background-image: url(images/back_bright.png);">
 				<div class="row" style="max-width:90%">
 					<div class="column large-12">
 						<div class="for-border-partent">
 							<div class="row">
-								<div class="column large-4 medium-4 small-12">
+								<div class="column large-8 medium-8 small-12">
 									<div class="about-team">
+
+										<?php
+
+											$total = 0;
+
+											while($dat = mysqli_fetch_array($res)){
+
+												$total += ($dat['cantidad'] * $dat['precio']);
+
+										?>
 										
-										<div class="team-member-info">
-											<img src="images/comillas.png" style="width:60px;margin-top:30px;margin-bottom:30px;">
-											<h3 class="team-name" style="font-size:24px; color:#130a56; margin-bottom:30px">Alexa Garza, CA</h3>
-											<p class="team-post" style="font-size:16px; line-height: 24px; color:#130a56; margin-bottom:30px">“Excelentes productos, lo que más me gusta es la puntualidad en la entrega y lo bonito de los empaques."</p>
-										</div>
+											<div class="row">
+												<div class="col-lg-3">
+													<img src="images/products/<?php echo $dat['imagen']; ?>">
+												</div>
+												<div class="col-lg-6">
+													<?php echo $dat['producto']; ?><br><br>
+													$<?php echo $dat['precio']; ?><br><br>
+													<input type="number" class="form-control" onchange="actualizarProductos(this.value,<?php echo $dat['producto_id']; ?>)" min="1" max="10" value="<?php echo $dat['cantidad']; ?>">
+												</div>
+												<div class="col-lg-3">
+													<i class="fa fa-trash" style="font-size:20px;cursor:pointer" onclick="eliminarProductoCarrito(<?php echo $dat['producto_id']; ?>)"></i>
+												</div>
+											 </div>
+											 <hr>
+
+										<?php
+											}
+										?>
+
+
 									</div>
+
 								</div>
 								<div class="column large-4 medium-4 small-12">
 									<div class="about-team">
-										<div class="team-member-info" >
-											<img src="images/comillas.png" style="width:60px;margin-top:30px;margin-bottom:30px;">
-											<h3 class="team-name" style="font-size:24px; color:#130a56; margin-bottom:30px">Ana Lucía, CDMX</h3>
-											<p class="team-post" style="font-size:16px; line-height: 24px; color:#130a56; margin-bottom:30px">"Amo lo natural y éste sitio ha sido mi mejor aliado para encontrar los productos que más necesito."</p>
+										<div class="team-member-info" style="text-align:left">
+											<h3 class="team-name" style="font-size:24px; color:#130a56; margin-bottom:30px">Resumen del pedido</h3>
+											<p class="team-post" style="font-size:16px; line-height: 24px; color:#130a56; margin-bottom:30px">Subtotal: $<?php echo number_format($total,2); ?></p>
 										</div>
-									</div>
-								</div>
-								<div class="column large-4 medium-4 small-12">
-									<div class="about-team">
-										<div class="team-member-info" >
-											<img src="images/comillas.png" style="width:60px;margin-top:30px;margin-bottom:30px;">
-											<h3 class="team-name" style="font-size:24px; color:#130a56; margin-bottom:30px">Arturo Cervantes, CDMX</h3>
-											<p class="team-post" style="font-size:16px; line-height: 24px; color:#130a56; margin-bottom:30px">“Una grata experiencia recibir mis productos de manera personalizada, cuidan hasta los más pequeños detalles.”</p>
+										<hr>
+										<div class="team-member-info" style="text-align:left">
+											<p class="team-post" style="font-size:16px; line-height: 24px; color:#130a56; margin-bottom:30px">Total: $<?php echo number_format($total,2); ?></p>
 										</div>
+										<div class="checkit-btn-block">
+					            	<span class="checkit-btn l-dis-ib button" style="width:100%; border-width: 1px;background-color:#fff;color: #130a56;" data-toggle="modal" data-target="#modalVerificar">Pagar</span>
+					           </div>
 									</div>
 								</div>
 							</div>
@@ -701,79 +474,7 @@
 
 		</section>
 		<footer>
-			<section class="get-in-touch l-section-padding bg-img" id="contacto">
-				<div class="title-block">
-					<div class="row">
-						<div class="columns large-12">
-							<h2 class="l-section-title">
-								<span class="title-text" style="font-size: 24px;font-weight: bold; letter-spacing: 0.25em; color: #130a56;">
-									contacto
-								</span>
-							</h2>
-						</div>
-					</div>
-				</div>
-				
-				<div class="fields-view">
-					<form action="sendmail.php" method="post">
-						<div class="row">
-							<div class="columns large-6 medium-6">
-								<div class="align-center-small">
-									<div class="centered-block">
-										<label for="name" class="contact-label" style="color:white">Nombre <span style="color:#D54212">*</span></label>
-										<input type="text" id="name" class="contact-field required" name="name_field">
-									</div>
-									<div class="centered-block">
-										<label for="name" class="contact-label" style="color:white">Apellidos <span style="color:#D54212">*</span></label>
-										<input type="text" id="name" class="contact-field required" name="name_field">
-									</div>
-									<div class="centered-block">
-										<label for="mail" class="contact-label" style="color:white">E-mail <span style="color:#D54212">*</span></label>
-										<input type="text" id="mail" class="contact-field required" name="mail_field">
-									</div>
-									<div class="centered-block">
-										<label for="subject" class="contact-label" style="color:white">Título <span style="color:#D54212">*</span></label>
-										<input type="text" id="subject" class="contact-field required" name="subject_field">
-									</div>
-								</div>
-							</div>
-							<div class="columns large-6 medium-6">
-								<div class="align-center-small">
-									<div class="centered-block">
-										<label for="message" class="contact-label" style="color:white">Mensaje <span style="color:#D54212">*</span></label>
-										<textarea id="message" class="contact-field textarea-contact required" name="message_field"></textarea>
-
-										<span class="checkout">
-											<span>Enviar</span>
-											<i class="fa fa-envelope-o"></i>
-										</span>
-									</div>
-								</div>
-							</div>
-						</div>
-					</form>
-
-					<div class="socials-list">
-						<ul class="social-icons">
-							<li>
-								<a href="#"><i class="fa fa-instagram" style="color:white;"></i></a>
-							</li>
-							<li>
-								<a href="#"><i class="fa fa-twitter" style="color:white;"></i></a> 
-							</li>
-							<li>
-								<a href="#"><i class="fa fa-facebook" style="color:white;"></i></a>
-							</li>
-							<li>
-								<a href="#"><i class="fa fa-dribbble" style="color:white;"></i></a>
-							</li>
-							<li>
-								<a href="#"><i class="fa fa-tumblr" style="color:white;"></i></a>
-							</li>
-						</ul>
-					</div>
-				</div>
-			</section>
+			
 			<div class="footer-wrapper l-section-padding">
 
 				<div class="row">
@@ -1087,22 +788,14 @@
                     session_id:'<?php echo $sessionID; ?>'
                 },
                 success: function(datos) {
+
+                	listarProductosCarrito();
+
                 }
          });
 
 			}
 
-			$.ajax({
-        type:"POST",
-                url: "scripts/ws.php",
-                data:{
-                    acc:'listarProductosCarrito',
-                    session_id:'<?php echo $sessionID; ?>'
-                },
-                success: function(datos) {
-                	document.getElementById('divCarrito').innerHTML = datos;
-                }
-      });
 
 		}
 
@@ -1156,19 +849,7 @@
 	        },
 	        success: function(datos) {
 
-
-	        	$.ajax({
-			        type:"POST",
-			        url: "scripts/ws.php",
-			                data:{
-			                    acc:'listarProductosCarrito',
-			                    session_id:'<?php echo $sessionID; ?>'
-			                },
-			        success: function(datos) {
-			          document.getElementById('divCarrito').innerHTML = datos;
-			        }
-			      });
-
+	        	location.reload();
 
 	        }
 	      });
