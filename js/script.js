@@ -1,7 +1,7 @@
 requirejs.config({
     waitSeconds: 0,
     paths: {
-        'jquery': 'lib/jquery-2.1.1.min',
+        /*'jquery': 'lib/jquery-2.1.1.min',*/
         'bPopup': 'lib/bpopup.min',
         'fancy': 'lib/jquery.fancybox.pack',
         'fancyThumb': 'lib/jquery.fancybox-thumbs',
