@@ -97,7 +97,8 @@
 
 	if($_POST['acc'] == "recalcularTotalCarrito"){
 
-		$sql = "SELECT * FROM carrito_compras AS C LEFT JOIN productos as P ON C.producto_id = P.id WHERE session_id = '".$_POST['session_id']."' ";
+		$sql = "SELECT * FROM carrito_compras AS C 
+						LEFT JOIN productos as P ON C.producto_id = P.id WHERE session_id = '".$_POST['session_id']."' ";
 		$res = mysqli_query($link,$sql);
 
 		$subtotal = 0;

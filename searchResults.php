@@ -415,98 +415,31 @@
 				<div class="row" style="max-width:90%">
 					<div class="column large-12">
 						<div class="for-border-partent">
-							<div class="row">
-								<div class="column large-8 medium-8 small-12">
-									<div class="about-team">
 
-										<div class="team-member-info" style="text-align:left">
+							<div class="row">
+								<div class="column large-12 medium-12 small-12">
+									<div class="about-team">
+										<div class="team-member-info" style="display: flex; justify-content: center;">
 											<h3 class="team-name" style="font-size:24px; color:#130a56; margin-bottom:30px">
-												Añadido al carrito 
-												<img src="images/carrito-icono.png" style="width:60px">
+												Resultados de la búsqueda
 											</h3>
 										</div>
-										<hr>
-
-										<?php
-
-											$total = 0;
-
-											while($dat = mysqli_fetch_array($res)){
-
-												$total += ($dat['cantidad'] * $dat['precio']);
-
-										?>
-										
-											<div class="row">
-												<div class="col-lg-3">
-													<img src="images/products/<?php echo $dat['imagen']; ?>">
-												</div>
-												<div class="col-lg-6">
-													<?php echo $dat['producto']; ?><br><br>
-													$<?php echo $dat['precio']; ?><br><br>
-													<input type="number" class="form-control" onchange="actualizarProductos(this.value,<?php echo $dat['producto_id']; ?>)" min="1" max="10" value="<?php echo $dat['cantidad']; ?>">
-												</div>
-												<div class="col-lg-3">
-													<i class="fa fa-trash" style="font-size:20px;cursor:pointer" onclick="eliminarProductoCarrito(<?php echo $dat['producto_id']; ?>)"></i>
-												</div>
-											 </div>
-											 <hr>
-
-										<?php
-											}
-										?>
-
-										<div class="team-member-info" style="text-align:left">
-											<div class="team-member-info" style="text-align:left">
-												<div class="row">
-													<div class="col-lg-12">
-														<p class="team-post" style="font-size:16px; line-height: 24px; color:#130a56; margin-bottom:30px; cursor: pointer;" onclick="mostrarCodigoDescuento()">
-															<svg viewBox="0 0 14 16" fill="currentColor" width="14" height="16"><g id="final-cart" stroke="none" fill="none" stroke-width="1" fill-rule="evenodd"><g id="general-layout" transform="translate(-515 -839)" fill="currentColor"><g id="coupon-icon" transform="rotate(30 -1300.653 1393.349)"><path d="M1,14.0046024 C0.999339408,13.9996515 9.00460243,14 9.00460243,14 C8.99965149,14.0006606 9,5.41421356 9,5.41421356 L5,1.41421356 L1,5.41421356 L1,14.0046024 Z M-2.72848411e-12,5 L5,-4.66116035e-12 L10,5 L10,14.0046024 C10,14.5543453 9.5443356,15 9.00460243,15 L0.995397568,15 C0.445654671,15 -2.72848411e-12,14.5443356 -2.72848411e-12,14.0046024 L-2.72848411e-12,5 Z" id="Rectangle-6" fill-rule="nonzero"></path><circle id="Oval-2" cx="5" cy="5" r="1"></circle></g></g></g></svg>
-															Introduce código de descuento: 
-														</p>
-													</div>
-												</div>
-												<div class="row" id="divCodigoDescuento" style="display: none;">
-													<div class="col-lg-4">
-														<input type="text" class="form-control" style="width:100%;background:transparent;">
-													</div>
-													<div class="col-lg-2">
-														<div class="checkit-btn-block">
-            									<span class="checkit-btn l-dis-ib button" style="border-width: 1px;background-color:transparent;color: #130a56;">Aplicar</span>
-            								</div>
-													</div>
-												</div>
-												<div class="row">
-													<div class="col-lg-12">
-														<p class="team-post" style="font-size:16px; line-height: 24px; color:#130a56; margin-bottom:30px">
-															<svg xmlns="http://www.w3.org/2000/svg" width="12" height="13" viewBox="0 0 12 13" class="bqcF4y"><g fill="none" fill-rule="evenodd" stroke="none" stroke-width="1"><g transform="translate(-515 -882)"><g transform="translate(515 882)"><path stroke="currentColor" d="M.5.5h7.778L11.5 3.737V12.5H.5V.5z"></path><path stroke="currentColor" d="M10.793 3.5H8.5V1.207L10.793 3.5z"></path><path fill="currentColor" d="M3 3H6V4H3z"></path><path fill="currentColor" d="M3 6H9V7H3z"></path><path fill="currentColor" d="M3 9H9V10H3z"></path></g></g></g></svg>
-															Agregar una nota: 
-														</p>
-														<textarea class="form-control" rows="4" style="width:300px;background:transparent;"></textarea>
-													</div>
-												</div>
-											</div>
-										</div>
-
 									</div>
-
-								</div>
-								<div class="column large-4 medium-4 small-12">
-									<div class="about-team">
-										<div class="team-member-info" style="text-align:left">
-											<h3 class="team-name" style="font-size:24px; color:#130a56; margin-bottom:30px">Resumen del pedido</h3>
-											<p class="team-post" style="font-size:16px; line-height: 24px; color:#130a56; margin-bottom:30px">Subtotal: $<span id="carritoSubtotal"><?php echo number_format($total,2); ?></span></p>
-										</div>
-										<hr>
-										<div class="team-member-info" style="text-align:left">
-											<p class="team-post" style="font-size:16px; line-height: 24px; color:#130a56; margin-bottom:30px">Total: $<span id="carritoTotal"><?php echo number_format($total,2); ?></span></p>
-										</div>
-										<div class="checkit-btn-block">
-					            	<span class="checkit-btn l-dis-ib button" style="width:100%; border-width: 1px;background-color:#fff;color: #130a56;" data-toggle="modal" data-target="#modalVerificar">Pagar</span>
-					           </div>
-									</div>
-								</div>
+								</div>	
 							</div>
+
+							<div class="row">
+								<div class="column large-12 medium-12 small-12">
+									<div class="about-team">
+										<div class="team-member-info" style="display: flex; justify-content: left;">
+											<h3 class="team-name" style="font-size:16px; color:#130a56; margin-bottom:30px">
+												No se encontraron resultados para "<?php print_r($_POST['q']); ?>". Prueba una nueva búsqueda.
+											</h3>
+										</div>
+									</div>
+								</div>	
+							</div>
+
 						</div>
 					</div>
 				</div>

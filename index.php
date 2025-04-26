@@ -14,6 +14,7 @@
 	<link href='https://fonts.googleapis.com/css?family=Playfair+Display+SC:400italic,700italic&amp;subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Fira+Sans:300,400,500,700&amp;subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
 
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css">
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
  	<link href="css/mobilemenu.css" rel="stylesheet">
@@ -79,6 +80,8 @@
 		}
 		.footer-wrapper {
 			background-image: url(images/fondoFooter.png);
+			background-size: cover;
+			background-position: 50% 50%;
 		}
 		.get-in-touch form .contact-field {
 		  color: #000;
@@ -89,7 +92,7 @@
 		}
 		.img-banner{
 			position: absolute;
-			right: 50px;
+			right: 150px;
 			bottom: 0px;
 			width: 20%;
 		}
@@ -358,6 +361,17 @@
 		<header class="header">
 			<div class="menu-wrapper">
 				<div class="row">
+					<div class="column large-12" style="display: flex; justify-content: right; margin-top: -30px">
+						<form role="search" name="formbuscar" id="formbuscar" style="width: 300px; height: 44px; border-radius: 5px; display: flex; flex-direction: row; align-items: center;" method="POST" action="searchResults.php">
+		  				<input type="search" id="query" name="q" placeholder="Buscador..." aria-label="Search through site content" style="all: unset; font: 16px system-ui; color: #fff; height: 100%; width: 100%; padding: 6px 10px;border:none;border-bottom: 1px solid #fff;">
+		  				<button style="all: unset; cursor: pointer; width: 44px; height: 44px;" onclick="buscarForm()">
+		    				<svg viewBox="0 0 1024 1024" style="color: #fff;	fill: currentColor; width: 24px;	height: 24px;"><path class="path1" d="M848.471 928l-263.059-263.059c-48.941 36.706-110.118 55.059-177.412 55.059-171.294 0-312-140.706-312-312s140.706-312 312-312c171.294 0 312 140.706 312 312 0 67.294-24.471 128.471-55.059 177.412l263.059 263.059-79.529 79.529zM189.623 408.078c0 121.364 97.091 218.455 218.455 218.455s218.455-97.091 218.455-218.455c0-121.364-103.159-218.455-218.455-218.455-121.364 0-218.455 97.091-218.455 218.455z"></path></svg>
+		  				</button>
+						</form>
+					</div>
+				</div>
+				<br>
+				<div class="row">
 					<div class="column large-2">
 						<div class="logo-wrapper">
 							<img src="images/logoIndex.png" alt="" class="logo-image">
@@ -420,7 +434,7 @@
 
 		<section role="main">	
 
-			<section class="our-products l-section-padding" id="productos" style="display:none">
+			<section class="our-products l-section-padding" style="display:none">
 				<div class="row">
 					<div class="columns large-12">
 						<h2 class="l-section-title"><span class="title-text">Productos</span></h2>
@@ -476,7 +490,7 @@
 				</div>
 			</section>	
 
-			<section>
+			<section id="productos">
 				<div class="row">
 					<div class="columns large-12">
 						<center>
@@ -494,81 +508,95 @@
       <!-- Card slides container -->
       <ul class="card-list swiper-wrapper">
         <li class="card-item swiper-slide">
-          <a href="javascript:void(0)" class="card-link" style="text-align:center;">
-            <img src="images/products/01.jpg" alt="Card Image" class="card-image" style="border-radius: 50%;">
+          <span href="javascript:void(0)" class="card-link" style="text-align:center;">
+          	<a href="images/products/01.jpg" data-toggle="lightbox" data-gallery="gallery">
+            	<img src="images/products/01.jpg" alt="Card Image" class="card-image" style="border-radius: 50%;">
+            </a>
             <h2 class="card-title">Anillo de plata</h2>
             <h2 class="card-precio">$252.00</h2>
             <br>
             <div class="checkit-btn-block">
             	<span class="checkit-btn l-dis-ib button" style="border-width: 1px;background-color:#fff;color: #130a56;" data-toggle="modal" data-target="#myModal2" onclick="agregarCarrito(1)">Agregar al carrito</span>
             </div>
-          </a>
+          </span>
         </li>
         <li class="card-item swiper-slide">
-          <a href="javascript:void(0)" class="card-link" style="text-align:center;">
-            <img src="images/products/02.jpg" alt="Card Image" class="card-image" style="border-radius: 50%;">
+          <span href="javascript:void(0)" class="card-link" style="text-align:center;">
+          	<a href="images/products/02.jpg" data-toggle="lightbox" data-gallery="gallery">
+            	<img src="images/products/02.jpg" alt="Card Image" class="card-image" style="border-radius: 50%;">
+            </a>
             <h2 class="card-title">Vasija de porcelana</h2>
             <h2 class="card-precio">$300.00</h2>
             <br>
             <div class="checkit-btn-block">
             	<span class="checkit-btn l-dis-ib button" style="border-width: 1px;background-color:#fff;color: #130a56;" data-toggle="modal" data-target="#myModal2" onclick="agregarCarrito(2)">Agregar al carrito</span>
             </div>
-          </a>
+          </span>
         </li>
         <li class="card-item swiper-slide">
-          <a href="javascript:void(0)" class="card-link" style="text-align:center;">
-            <img src="images/products/03.jpg" alt="Card Image" class="card-image" style="border-radius: 50%;">
+          <span href="javascript:void(0)" class="card-link" style="text-align:center;">
+          	<a href="images/products/03.jpg" data-toggle="lightbox" data-gallery="gallery">
+            	<img src="images/products/03.jpg" alt="Card Image" class="card-image" style="border-radius: 50%;">
+            </a>
             <h2 class="card-title">Mezcal artesanal</h2>
             <h2 class="card-precio">$550.00</h2>
             <br>
             <div class="checkit-btn-block">
             	<span class="checkit-btn l-dis-ib button" style="border-width: 1px;background-color:#fff;color: #130a56;" data-toggle="modal" data-target="#myModal2" onclick="agregarCarrito(3)">Agregar al carrito</span>
             </div>
-          </a>
+          </span>
         </li>
         <li class="card-item swiper-slide">
-          <a href="javascript:void(0)" class="card-link" style="text-align:center;">
-            <img src="images/products/04.jpg" alt="Card Image" class="card-image" style="border-radius: 50%;">
+          <span href="javascript:void(0)" class="card-link" style="text-align:center;">
+          	<a href="images/products/04.jpg" data-toggle="lightbox" data-gallery="gallery">
+            	<img src="images/products/04.jpg" alt="Card Image" class="card-image" style="border-radius: 50%;">
+            </a>
             <h2 class="card-title">Anillo de coco</h2>
             <h2 class="card-precio">$180.00</h2>
             <br>
             <div class="checkit-btn-block">
             	<span class="checkit-btn l-dis-ib button" style="border-width: 1px;background-color:#fff;color: #130a56;" data-toggle="modal" data-target="#myModal2" onclick="agregarCarrito(4)">Agregar al carrito</span>
             </div>
-          </a>
+          </span>
         </li>
         <li class="card-item swiper-slide">
-          <a href="javascript:void(0)" class="card-link" style="text-align:center;">
-            <img src="images/products/05.jpg" alt="Card Image" class="card-image" style="border-radius: 50%;">
+          <span href="javascript:void(0)" class="card-link" style="text-align:center;">
+          	<a href="images/products/05.jpg" data-toggle="lightbox" data-gallery="gallery">
+            	<img src="images/products/05.jpg" alt="Card Image" class="card-image" style="border-radius: 50%;">
+            </a>
             <h2 class="card-title">Jabón de castilla</h2>
             <h2 class="card-precio">$200.00</h2>
             <br>
             <div class="checkit-btn-block">
             	<span class="checkit-btn l-dis-ib button" style="border-width: 1px;background-color:#fff;color: #130a56;" data-toggle="modal" data-target="#myModal2" onclick="agregarCarrito(5)">Agregar al carrito</span>
             </div>
-          </a>
+          </span>
         </li>
         <li class="card-item swiper-slide">
-          <a href="javascript:void(0)" class="card-link" style="text-align:center;">
-            <img src="images/products/06.jpeg" alt="Card Image" class="card-image" style="border-radius: 50%;">
+          <span href="javascript:void(0)" class="card-link" style="text-align:center;">
+          	<a href="images/products/06.jpeg" data-toggle="lightbox" data-gallery="gallery">
+            	<img src="images/products/06.jpeg" alt="Card Image" class="card-image" style="border-radius: 50%;">
+            </a>
             <h2 class="card-title">Colgante de macrame</h2>
             <h2 class="card-precio">$190.00</h2>
             <br>
             <div class="checkit-btn-block">
             	<span class="checkit-btn l-dis-ib button" style="border-width: 1px;background-color:#fff;color: #130a56;" data-toggle="modal" data-target="#myModal2" onclick="agregarCarrito(6)">Agregar al carrito</span>
             </div>
-          </a>
+          </span>
         </li>
         <li class="card-item swiper-slide">
-          <a href="javascript:void(0)" class="card-link" style="text-align:center;">
-            <img src="images/products/07.jpg" alt="Card Image" class="card-image" style="border-radius: 50%;">
+          <span href="javascript:void(0)" class="card-link" style="text-align:center;">
+          	<a href="images/products/07.jpg" data-toggle="lightbox" data-gallery="gallery">
+            	<img src="images/products/07.jpg" alt="Card Image" class="card-image" style="border-radius: 50%;">
+            </a>
             <h2 class="card-title">Mochila</h2>
             <h2 class="card-precio">$320.00</h2>
             <br>
             <div class="checkit-btn-block">
             	<span class="checkit-btn l-dis-ib button" style="border-width: 1px;background-color:#fff;color: #130a56;" data-toggle="modal" data-target="#myModal2" onclick="agregarCarrito(7)">Agregar al carrito</span>
             </div>
-          </a>
+          </span>
         </li>
       </ul>
 
@@ -753,7 +781,7 @@
 						</div>
 					</form>
 
-					<div class="socials-list">
+					<div class="socials-list" style="display:none">
 						<ul class="social-icons">
 							<li>
 								<a href="#"><i class="fa fa-instagram" style="color:white;"></i></a>
@@ -786,13 +814,13 @@
 										<span class="heightlight"><font size="+1">Artezannal</font></span>
 									</p>
 									<p class="address-item" align="left">
-										<span class="heightlight">Quiénes somos</span>
+										<span class="heightlight"><a href="#quienes-somos" style="text-decoration: none;color: white;">Quiénes somos</a></span>
 									</p>
 									<p class="address-item" align="left">
-										<span class="heightlight">Productos</span>
+										<span class="heightlight"><a href="#productos" style="text-decoration: none;color: white;">Productos</a></span>
 									</p>
 									<p class="address-item" align="left">
-										<span class="heightlight">Contacto</span>
+										<span class="heightlight"><a href="#contacto" style="text-decoration: none;color: white;">Contacto</a></span>
 									</p>
 									<p class="address-item" align="left">
 										<span class="heightlight">Términos y Condiciones de uso</span>
@@ -844,7 +872,10 @@
 									<p class="address-item" align="left">
 										<div class="checkit-btn-block"><span class="checkit-btn l-dis-ib button" style="background-color:#263770">Suscribirme</span></div>
 									</p>
-									<p class="address-item" align="left">
+									<p class="address-item" align="right">
+										<img src="assets/images/icons/facebook_icon.png" style="width:26px;height:26px">
+										<img src="assets/images/icons/pinterest.png" style="width:26px;height:26px">
+										<img src="assets/images/icons/instagram.png" style="width:26px;height:26px">
 									</p>
 								</address>
 							</div>
@@ -1042,6 +1073,8 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
+
 	<script type="text/javascript">
 		new Swiper('.card-wrapper', {
     loop: true,
@@ -1198,6 +1231,17 @@
 			window.location = "shoppingCart.php";
 
 		}
+
+		function buscarForm(){
+
+			document.formbuscar.submit();
+
+		}
+
+		$(document).on("click", '[data-toggle="lightbox"]', function(event) {
+		  event.preventDefault();
+		  $(this).ekkoLightbox();
+		});
 
 	</script>
 
