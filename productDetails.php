@@ -456,7 +456,7 @@
 														<input type="number" class="form-control" id="cantidad" min="1" max="10" value="1" style="width: 100px;">
 														<br><br>
 														<div class="checkit-btn-block">
-								            	<span class="checkit-btn l-dis-ib button" style="width:100%; border-width: 1px;background:transparent;color: #130a56;" onclick="agregarCarritoCantidad(<?php echo $dat['producto_id']; ?>)">Agregar al carrito</span>
+								            	<span class="checkit-btn l-dis-ib button" style="width:100%; border-width: 1px;background:transparent;color: #130a56;" onclick="agregarCarritoCantidad(<?php echo $dat['id']; ?>)">Agregar al carrito</span>
 								           	</div>
 								           	<div class="checkit-btn-block">
 								            	<span class="checkit-btn l-dis-ib button" style="width:100%; border-width: 1px;background:transparent;color: #130a56;" data-toggle="modal" data-target="#modalVerificar">Comprar</span>
