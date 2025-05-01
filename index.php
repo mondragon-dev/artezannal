@@ -348,6 +348,12 @@
   }
 }
 
+
+#Layer_1 {
+  width: 10%;
+  height: 10%;
+}
+
 	</style>
 </head>
 <body data-currency="$">
@@ -391,6 +397,9 @@
 								</li>
 								<li class="menu-item">
 									<a href="#contacto"><font size="+1">Contacto</font></a>
+								</li>
+								<li class="menu-item">
+									<img src="images/acceso_512.png" style="width:40px;cursor:pointer" onclick="self.location='login.php'">
 								</li>
 							</ul>
 						</nav>

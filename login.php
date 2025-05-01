@@ -1,16 +1,32 @@
-<?php 
+<?php
 
 	include('config/config.php');
 	include('config/db.php');
 
-	$sessionID = session_id();
+	if(isset($_GET['u'])){
 
-	$sql = "SELECT * FROM carrito_compras AS C 
-					LEFT JOIN productos as P ON C.producto_id = P.id WHERE session_id = '".$sessionID."' ";
-	$res = mysqli_query($link,$sql);
+		$sql = "SELECT * FROM usuarios WHERE id = '".base64_decode($_GET['u'])."' and estatus = 'PendienteVerificar' ";
+		$res = mysqli_query($link,$sql);
+		$ex = mysqli_num_rows($res);
+
+		if($ex == 1){
+
+			$sql = "UPDATE usuarios SET estatus = 'Verificado' WHERE id = '".base64_decode($_GET['u'])."' and estatus = 'PendienteVerificar' ";
+			$res = mysqli_query($link,$sql);
+
+			$msgCuenta = '<span style="font-size:18px;color:#130a56;"><br><br>Su cuenta ha sido verificada con exito.<br><br><a href="login.php">Clic para iniciar sesión</a><br><br><a href="index.php">Clic para seguir navegando</a></span>';
+
+		}else{
+
+			$msgCuenta = '<span style="font-size:18px;color:#130a56;"><br><br>No se encontraron datos relacionados al link de verificación.<br><br><a href="login.php">Clic para iniciar sesión</a><br><br><a href="index.php">Clic para seguir navegando</a></span>';
+
+		}
+
+	}else{
+		$msgCuenta = "";
+	}
 
 ?>
-
 <!doctype html>
 <html>
 <head>
@@ -408,109 +424,92 @@
 		</header>
 
 		<section role="main">	
+
 			<br><br>
 			<br><br>
 			<br><br>
 			<br><br>
+
 			<section class="members l-section-padding" id="team-members" style="background-image: url(images/back_bright.png); background-size: cover; background-position: 50% 50%;">
+
 				<div class="row" style="max-width:90%">
 					<div class="column large-12">
 						<div class="for-border-partent">
 							<div class="row">
-								<div class="column large-8 medium-8 small-12">
-									<div class="about-team">
+								<div class="column large-12 medium-12 small-12">
 
-										<div class="team-member-info" style="text-align:left">
-											<h3 class="team-name" style="font-size:24px; color:#130a56; margin-bottom:30px">
-												Añadido al carrito 
-												<img src="images/carrito-icono.png" style="width:60px">
-											</h3>
-										</div>
-										<hr>
-
-										<?php
-
-											$total = 0;
-
-											while($dat = mysqli_fetch_array($res)){
-
-												$total += ($dat['cantidad'] * $dat['precio']);
-
-										?>
-										
-											<div class="row">
-												<div class="col-lg-3">
-													<img src="images/products/<?php echo $dat['imagen']; ?>" style="cursor: pointer" onclick='self.location="productDetails.php?p=<?php echo $dat['producto_id']; ?>"'>
-												</div>
-												<div class="col-lg-6">
-													<span style="cursor: pointer" onclick='self.location="productDetails.php?p=<?php echo $dat['producto_id']; ?>"'><?php echo $dat['producto']; ?></span><br><br>
-													$<?php echo $dat['precio']; ?><br><br>
-													<input type="number" class="form-control" onchange="actualizarProductos(this.value,<?php echo $dat['producto_id']; ?>)" min="1" max="10" value="<?php echo $dat['cantidad']; ?>">
-												</div>
-												<div class="col-lg-3">
-													<i class="fa fa-trash" style="font-size:20px;cursor:pointer" onclick="eliminarProductoCarrito(<?php echo $dat['producto_id']; ?>)"></i>
-												</div>
-											 </div>
-											 <hr>
-
-										<?php
-											}
-										?>
-
-										<div class="team-member-info" style="text-align:left">
-											<div class="team-member-info" style="text-align:left">
-												<div class="row">
-													<div class="col-lg-12">
-														<p class="team-post" style="font-size:16px; line-height: 24px; color:#130a56; margin-bottom:30px; cursor: pointer;" onclick="mostrarCodigoDescuento()">
-															<svg viewBox="0 0 14 16" fill="currentColor" width="14" height="16"><g id="final-cart" stroke="none" fill="none" stroke-width="1" fill-rule="evenodd"><g id="general-layout" transform="translate(-515 -839)" fill="currentColor"><g id="coupon-icon" transform="rotate(30 -1300.653 1393.349)"><path d="M1,14.0046024 C0.999339408,13.9996515 9.00460243,14 9.00460243,14 C8.99965149,14.0006606 9,5.41421356 9,5.41421356 L5,1.41421356 L1,5.41421356 L1,14.0046024 Z M-2.72848411e-12,5 L5,-4.66116035e-12 L10,5 L10,14.0046024 C10,14.5543453 9.5443356,15 9.00460243,15 L0.995397568,15 C0.445654671,15 -2.72848411e-12,14.5443356 -2.72848411e-12,14.0046024 L-2.72848411e-12,5 Z" id="Rectangle-6" fill-rule="nonzero"></path><circle id="Oval-2" cx="5" cy="5" r="1"></circle></g></g></g></svg>
-															Introduce código de descuento: 
-														</p>
+										<center>
+											<?php
+												if($msgCuenta != ""){
+													echo $msgCuenta;
+												}else{
+											?>
+													<table align="center" style="background:transparent;" width="70%" id="tablaIniciarSesion">
+														<tr style="background: transparent;">
+															<td style="vertical-align:top;">
+																<span style="font-size:28px;color:#130a56;">Ingrese sus datos de acceso</span>
+																<br><br>
+																<div class="centered-block">
+																	<input type="text" id="usuario" class="contact-field required" name="usuario" placeholder="Ingrese su correo electrónico">
+																</div>
+																<div class="centered-block">
+																	<input type="password" id="contrasenia" class="contact-field required" name="contrasenia" placeholder="Ingrese su contraseña">
+																</div>
+																<div class="checkit-btn-block">
+										            	<span class="checkit-btn l-dis-ib button" style="width:100%; border-width: 1px;background:transparent;color: #130a56;" onclick="">Ingresar</span>
+										           	</div>
+															</td>
+														</tr>
+														<tr style="background: transparent;">
+															<td style="vertical-align:top;">
+																<a href="javascript:void(0)" onclick="mostrarCrearCuenta()">
+																	<span style="font-size:18px;color:#130a56;">
+																		Si aún no se ha registrado, clic para crear una cuenta
+																	</span>
+																</a>
+															</td>
+														</tr>
+													</table>
+													<div id="divTablaCrearCuenta">
+														<table align="center" style="background:transparent;display:none;" width="70%" id="tablaCrearCuenta">
+															<tr style="background: transparent;">
+																<td style="vertical-align:top;" width="100%">
+																	<span style="font-size:18px;color:#130a56;">Por favor ingrese la siguiente información</span>
+																	<br><br>
+																	<div class="centered-block">
+																		<input type="text" id="nombre_alta" class="contact-field required" name="nombre_alta" placeholder="Ingrese su nombre completo">
+																	</div>
+																	<div class="centered-block">
+																		<input type="email" id="correo_alta" class="contact-field required" name="correo_alta" placeholder="Ingrese su correo electrónico">
+																	</div>
+																	<div class="centered-block">
+																		<input type="password" id="contrasenia_alta" class="contact-field required" name="contrasenia_alta" placeholder="Ingrese su contraseña">
+																	</div>
+																	<div class="centered-block">
+																		<input type="password" id="verificar_contrasenia_alta" class="contact-field required" name="verificar_contrasenia_alta" placeholder="Verificar contraseña">
+																	</div>
+																	<div class="centered-block">
+																		<input type="text" id="telefono_alta" class="contact-field required" name="telefono_alta" placeholder="Ingrese su número telefónico">
+																	</div>
+																	<div class="checkit-btn-block">
+											            	<input type="submit" class="checkit-btn l-dis-ib button" style="width:100%; border-width: 1px;background:transparent;color: #130a56;" value="Crear cuenta" onclick="crearCuenta()" id="btnCrearCuenta">
+											           	</div>
+																</td>
+															</tr>
+														</table>
 													</div>
-												</div>
-												<div class="row" id="divCodigoDescuento" style="display: none;">
-													<div class="col-lg-4">
-														<input type="text" class="form-control" style="width:100%;background:transparent;">
-													</div>
-													<div class="col-lg-2">
-														<div class="checkit-btn-block">
-            									<span class="checkit-btn l-dis-ib button" style="border-width: 1px;background-color:transparent;color: #130a56;">Aplicar</span>
-            								</div>
-													</div>
-												</div>
-												<div class="row">
-													<div class="col-lg-12">
-														<p class="team-post" style="font-size:16px; line-height: 24px; color:#130a56; margin-bottom:30px">
-															<svg xmlns="http://www.w3.org/2000/svg" width="12" height="13" viewBox="0 0 12 13" class="bqcF4y"><g fill="none" fill-rule="evenodd" stroke="none" stroke-width="1"><g transform="translate(-515 -882)"><g transform="translate(515 882)"><path stroke="currentColor" d="M.5.5h7.778L11.5 3.737V12.5H.5V.5z"></path><path stroke="currentColor" d="M10.793 3.5H8.5V1.207L10.793 3.5z"></path><path fill="currentColor" d="M3 3H6V4H3z"></path><path fill="currentColor" d="M3 6H9V7H3z"></path><path fill="currentColor" d="M3 9H9V10H3z"></path></g></g></g></svg>
-															Agregar una nota: 
-														</p>
-														<textarea class="form-control" rows="4" style="width:300px;background:transparent;"></textarea>
-													</div>
-												</div>
-											</div>
-										</div>
-
-									</div>
+											<?php
+												}
+											?>
+										</center>
 
 								</div>
-								<div class="column large-4 medium-4 small-12">
-									<div class="about-team">
-										<div class="team-member-info" style="text-align:left">
-											<h3 class="team-name" style="font-size:24px; color:#130a56; margin-bottom:30px">Resumen del pedido</h3>
-											<p class="team-post" style="font-size:16px; line-height: 24px; color:#130a56; margin-bottom:30px">Subtotal: $<span id="carritoSubtotal"><?php echo number_format($total,2); ?></span></p>
-										</div>
-										<hr>
-										<div class="team-member-info" style="text-align:left">
-											<p class="team-post" style="font-size:16px; line-height: 24px; color:#130a56; margin-bottom:30px">Total: $<span id="carritoTotal"><?php echo number_format($total,2); ?></span></p>
-										</div>
-										<div class="checkit-btn-block">
-					            	<span class="checkit-btn l-dis-ib button" style="width:100%; border-width: 1px;background-color:#fff;color: #130a56;" data-toggle="modal" data-target="#modalVerificar">Pagar</span>
-					           </div>
-									</div>
-								</div>
+								
 							</div>
 						</div>
 					</div>
 				</div>
+
 			</section>
 
 		</section>
@@ -763,14 +762,12 @@
 				</div>
 
 				<div class="modal-body">
-					<center>
-						<span class="title-text" style="color:#130a56;font-size:24px">No podemos aceptar pedidos en línea en este momento.</span>
-						<br><br>
-						<span class="title-text" style="color:#130a56;font-size:14px">Por favor póngase en contacto con nosotros para completar su compra.</span>
-					</center>
+					<span class="title-text" style="color:red;font-size:14px;font-weight:bold;">Es necesario revisar lo siguiente:</span>
+					<br><br>
+					<span class="title-text" style="color:red;font-size:14px" id="spanValidacionCuenta"></span>
 					<br>
 					<div class="checkit-btn-block">
-					  <span class="checkit-btn l-dis-ib button" style="width:100%; border-width: 1px;background-color:#130a56;color: #fff;">Contactar</span>
+					  <span class="checkit-btn l-dis-ib button" style="width:100%; border-width: 1px;background-color:#130a56;color: #fff;" onclick="cerrarModal()">Aceptar</span>
 					</div>
 				</div>
 
@@ -785,6 +782,7 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
 	<script type="text/javascript">
+
 		new Swiper('.card-wrapper', {
     loop: true,
     spaceBetween: 30,
@@ -816,114 +814,74 @@
     }
 });
 
-		function agregarCarrito(producto_id){
 
-			if(producto_id != ""){
+		function mostrarCrearCuenta(){
+			document.getElementById('tablaCrearCuenta').style.display = "block";
+			document.getElementById('tablaIniciarSesion').style.display = "none";
+		}
 
-				$.ajax({
-                type:"POST",
-                url: "scripts/ws.php",
-                data:{
-                    acc:'agregarProductoCarrito',
-                    producto_id:producto_id,
-                    session_id:'<?php echo $sessionID; ?>'
-                },
-                success: function(datos) {
+		function crearCuenta(){
 
-                	listarProductosCarrito();
+			document.getElementById('btnCrearCuenta').disabled = true;
 
-                }
-         });
+			var falta = "";
 
+			var nombre = document.getElementById('nombre_alta').value;
+			var correo = document.getElementById('correo_alta').value;
+			var contrasenia = document.getElementById('contrasenia_alta').value;
+			var verificar_contrasenia = document.getElementById('verificar_contrasenia_alta').value;
+			var telefono = document.getElementById('telefono_alta').value;
+
+			if(nombre == ""){
+				falta = falta + "Ingresar nombre completo<br>";
+			}
+			if(correo == ""){
+				falta = falta + "Ingresar correo electrónico<br>";
+			}
+			if(contrasenia.length < 8){
+				falta = falta + "La contraseña debe contener minimo 8 caracteres<br>";
+			}else{
+				if(contrasenia != verificar_contrasenia){
+					falta = falta + "La verificación de la contraseña no es correcta<br>";
+				}
+			}
+			if(telefono == ""){
+				falta = falta + "Ingresar teléfono<br>";
 			}
 
-
-		}
-
-		function actualizarProductos(cantidad, producto_id){
-
-			$.ajax({
-        type:"POST",
-        url: "scripts/ws.php",
-                data:{
-                    acc:'actualizarProductoCarrito',
-                    session_id:'<?php echo $sessionID; ?>',
-                    cantidad:cantidad,
-                    producto_id:producto_id
-                },
-                success: function(datos) {
-                	reCalcularTotal()
-                }
-      });
-
-		}
-
-		function reCalcularTotal(){
-
-			$.ajax({
-        type:"POST",
-        url: "scripts/ws.php",
-        data:{
-          acc:'recalcularTotalCarrito',
-          session_id:'<?php echo $sessionID; ?>'
-        },
-        success: function(datos) {
-
-        	document.getElementById('carritoSubtotal').innerHTML = datos;
-        	document.getElementById('carritoTotal').innerHTML = datos;
-
-        }
-      });
-
-		}
-
-		function eliminarProductoCarrito(producto_id){
-
-			if(producto_id != ""){
+			if(falta != ""){
+				$('#modalVerificar').modal('show');
+				document.getElementById('spanValidacionCuenta').innerHTML = falta;
+			}else{
 
 				$.ajax({
-	        type:"POST",
-	        url: "scripts/ws.php",
-	        data:{
-	          acc:'eliminarProductoCarrito',
-	          session_id:'<?php echo $sessionID; ?>',
-	          producto_id:producto_id
-	        },
-	        success: function(datos) {
+			    type:"POST",
+			    url: "scripts/ws.php",
+			    data:{
+			      acc:'altaCuenta',
+			      nombre:nombre,
+			      correo:correo,
+			      contrasenia:contrasenia,
+			      telefono:telefono
+			    },
+			    success: function(datos){
 
-	        	location.reload();
+			    	if(datos == "si"){
 
-	        }
-	      });
+			    		document.getElementById('divTablaCrearCuenta').innerHTML = '<span style="font-size:18px;color:#130a56;"><br><br>Se envío un mensaje a la cuenta de correo registrada.<br>Es necesario confirmar el mensaje para continuar con el proceso de registro<br><br><a href="index.php">Clic para seguir navegando</a></span>';
+
+
+			    	}
+
+			    }
+			  });
 
 			}
 
 		}
 
-		function listarProductosCarrito(){
-
-			$.ajax({
-			        type:"POST",
-			        url: "scripts/ws.php",
-			                data:{
-			                    acc:'listarProductosCarrito',
-			                    session_id:'<?php echo $sessionID; ?>'
-			                },
-			        success: function(datos) {
-			          document.getElementById('divCarrito').innerHTML = datos;
-			        }
-			      });
-
-		}
-
-		function verCarrito(){
-
-			window.location = "shoppingCart.php";
-
-		}
-
-		function mostrarCodigoDescuento(){
-			document.getElementById('divCodigoDescuento').style.display = "block";
+		function cerrarModal(){
+			$('#modalVerificar').modal('hide');
 		}
 
 	</script>

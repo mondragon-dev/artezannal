@@ -124,4 +124,72 @@
 
 	}
 
+	if($_POST['acc'] == "altaCuenta"){
+
+		$sql = "INSERT INTO usuarios (nombre, correo, contrasenia, telefono, tipo, estatus, updated_at, created_at) VALUES('".$_POST['nombre']."', '".$_POST['correo']."', '".password_hash($_POST['contrasenia'],PASSWORD_BCRYPT)."', '".$_POST['telefono']."', 'Usuario', 'PendienteVerificar', '".date("Y-m-d H:i:s")."', '".date("Y-m-d H:i:s")."') ";
+		$res = mysqli_query($link,$sql);
+
+		$userId = mysqli_insert_id($link);
+
+		require("libs/phpmailer/PHPMailerAutoload.php");
+
+		$mail = new PHPMailer();
+    $mail->isSMTP();
+
+		$mail->SMTPOptions = array ('ssl' => array('verify_peer'  => false,
+                                               'verify_peer_name'  => false,
+                                               'allow_self_signed' => true));
+    $mail->SMTPDebug = 0;
+    $mail->Debugoutput = 'html';
+
+		$mail->Host = "mail.xperanto.com.mx";	
+		$mail->Port = 2525;   
+    $mail->SMTPAuth = true;
+    $mail->Username = "daniel@xperanto.com.mx";
+    $mail->Password = "Zucoso2099@";
+
+		$mail->From = "daniel@xperanto.com.mx";
+		$mail->FromName = "Artezannal";
+		$mail->Subject = utf8_decode("Artezannal - Alta de cuenta");
+
+		$mensaje = "<center>
+									<table style='background:url(https://qa.artezannal.com/images/back_bright.png);background-size:cover;background-position:50% 50%'>
+										<tr>
+											<td>Gracias por registrarte con nosotros</td>
+										</tr>
+										<tr>
+											<td>
+												<br>
+												<strong>Tus datos:</strong><br><br>
+												<strong>Nombre:</strong> ".$_POST['nombre']."<br>
+												<strong>Correo electrónico (usuario):</strong> ".$_POST['correo']."<br>
+												<strong>Teléfono:</strong> ".$_POST['telefono']."<br>
+												<strong>Fecha de registro:</strong> ".date("Y-m-d H:i:s")."<br>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<br>
+												<strong>Para activar tu cuenta es necesario verificarla dando clic en la siguiente liga:</strong><br><br>
+												https://qa.artezannal.com/login.php?u=".base64_encode($userId)."
+											</td>
+										</tr>
+									</table>
+								</center>";
+
+		$mail->Body = utf8_decode($mensaje);
+		$mail->AltBody = utf8_decode($mensaje);
+				
+		$mail->AddAddress(trim($_POST['correo']));
+
+		if($mail->Send()){
+			echo "si";
+		}else{
+			echo "error: ";
+			echo $mail->ErrorInfo;
+		}
+
+		exit;
+	}
+
 ?>

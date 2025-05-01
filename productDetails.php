@@ -5,8 +5,7 @@
 
 	$sessionID = session_id();
 
-	$sql = "SELECT * FROM carrito_compras AS C 
-					LEFT JOIN productos as P ON C.producto_id = P.id WHERE session_id = '".$sessionID."' ";
+	$sql = "SELECT * FROM carrito_compras AS C LEFT JOIN productos as P ON C.producto_id = P.id WHERE session_id = '".$sessionID."' ";
 	$res = mysqli_query($link,$sql);
 
 ?>
@@ -408,109 +407,95 @@
 		</header>
 
 		<section role="main">	
+
 			<br><br>
 			<br><br>
 			<br><br>
 			<br><br>
+
 			<section class="members l-section-padding" id="team-members" style="background-image: url(images/back_bright.png); background-size: cover; background-position: 50% 50%;">
+
 				<div class="row" style="max-width:90%">
 					<div class="column large-12">
 						<div class="for-border-partent">
 							<div class="row">
-								<div class="column large-8 medium-8 small-12">
-									<div class="about-team">
-
-										<div class="team-member-info" style="text-align:left">
-											<h3 class="team-name" style="font-size:24px; color:#130a56; margin-bottom:30px">
-												Añadido al carrito 
-												<img src="images/carrito-icono.png" style="width:60px">
-											</h3>
-										</div>
-										<hr>
+								<div class="column large-12 medium-12 small-12">
 
 										<?php
 
-											$total = 0;
-
-											while($dat = mysqli_fetch_array($res)){
-
-												$total += ($dat['cantidad'] * $dat['precio']);
+											$sql = "SELECT * FROM productos WHERE id = '".$_GET['p']."' ";
+											$res = mysqli_query($link,$sql);
+											$dat = mysqli_fetch_array($res);
 
 										?>
-										
-											<div class="row">
-												<div class="col-lg-3">
-													<img src="images/products/<?php echo $dat['imagen']; ?>" style="cursor: pointer" onclick='self.location="productDetails.php?p=<?php echo $dat['producto_id']; ?>"'>
-												</div>
-												<div class="col-lg-6">
-													<span style="cursor: pointer" onclick='self.location="productDetails.php?p=<?php echo $dat['producto_id']; ?>"'><?php echo $dat['producto']; ?></span><br><br>
-													$<?php echo $dat['precio']; ?><br><br>
-													<input type="number" class="form-control" onchange="actualizarProductos(this.value,<?php echo $dat['producto_id']; ?>)" min="1" max="10" value="<?php echo $dat['cantidad']; ?>">
-												</div>
-												<div class="col-lg-3">
-													<i class="fa fa-trash" style="font-size:20px;cursor:pointer" onclick="eliminarProductoCarrito(<?php echo $dat['producto_id']; ?>)"></i>
-												</div>
-											 </div>
-											 <hr>
-
-										<?php
-											}
-										?>
-
-										<div class="team-member-info" style="text-align:left">
-											<div class="team-member-info" style="text-align:left">
-												<div class="row">
-													<div class="col-lg-12">
-														<p class="team-post" style="font-size:16px; line-height: 24px; color:#130a56; margin-bottom:30px; cursor: pointer;" onclick="mostrarCodigoDescuento()">
-															<svg viewBox="0 0 14 16" fill="currentColor" width="14" height="16"><g id="final-cart" stroke="none" fill="none" stroke-width="1" fill-rule="evenodd"><g id="general-layout" transform="translate(-515 -839)" fill="currentColor"><g id="coupon-icon" transform="rotate(30 -1300.653 1393.349)"><path d="M1,14.0046024 C0.999339408,13.9996515 9.00460243,14 9.00460243,14 C8.99965149,14.0006606 9,5.41421356 9,5.41421356 L5,1.41421356 L1,5.41421356 L1,14.0046024 Z M-2.72848411e-12,5 L5,-4.66116035e-12 L10,5 L10,14.0046024 C10,14.5543453 9.5443356,15 9.00460243,15 L0.995397568,15 C0.445654671,15 -2.72848411e-12,14.5443356 -2.72848411e-12,14.0046024 L-2.72848411e-12,5 Z" id="Rectangle-6" fill-rule="nonzero"></path><circle id="Oval-2" cx="5" cy="5" r="1"></circle></g></g></g></svg>
-															Introduce código de descuento: 
-														</p>
-													</div>
-												</div>
-												<div class="row" id="divCodigoDescuento" style="display: none;">
-													<div class="col-lg-4">
-														<input type="text" class="form-control" style="width:100%;background:transparent;">
-													</div>
-													<div class="col-lg-2">
+										<center>
+											<table align="center" style="background:transparent;" width="70%">
+												<tr>
+													<td width="50%">
+														<span style="font-size:20px; line-height: 24px; color:#130a56;"><?php echo $dat['producto']; ?></span>
+													</td>
+													<td>
+														
+													</td>
+												</tr>
+												<tr style="background: transparent;">
+													<td>
+														<img src="images/products/<?php echo $dat['imagen']; ?>" style="cursor: pointer" onclick='self.location="productDetails.php?p=<?php echo $dat['producto_id']; ?>"'>
+													</td>
+													<td style="vertical-align:top;">
+														<span style="font-size:28px;color:#130a56;"><?php echo $dat['producto']; ?></span>
+														<br>
+														<span style="font-size:18px;color:#130a56;">SKU<?php echo str_pad($_GET['p'],4,0,STR_PAD_LEFT); ?></span>
+														<br><br>
+														<span style="font-size:18px;color:#D54212;">$<?php echo $dat['precio']; ?></span>
+														<br><br>
+														<span style="font-size:18px;color:#130a56;"><?php echo $dat['descripcion']; ?></span>
+														<br><br>
+														<span style="font-size:18px;color:#130a56;">Cantidad</span>
+														<br>
+														<input type="number" class="form-control" id="cantidad" min="1" max="10" value="1" style="width: 100px;">
+														<br><br>
 														<div class="checkit-btn-block">
-            									<span class="checkit-btn l-dis-ib button" style="border-width: 1px;background-color:transparent;color: #130a56;">Aplicar</span>
-            								</div>
-													</div>
-												</div>
-												<div class="row">
-													<div class="col-lg-12">
-														<p class="team-post" style="font-size:16px; line-height: 24px; color:#130a56; margin-bottom:30px">
-															<svg xmlns="http://www.w3.org/2000/svg" width="12" height="13" viewBox="0 0 12 13" class="bqcF4y"><g fill="none" fill-rule="evenodd" stroke="none" stroke-width="1"><g transform="translate(-515 -882)"><g transform="translate(515 882)"><path stroke="currentColor" d="M.5.5h7.778L11.5 3.737V12.5H.5V.5z"></path><path stroke="currentColor" d="M10.793 3.5H8.5V1.207L10.793 3.5z"></path><path fill="currentColor" d="M3 3H6V4H3z"></path><path fill="currentColor" d="M3 6H9V7H3z"></path><path fill="currentColor" d="M3 9H9V10H3z"></path></g></g></g></svg>
-															Agregar una nota: 
-														</p>
-														<textarea class="form-control" rows="4" style="width:300px;background:transparent;"></textarea>
-													</div>
-												</div>
-											</div>
-										</div>
-
-									</div>
+								            	<span class="checkit-btn l-dis-ib button" style="width:100%; border-width: 1px;background:transparent;color: #130a56;" onclick="agregarCarritoCantidad(<?php echo $dat['producto_id']; ?>)">Agregar al carrito</span>
+								           	</div>
+								           	<div class="checkit-btn-block">
+								            	<span class="checkit-btn l-dis-ib button" style="width:100%; border-width: 1px;background:transparent;color: #130a56;" data-toggle="modal" data-target="#modalVerificar">Comprar</span>
+								           	</div>
+													</td>
+												</tr>
+											</table>
+											<br><br>
+											<table align="center" style="background:transparent;" width="80%" cellpadding="10" cellspacing="10">
+												<tr>
+													<td width="50%" style="text-align:justify;border-right: 1px solid #130a56;">
+														<span style="font-size:20px; color:#130a56;"><strong>
+															Información de Producto
+														</strong></span>
+														<br><br>
+														<span style="font-size:14px; color:#130a56;text-align:justify;">
+															Soy la información del producto. Es el lugar ideal para agregar más información sobre tu producto, como talla, material e instrucciones de cuidado y limpieza. También es un buen espacio para escribir qué hace especial a este producto y cómo tus clientes pueden beneficiarse de él. A los compradores les gusta saber qué reciben antes de comprarlo, así que proporciónales la mayor cantidad de información posible para que puedan comprar con confianza.
+														</span>
+													</td>
+													<td width="50%" style="text-align:justify;">
+														<span style="font-size:20px; color:#130a56;"><strong>
+															Política de devoluciones y reembolsos
+														</strong></span>
+														<br><br>
+														<span style="font-size:14px; color:#130a56;text-align:justify;">
+															Soy una política de devoluciones y reembolsos. Es un excelente lugar para que tus clientes sepan qué hacer si no están satisfechos con su compra. Tener una política de reembolsos o cambios clara y clara es una excelente manera de generar confianza y asegurarles a tus clientes que pueden comprar con tranquilidad.
+														</span>
+													</td>
+												</tr>
+											</table>
+										</center>
 
 								</div>
-								<div class="column large-4 medium-4 small-12">
-									<div class="about-team">
-										<div class="team-member-info" style="text-align:left">
-											<h3 class="team-name" style="font-size:24px; color:#130a56; margin-bottom:30px">Resumen del pedido</h3>
-											<p class="team-post" style="font-size:16px; line-height: 24px; color:#130a56; margin-bottom:30px">Subtotal: $<span id="carritoSubtotal"><?php echo number_format($total,2); ?></span></p>
-										</div>
-										<hr>
-										<div class="team-member-info" style="text-align:left">
-											<p class="team-post" style="font-size:16px; line-height: 24px; color:#130a56; margin-bottom:30px">Total: $<span id="carritoTotal"><?php echo number_format($total,2); ?></span></p>
-										</div>
-										<div class="checkit-btn-block">
-					            	<span class="checkit-btn l-dis-ib button" style="width:100%; border-width: 1px;background-color:#fff;color: #130a56;" data-toggle="modal" data-target="#modalVerificar">Pagar</span>
-					           </div>
-									</div>
-								</div>
+								
 							</div>
 						</div>
 					</div>
 				</div>
+
 			</section>
 
 		</section>
@@ -834,6 +819,38 @@
 
                 }
          });
+
+			}
+
+
+		}
+
+		function agregarCarritoCantidad(producto_id){
+
+			var cantidad = Number(document.getElementById('cantidad').value);
+
+			if(producto_id != ""){
+
+				for(var c = 1; c <= cantidad; c++){
+
+					$.ajax({
+	                type:"POST",
+	                url: "scripts/ws.php",
+	                data:{
+	                    acc:'agregarProductoCarrito',
+	                    producto_id:producto_id,
+	                    session_id:'<?php echo $sessionID; ?>'
+	                },
+	                success: function(datos) {
+
+	                	listarProductosCarrito();
+
+	                }
+	         });
+
+				}
+
+				$('#myModal2').modal('show');
 
 			}
 
