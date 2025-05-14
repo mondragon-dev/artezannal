@@ -1,32 +1,76 @@
-<?php
+<?php 
 
 	include('config/config.php');
 	include('config/db.php');
 
-	if(isset($_GET['u'])){
+	$sessionID = session_id();
 
-		$sql = "SELECT * FROM usuarios WHERE id = '".base64_decode($_GET['u'])."' and estatus = 'PendienteVerificar' ";
-		$res = mysqli_query($link,$sql);
-		$ex = mysqli_num_rows($res);
+	if(isset($_POST['acc'])){
 
-		if($ex == 1){
+		if($_POST['acc'] == "alta"){
 
-			$sql = "UPDATE usuarios SET estatus = 'Verificado' WHERE id = '".base64_decode($_GET['u'])."' and estatus = 'PendienteVerificar' ";
-			$res = mysqli_query($link,$sql);
+			$sql = "INSERT INTO productos (producto, precio, imagen, descripcion, estatus, fecha_captura) VALUES('".$_POST['producto']."', '".$_POST['precio']."', '', '".$_POST['descripcion']."', 'A', '".date("Y-m-d H:i:s")."')";
+			if($res = mysqli_query($link,$sql)){
 
-			$msgCuenta = '<span style="font-size:18px;color:#130a56;"><br><br>Su cuenta ha sido verificada con exito.<br><br><a href="login.php">Clic para iniciar sesión</a><br><br><a href="index.php">Clic para seguir navegando</a></span>';
+				$idProducto =  mysqli_insert_id($link);
 
-		}else{
+				$info = new SplFileInfo($_FILES['imagen']['name']);
 
-			$msgCuenta = '<span style="font-size:18px;color:#130a56;"><br><br>No se encontraron datos relacionados al link de verificación.<br><br><a href="login.php">Clic para iniciar sesión</a><br><br><a href="index.php">Clic para seguir navegando</a></span>';
+				$extension = pathinfo($_FILES['imagen']['name'], PATHINFO_EXTENSION);
+				$name = pathinfo($_FILES['imagen']['name'], PATHINFO_FILENAME);
+
+				$nameStorage = $idProducto.".".$extension;
+
+				$directorio = 'images/products/';
+      	if(move_uploaded_file($_FILES['imagen']['tmp_name'],$directorio.$nameStorage)){
+
+      		$sql_u = "UPDATE productos SET imagen = '".$nameStorage."' WHERE id = '".$idProducto."' ";
+      		$res_u = mysqli_query($link,$sql_u);
+
+      	}
+
+			}
+			header('Location: productManager.php');
+
+			exit;
 
 		}
 
-	}else{
-		$msgCuenta = "";
+		if($_POST['acc'] == "editar"){
+
+			$sql = "UPDATE productos SET producto = '".$_POST['producto_edit']."' , precio = '".$_POST['precio_edit']."', descripcion = '".$_POST['descripcion_edit']."', estatus = '".$_POST['estatus_edit']."' WHERE id = '".$_POST['producto_id_edit']."' ";
+			if($res = mysqli_query($link,$sql)){
+
+				if(isset($_FILES['imagen_edit']['name'])){
+
+					$info = new SplFileInfo($_FILES['imagen_edit']['name']);
+
+					$extension = pathinfo($_FILES['imagen_edit']['name'], PATHINFO_EXTENSION);
+					$name = pathinfo($_FILES['imagen_edit']['name'], PATHINFO_FILENAME);
+
+					$nameStorage = $_POST['producto_id_edit'].".".$extension;
+
+					$directorio = 'images/products/';
+
+					if(move_uploaded_file($_FILES['imagen_edit']['tmp_name'],$directorio.$nameStorage)){
+
+      			$sql_u = "UPDATE productos SET imagen = '".$nameStorage."' WHERE id = '".$_POST['producto_id_edit']."' ";
+      			$res_u = mysqli_query($link,$sql_u);
+
+      		}
+
+				}
+
+			}
+
+			header('Location: productManager.php');
+
+		}
+
 	}
 
 ?>
+
 <!doctype html>
 <html>
 <head>
@@ -54,9 +98,9 @@
 	<link rel="icon" type="image/png" href="favicon.png" sizes="32x32">
 
 	<script src="js/lib/modernizr.js"></script>
-	<script src="https://maps.googleapis.com/maps/api/js"></script>
 
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/2.3.0/css/dataTables.dataTables.min.css">
 
 	<style type="text/css">
 		.logo-wrapper .logo-image {
@@ -378,11 +422,11 @@
 </head>
 <body data-currency="$">
 	<span class="theme-bg-c"></span>
-	<div class="preloader-block">
+	<!--<div class="preloader-block">
 		<div class="preloader-container">
 			<img src="images/logoIndex.png" alt="" class="logo-image">
 		</div>
-	</div>
+	</div>-->
 	<div class="page-content" style="background-color: #182371;">
 		<header class="header">
 			<div class="menu-wrapper" style="background-color: #182371;">
@@ -430,87 +474,87 @@
 			<br><br>
 			<br><br>
 
-			<section class="members l-section-padding" id="team-members" style="background-image: url(images/back_bright.png); background-size: cover; background-position: 50% 50%;">
+			<section class="our-products l-section-padding" id="products">
 
-				<div class="row" style="max-width:90%">
-					<div class="column large-12">
-						<div class="for-border-partent">
+				<div class="row">
+					<div class="columns large-12">
+						<h2 class="l-section-title"><span class="title-text">Administrador de productos</span></h2>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="column-large-12">
+						<div class="hidden-container">
+
 							<div class="row">
-								<div class="column large-12 medium-12 small-12">
 
-										<center>
-											<?php
-												if($msgCuenta != ""){
-													echo $msgCuenta;
-												}else{
-											?>
-													<table align="center" style="background:transparent;" width="70%" id="tablaIniciarSesion">
-														<tr style="background: transparent;">
-															<td style="vertical-align:top;">
-																<span style="font-size:28px;color:#130a56;">Ingrese sus datos de acceso</span>
-																<br><br>
-																<div class="centered-block">
-																	<input type="text" id="usuario" class="contact-field required" name="usuario" placeholder="Ingrese su correo electrónico">
-																</div>
-																<div class="centered-block">
-																	<input type="password" id="contrasenia" class="contact-field required" name="contrasenia" placeholder="Ingrese su contraseña">
-																</div>
-																<div class="checkit-btn-block">
-										            	<span class="checkit-btn l-dis-ib button" style="width:100%; border-width: 1px;background:transparent;color: #130a56;" onclick="validarAcceso()">Ingresar</span>
-										           	</div>
-															</td>
-														</tr>
-														<tr style="background: transparent;">
-															<td style="vertical-align:top;">
-																<a href="javascript:void(0)" onclick="mostrarCrearCuenta()">
-																	<span style="font-size:18px;color:#130a56;">
-																		Si aún no se ha registrado, clic para crear una cuenta
-																	</span>
-																</a>
-															</td>
-														</tr>
-													</table>
-													<div id="divTablaCrearCuenta">
-														<table align="center" style="background:transparent;display:none;" width="70%" id="tablaCrearCuenta">
-															<tr style="background: transparent;">
-																<td style="vertical-align:top;" width="100%">
-																	<span style="font-size:18px;color:#130a56;">Por favor ingrese la siguiente información</span>
-																	<br><br>
-																	<div class="centered-block">
-																		<input type="text" id="nombre_alta" class="contact-field required" name="nombre_alta" placeholder="Ingrese su nombre completo">
-																	</div>
-																	<div class="centered-block">
-																		<input type="email" id="correo_alta" class="contact-field required" name="correo_alta" placeholder="Ingrese su correo electrónico">
-																	</div>
-																	<div class="centered-block">
-																		<input type="password" id="contrasenia_alta" class="contact-field required" name="contrasenia_alta" placeholder="Ingrese su contraseña">
-																	</div>
-																	<div class="centered-block">
-																		<input type="password" id="verificar_contrasenia_alta" class="contact-field required" name="verificar_contrasenia_alta" placeholder="Verificar contraseña">
-																	</div>
-																	<div class="centered-block">
-																		<input type="text" id="telefono_alta" class="contact-field required" name="telefono_alta" placeholder="Ingrese su número telefónico">
-																	</div>
-																	<div class="checkit-btn-block">
-											            	<input type="submit" class="checkit-btn l-dis-ib button" style="width:100%; border-width: 1px;background:transparent;color: #130a56;" value="Crear cuenta" onclick="crearCuenta()" id="btnCrearCuenta">
-											           	</div>
-																</td>
-															</tr>
-														</table>
-													</div>
-											<?php
-												}
-											?>
-										</center>
+								<div class="columns large-12 medium-12">
+										<div class="checkit-btn-block" data-toggle="modal" data-target="#modalAlta"><span class="checkit-btn l-dis-ib button" style="background-color:#263770">Nuevo Producto</span></div>
+								</div>
+
+							</div>
+
+							<div class="row">
+								<div class="columns large-12 medium-12 small-12">
+									
+									<table id="productos-table" class="display">
+						        <thead>
+						            <tr>
+						            		<th>ID</th>
+						                <th>Producto</th>
+						                <th>Descripción</th>
+						                <th>Estatus</th>
+						                <th>Acciones</th>
+						            </tr>
+						        </thead>
+						        <tbody>
+						        	<?php
+						        		$sql = "SELECT * FROM productos ORDER BY id DESC";
+						        		$res = mysqli_query($link,$sql);
+						        		while($dat = mysqli_fetch_array($res)){
+						        	?>
+							            <tr>
+							                <td><?php echo $dat['id']; ?></td>
+							                <td><?php echo $dat['producto']; ?></td>
+							                <td><?php echo $dat['descripcion']; ?></td>
+							                <td>
+							                	<?php
+							                		if($dat['estatus'] == "A"){
+							                			echo "Activo";
+							                		}
+							                		if($dat['estatus'] == "P"){
+							                			echo "Pausado";
+							                		}
+							                		if($dat['estatus'] == "I"){
+							                			echo "Inactivo";
+							                		}
+							                	?>
+							                </td>
+							                <td align="center"><img src="images/edit_512.png" style="width:30px;cursor:pointer;" data-toggle="modal" data-target="#modalEditar" onclick="obtenerDatosProducto(<?php echo $dat['id']; ?>)"></td>
+							            </tr>
+						          <?php
+						          	}
+						          ?>            
+						        </tbody>
+						        <tfoot>
+						            <tr>
+						            		<th>ID</th>
+						                <th>Producto</th>
+						                <th>Descripción</th>
+						                <th>Estatus</th>
+						                <th>Acciones</th>
+						            </tr>
+						        </tfoot>
+						    </table>
 
 								</div>
-								
 							</div>
+
 						</div>
 					</div>
 				</div>
 
-			</section>
+			</section>	
 
 		</section>
 		<footer>
@@ -623,12 +667,6 @@
 		</footer>
 	</div>
 	<div class="modals">
-		<div class="map-view js-map-container">
-			<span class="button form-view-btn js-form-view">back to site</span>
-			<div id="map-block">
-						
-			</div>
-		</div>
 
 		<div class="codal-container">
 
@@ -752,22 +790,38 @@
 		</div><!-- modal-dialog -->
 	</div>
 
-	<div class="modal fade" id="modalVerificar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2">
+	<div class="modal fade" id="modalAlta" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-					<h4 class="modal-title" id="modalLabelVerificar">Aviso</h4>
+					<h4 class="modal-title" id="modalLabelVerificar">Alta producto</h4>
 				</div>
 
 				<div class="modal-body">
-					<span class="title-text" style="color:red;font-size:14px;font-weight:bold;">Es necesario revisar lo siguiente:</span>
-					<br><br>
-					<span class="title-text" style="color:red;font-size:14px" id="spanValidacionCuenta"></span>
+					<form method="post" action="productManager.php" name="formalta" enctype='multipart/form-data'>
+						<div class="block">
+							<label for="mail" class="contact-label">Producto <span style="color:#D54212">*</span></label>
+							<input type="text" name="producto" id="producto" class="contact-field required" required>
+						</div>
+						<div class="block">
+							<label for="mail" class="contact-label">Descripción <span style="color:#D54212">*</span></label>
+							<input type="text" name="descripcion" id="descripcion" class="contact-field required" required>
+						</div>
+						<div class="block">
+							<label for="mail" class="contact-label">Precio <span style="color:#D54212">*</span></label>
+							<input type="text" name="precio" id="precio" class="contact-field required" required>
+						</div>
+						<div class="block">
+							<label for="mail" class="contact-label">Imagen <span style="color:#D54212">*</span></label>
+							<input type="file" name="imagen" id="imagen" class="contact-field required" required>
+						</div>
+						<input type="hidden" name="acc" id="acc" value="alta">
+					</form>
 					<br>
 					<div class="checkit-btn-block">
-					  <span class="checkit-btn l-dis-ib button" style="width:100%; border-width: 1px;background-color:#130a56;color: #fff;" onclick="cerrarModal()">Aceptar</span>
+					  <span class="checkit-btn l-dis-ib button" style="width:100%; border-width: 1px;background-color:#130a56;color: #fff;" onclick="javascript:document.formalta.submit()">Guardar</span>
 					</div>
 				</div>
 
@@ -775,14 +829,63 @@
 		</div><!-- modal-dialog -->
 	</div>
 
-	<script data-main="js/script.js" src="js/lib/require.js"></script>
+	<div class="modal fade" id="modalEditar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="modalLabelVerificar">Editar producto</h4>
+				</div>
+
+				<div class="modal-body">
+					<form method="post" action="productManager.php" name="formeditar" enctype='multipart/form-data'>
+						<div class="block">
+							<label for="mail" class="contact-label">Producto <span style="color:#D54212">*</span></label>
+							<input type="text" name="producto_edit" id="producto_edit" class="contact-field required" required>
+						</div>
+						<div class="block">
+							<label for="mail" class="contact-label">Descripción <span style="color:#D54212">*</span></label>
+							<input type="text" name="descripcion_edit" id="descripcion_edit" class="contact-field required" required>
+						</div>
+						<div class="block">
+							<label for="mail" class="contact-label">Precio <span style="color:#D54212">*</span></label>
+							<input type="text" name="precio_edit" id="precio_edit" class="contact-field required" required>
+						</div>
+						<div class="block">
+							<label for="mail" class="contact-label">Estatus <span style="color:#D54212">*</span></label>
+							<select name="estatus_edit" id="estatus_edit" class="contact-field required" required>
+								<option value="">::Seleccione::</option>
+								<option value="A">Activo</option>
+								<option value="P">Pausado</option>
+								<option value="I">Inactivo</option>
+							</select>
+						</div>
+						<div class="block">
+							<label for="mail" class="contact-label">Imagen <span style="color:#D54212">*</span></label>
+							<input type="file" name="imagen_edit" id="imagen_edit" class="contact-field required" required>
+						</div>
+						<input type="hidden" name="producto_id_edit" id="producto_id_edit" value="">
+						<input type="hidden" name="acc" id="acc" value="editar">
+					</form>
+					<br>
+					<div class="checkit-btn-block">
+						<span class="checkit-btn l-dis-ib button" style="width:100%; border-width: 1px;background-color:#130a56;color: #fff;" onclick="javascript:document.formeditar.submit()">Actualizar</span>
+					</div>
+				</div>
+
+			</div><!-- modal-content -->
+		</div><!-- modal-dialog -->
+	</div>
+
+	<!--<script data-main="js/script.js" src="js/lib/require.js"></script>-->
 	<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script src="https://cdn.datatables.net/2.3.0/js/dataTables.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
 	<script type="text/javascript">
-
 		new Swiper('.card-wrapper', {
     loop: true,
     spaceBetween: 30,
@@ -814,101 +917,184 @@
     }
 });
 
+		function agregarCarrito(producto_id){
 
-		function mostrarCrearCuenta(){
-			document.getElementById('tablaCrearCuenta').style.display = "block";
-			document.getElementById('tablaIniciarSesion').style.display = "none";
+			if(producto_id != ""){
+
+				$.ajax({
+                type:"POST",
+                url: "scripts/ws.php",
+                data:{
+                    acc:'agregarProductoCarrito',
+                    producto_id:producto_id,
+                    session_id:'<?php echo $sessionID; ?>'
+                },
+                success: function(datos) {
+
+                	listarProductosCarrito();
+
+                }
+         });
+
+			}
+
+
 		}
 
-		function crearCuenta(){
+		function agregarCarritoCantidad(producto_id){
 
-			document.getElementById('btnCrearCuenta').disabled = true;
+			var cantidad = Number(document.getElementById('cantidad').value);
 
-			var falta = "";
+			if(producto_id != ""){
 
-			var nombre = document.getElementById('nombre_alta').value;
-			var correo = document.getElementById('correo_alta').value;
-			var contrasenia = document.getElementById('contrasenia_alta').value;
-			var verificar_contrasenia = document.getElementById('verificar_contrasenia_alta').value;
-			var telefono = document.getElementById('telefono_alta').value;
+				for(var c = 1; c <= cantidad; c++){
 
-			if(nombre == ""){
-				falta = falta + "Ingresar nombre completo<br>";
-			}
-			if(correo == ""){
-				falta = falta + "Ingresar correo electrónico<br>";
-			}
-			if(contrasenia.length < 8){
-				falta = falta + "La contraseña debe contener minimo 8 caracteres<br>";
-			}else{
-				if(contrasenia != verificar_contrasenia){
-					falta = falta + "La verificación de la contraseña no es correcta<br>";
+					$.ajax({
+	                type:"POST",
+	                url: "scripts/ws.php",
+	                data:{
+	                    acc:'agregarProductoCarrito',
+	                    producto_id:producto_id,
+	                    session_id:'<?php echo $sessionID; ?>'
+	                },
+	                success: function(datos) {
+
+	                	listarProductosCarrito();
+
+	                }
+	         });
+
 				}
-			}
-			if(telefono == ""){
-				falta = falta + "Ingresar teléfono<br>";
+
+				$('#myModal2').modal('show');
+
 			}
 
-			if(falta != ""){
-				$('#modalVerificar').modal('show');
-				document.getElementById('spanValidacionCuenta').innerHTML = falta;
-			}else{
+
+		}
+
+		function actualizarProductos(cantidad, producto_id){
+
+			$.ajax({
+        type:"POST",
+        url: "scripts/ws.php",
+                data:{
+                    acc:'actualizarProductoCarrito',
+                    session_id:'<?php echo $sessionID; ?>',
+                    cantidad:cantidad,
+                    producto_id:producto_id
+                },
+                success: function(datos) {
+                	reCalcularTotal()
+                }
+      });
+
+		}
+
+		function reCalcularTotal(){
+
+			$.ajax({
+        type:"POST",
+        url: "scripts/ws.php",
+        data:{
+          acc:'recalcularTotalCarrito',
+          session_id:'<?php echo $sessionID; ?>'
+        },
+        success: function(datos) {
+
+        	document.getElementById('carritoSubtotal').innerHTML = datos;
+        	document.getElementById('carritoTotal').innerHTML = datos;
+
+        }
+      });
+
+		}
+
+		function eliminarProductoCarrito(producto_id){
+
+			if(producto_id != ""){
 
 				$.ajax({
-			    type:"POST",
-			    url: "scripts/ws.php",
-			    data:{
-			      acc:'altaCuenta',
-			      nombre:nombre,
-			      correo:correo,
-			      contrasenia:contrasenia,
-			      telefono:telefono
-			    },
-			    success: function(datos){
+	        type:"POST",
+	        url: "scripts/ws.php",
+	        data:{
+	          acc:'eliminarProductoCarrito',
+	          session_id:'<?php echo $sessionID; ?>',
+	          producto_id:producto_id
+	        },
+	        success: function(datos) {
 
-			    	if(datos == "si"){
+	        	location.reload();
 
-			    		document.getElementById('divTablaCrearCuenta').innerHTML = '<span style="font-size:18px;color:#130a56;"><br><br>Se envío un mensaje a la cuenta de correo registrada.<br>Es necesario confirmar el mensaje para continuar con el proceso de registro<br><br><a href="index.php">Clic para seguir navegando</a></span>';
-
-
-			    	}
-
-			    }
-			  });
+	        }
+	      });
 
 			}
 
 		}
 
-		function cerrarModal(){
-			$('#modalVerificar').modal('hide');
+		function listarProductosCarrito(){
+
+			$.ajax({
+			        type:"POST",
+			        url: "scripts/ws.php",
+			                data:{
+			                    acc:'listarProductosCarrito',
+			                    session_id:'<?php echo $sessionID; ?>'
+			                },
+			        success: function(datos) {
+			          document.getElementById('divCarrito').innerHTML = datos;
+			        }
+			      });
+
 		}
 
-		function validarAcceso(){
+		function obtenerDatosProducto(producto_id){
 
-			var usuario = document.getElementById('usuario').value;
-			var contrasenia = document.getElementById('contrasenia').value;
-
-			if(usuario != "" && contrasenia != ""){
-
+			if(producto_id != ""){
 				$.ajax({
-			    type:"POST",
-			    url: "scripts/ws.php",
-			    data:{
-			      acc:'validarAcceso',
-			      usuario:usuario,
-			      contrasenia:contrasenia
-			    },
-			    success: function(datos){
-			    	if(datos == "OK"){
-			    		self.location = "index.php";
-			    	}
-			    }
-			  });
+				  type:"POST",
+				  url: "scripts/ws.php",
+				  data:{
+				    acc:'obtenerDatosProducto',
+				    producto_id:producto_id
+				  },
+				  success: function(datos) {
 
+				  	var data = JSON.parse(datos);
+				  	document.getElementById('producto_edit').value = data.producto;
+				  	document.getElementById('descripcion_edit').value = data.descripcion;
+				  	document.getElementById('precio_edit').value = data.precio;
+				  	document.getElementById('producto_id_edit').value = data.id;
+
+				  	if(data.estatus == "A"){
+				  		document.getElementById('estatus_edit').options.selectedIndex = 1;
+				  	}
+				  	if(data.estatus == "P"){
+				  		document.getElementById('estatus_edit').options.selectedIndex = 2;
+				  	}
+				  	if(data.estatus == "I"){
+				  		document.getElementById('estatus_edit').options.selectedIndex = 3;
+				  	}
+
+				  }
+				});
 			}
+		}
+
+		function verCarrito(){
+
+			window.location = "shoppingCart.php";
 
 		}
+
+		function mostrarCodigoDescuento(){
+			document.getElementById('divCodigoDescuento').style.display = "block";
+		}
+
+		$(document).ready(function() {
+    	$('#productos-table').DataTable();
+    });
 
 	</script>
 

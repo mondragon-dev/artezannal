@@ -398,9 +398,56 @@
 								<li class="menu-item">
 									<a href="#contacto"><font size="+1">Contacto</font></a>
 								</li>
-								<li class="menu-item">
+								<!--<li class="menu-item">
 									<img src="images/acceso_512.png" style="width:40px;cursor:pointer" onclick="self.location='login.php'">
-								</li>
+								</li>-->
+								<?php
+									if(isset($_SESSION['tipo'])){
+										if($_SESSION['tipo'] == "Usuario"){
+								?>
+											<li class="menu-item">
+												<div class="dropdown">
+			  									<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: transparent;margin-top: -10px;">
+			    									<img src="images/login_512.png" style="width:40px;cursor:pointer">
+			  									</button>
+													  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="text-align: center;">
+													    <a class="dropdown-item" href="#">Mi cuenta</a>
+													    <a class="dropdown-item" href="#" onclick="cerrarSesion()">Cerrar sesión</a>
+													  </div>
+													</div>
+											</li>
+								<?php
+										}
+										if($_SESSION['tipo'] == "Administrador"){
+								?>
+											<li class="menu-item">
+												<div class="dropdown">
+			  									<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: transparent;margin-top: -10px;">
+			    									<img src="images/admin_512.png" style="width:40px;cursor:pointer">
+			  									</button>
+													  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="text-align: center;">
+													    <a class="dropdown-item" href="#" onclick="javascript:self.location='productManager.php'">Productos</a>
+													    <a class="dropdown-item" href="#" onclick="cerrarSesion()">Cerrar sesión</a>
+													  </div>
+													</div>
+											</li>
+								<?php
+										}
+									}else{
+								?>
+										<li class="menu-item">
+											<div class="dropdown">
+		  									<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: transparent;margin-top: -10px;">
+		    									<img src="images/acceso_512.png" style="width:40px;cursor:pointer">
+		  									</button>
+												  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="text-align: center;">
+												    <a class="dropdown-item" href="login.php" onclick="self.location='login.php'">Iniciar sesión</a>
+												  </div>
+												</div>
+										</li>
+								<?php
+									}
+								?>
 							</ul>
 						</nav>
 					</div>
@@ -1244,6 +1291,23 @@
 		function buscarForm(){
 
 			document.formbuscar.submit();
+
+		}
+
+		function cerrarSesion(){
+
+			$.ajax({
+				type:"POST",
+			  url: "scripts/ws.php",
+			  data:{
+			    acc:'cerrarSesion',
+			  },
+			  success: function(datos) {
+			    if(datos == "OK"){
+			    	self.location = "index.php";
+			    }
+			  }
+			 });
 
 		}
 

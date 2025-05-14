@@ -192,4 +192,39 @@
 		exit;
 	}
 
+	if($_POST['acc'] == "validarAcceso"){
+
+		$sql = "SELECT * FROM usuarios WHERE correo = '".$_POST['usuario']."' ";
+		$res = mysqli_query($link,$sql);
+		$dat = mysqli_fetch_array($res);
+
+		if(password_verify($_POST['contrasenia'],$dat['contrasenia'])){
+			
+			session_start();
+			$_SESSION['username'] = $_POST['usuario'];
+			$_SESSION['tipo'] = $dat['tipo'];
+    	echo 'OK';
+		
+		}else{
+    	echo 'La contraseña no es válida.';
+		}
+
+	}
+
+	if($_POST['acc'] == "obtenerDatosProducto"){
+
+		$sql = "SELECT * FROM productos WHERE id = '".$_POST['producto_id']."' ";
+		$res = mysqli_query($link,$sql);
+		$dat = $res->fetch_assoc();
+
+		echo json_encode($dat,true);
+
+	}
+
+	if($_POST['acc'] == "cerrarSesion"){
+		session_start();
+		session_destroy();
+		echo "OK";
+	}
+
 ?>
