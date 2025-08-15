@@ -37,8 +37,8 @@
 
 	<style type="text/css">
 		.logo-wrapper .logo-image {
-  			width: 150%;
-  			max-width: 150%;
+  			width: 120%;
+  			max-width: 120%;
 		}
 		.menu-item a {
   			color: #130a56;
@@ -119,7 +119,7 @@
 		  position: fixed;
 		  width: 60px;
 		  height: 60px;
-		  top: 40px;
+		  top: 20px;
 		  right: 40px;
 		  /*background-color: #25d366;*/
 		  color: #fff;
@@ -366,10 +366,10 @@
 	<div class="page-content">
 		<header class="header">
 			<div class="menu-wrapper">
-				<div class="row">
-					<div class="column large-12" style="display: flex; justify-content: right; margin-top: -30px">
-						<form role="search" name="formbuscar" id="formbuscar" style="width: 300px; height: 44px; border-radius: 5px; display: flex; flex-direction: row; align-items: center;" method="POST" action="searchResults.php">
-		  				<input type="search" id="query" name="q" placeholder="Buscador..." aria-label="Search through site content" style="all: unset; font: 16px system-ui; color: #fff; height: 100%; width: 100%; padding: 6px 10px;border:none;border-bottom: 1px solid #fff;">
+				<div class="row" style="max-width: 90%;">
+					<div class="column large-12" style="display: flex; justify-content: right; margin-top: -30px; margin-left: -20px">
+						<form role="search" name="formbuscar" id="formbuscar" style="width: 350px; height: 44px; border-radius: 5px; display: flex; flex-direction: row; align-items: center;" method="POST" action="searchResults.php">
+		  				<input type="search" id="query" name="q" placeholder="Buscador..." aria-label="Search through site content" style="all: unset; font: 16px system-ui; color: #fff; height: 100%; width: 90%; padding: 6px 10px;border:none;border-bottom: 1px solid #fff;">
 		  				<button style="all: unset; cursor: pointer; width: 44px; height: 44px;" onclick="buscarForm()">
 		    				<svg viewBox="0 0 1024 1024" style="color: #fff;	fill: currentColor; width: 24px;	height: 24px;"><path class="path1" d="M848.471 928l-263.059-263.059c-48.941 36.706-110.118 55.059-177.412 55.059-171.294 0-312-140.706-312-312s140.706-312 312-312c171.294 0 312 140.706 312 312 0 67.294-24.471 128.471-55.059 177.412l263.059 263.059-79.529 79.529zM189.623 408.078c0 121.364 97.091 218.455 218.455 218.455s218.455-97.091 218.455-218.455c0-121.364-103.159-218.455-218.455-218.455-121.364 0-218.455 97.091-218.455 218.455z"></path></svg>
 		  				</button>
@@ -377,7 +377,7 @@
 					</div>
 				</div>
 				<br>
-				<div class="row">
+				<div class="row" style="max-width: 90%;">
 					<div class="column large-2">
 						<div class="logo-wrapper">
 							<img src="images/logoIndex.png" alt="" class="logo-image">
@@ -398,9 +398,6 @@
 								<li class="menu-item">
 									<a href="#contacto"><font size="+1">Contacto</font></a>
 								</li>
-								<!--<li class="menu-item">
-									<img src="images/acceso_512.png" style="width:40px;cursor:pointer" onclick="self.location='login.php'">
-								</li>-->
 								<?php
 									if(isset($_SESSION['tipo'])){
 										if($_SESSION['tipo'] == "Usuario"){
@@ -435,7 +432,7 @@
 										}
 									}else{
 								?>
-										<li class="menu-item">
+										<!--<li class="menu-item">
 											<div class="dropdown">
 		  									<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: transparent;margin-top: -10px;">
 		    									<img src="images/acceso_512.png" style="width:40px;cursor:pointer">
@@ -444,7 +441,7 @@
 												    <a class="dropdown-item" href="login.php" onclick="self.location='login.php'">Iniciar sesión</a>
 												  </div>
 												</div>
-										</li>
+										</li>-->
 								<?php
 									}
 								?>
@@ -476,7 +473,7 @@
 				        <source src="video/artezannal.mp4" type="video/mp4">
 				    </video>
 				</div>
-				<img src="assets/images/circulo_grande.png" class="img-banner">
+				<!--<img src="assets/images/circulo_grande.png" class="img-banner">-->
 			</div>
 
 			<div class="mobile-menu-wrapper">
@@ -1078,7 +1075,10 @@
 
 	<a href="https://wa.me/5211234567890?text=Me%20gustaría%20más%20información%20de%20sus%20productos" class="whatsapp" target="_blank"><img src="images/chat.png"></i></a>
 
-	<span class="carrito" style="cursor:pointer" data-toggle="modal" data-target="#myModal2" onclick="listarProductosCarrito()"><img src="images/carrito-icono.png"></i></span>
+	<span class="carrito">
+		<img src="images/user_block.png" style="width:60%;cursor:pointer" data-toggle="modal" data-target="#accessModal"><br><br>
+		<img src="images/carrito-icono.png" style="cursor:pointer" data-toggle="modal" data-target="#myModal2" onclick="listarProductosCarrito()">
+	</span>
 
 	<div class="modal right fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2">
 		<div class="modal-dialog" role="document">
@@ -1092,6 +1092,33 @@
 				<div class="modal-body" id="divCarrito">
 
 
+				</div>
+
+			</div><!-- modal-content -->
+		</div><!-- modal-dialog -->
+	</div>
+
+	<div class="modal right fade" id="accessModal" tabindex="-1" role="dialog" aria-labelledby="accessModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content" style="background-image: url(images/back_bright.png);
+  background-size: cover;
+  background-position: 50% 50%;">
+
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<center>
+						<h4 class="modal-title" id="myModalLabel2">Inicio de sesión</h4>
+					</center>
+				</div>
+
+				<div class="modal-body">
+					<input type="text" id="usuario" class="contact-field required" name="usuario" placeholder="E-mail" style="border-radius: 30px;">
+					<br>
+					<input type="password" id="password" class="contact-field required" name="password" placeholder="Contraseña" style="border-radius: 30px;">
+					<br>
+					<center>
+						<div class="checkit-btn-block" style="border-radius: 30px;"><span class="checkit-btn l-dis-ib button" style="background-color:#263770; border-radius: 30px;">Accesar</span></div>
+					</center>
 				</div>
 
 			</div><!-- modal-content -->
