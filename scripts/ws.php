@@ -194,6 +194,9 @@
 
 	if($_POST['acc'] == "validarAcceso"){
 
+		//echo password_hash($_POST['contrasenia'],PASSWORD_BCRYPT);
+		//exit;
+
 		$sql = "SELECT * FROM usuarios WHERE correo = '".$_POST['usuario']."' ";
 		$res = mysqli_query($link,$sql);
 		$dat = mysqli_fetch_array($res);
@@ -203,6 +206,7 @@
 			session_start();
 			$_SESSION['username'] = $_POST['usuario'];
 			$_SESSION['tipo'] = $dat['tipo'];
+			$_SESSION['nombre'] = $dat['nombre'];
     	echo 'OK';
 		
 		}else{
