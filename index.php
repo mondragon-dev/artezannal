@@ -354,6 +354,11 @@
   height: 10%;
 }
 
+.footer-item {
+  vertical-align: top;
+  margin-top: 30px;
+}
+
 	</style>
 </head>
 <body data-currency="$">
@@ -417,7 +422,7 @@
 										}
 										if($_SESSION['tipo'] == "Administrador"){
 								?>
-											<li class="menu-item">
+											<!--<li class="menu-item">
 												<div class="dropdown">
 			  									<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: transparent;margin-top: -10px;">
 			    									<img src="images/admin_512.png" style="width:40px;cursor:pointer">
@@ -427,7 +432,7 @@
 													    <a class="dropdown-item" href="#" onclick="cerrarSesion()">Cerrar sesión</a>
 													  </div>
 													</div>
-											</li>
+											</li>-->
 								<?php
 										}
 									}else{
@@ -863,22 +868,22 @@
 
 							<div class="footer-item">
 								<address>
-									<p class="address-item" align="left" style="padding-bottom: 10px;">
+									<p class="address-item" align="center" style="padding-bottom: 10px;">
 										<span class="heightlight"><font size="+1">Artezannal</font></span>
 									</p>
-									<p class="address-item" align="left">
+									<p class="address-item" align="center">
 										<span class="heightlight"><a href="#quienes-somos" style="text-decoration: none;color: white;">Quiénes somos</a></span>
 									</p>
-									<p class="address-item" align="left">
+									<p class="address-item" align="center">
 										<span class="heightlight"><a href="#productos" style="text-decoration: none;color: white;">Productos</a></span>
 									</p>
-									<p class="address-item" align="left">
+									<p class="address-item" align="center">
 										<span class="heightlight"><a href="#contacto" style="text-decoration: none;color: white;">Contacto</a></span>
 									</p>
-									<p class="address-item" align="left">
+									<p class="address-item" align="center">
 										<span class="heightlight">Términos y Condiciones de uso</span>
 									</p>
-									<p class="address-item" align="left">
+									<p class="address-item" align="center">
 										<span class="heightlight">Políticas de envío y devolución</span>
 									</p>
 								</address>
@@ -886,22 +891,22 @@
 
 							<div class="footer-item">
 								<address>
-									<p class="address-item" align="left" style="padding-bottom: 10px;">
+									<p class="address-item" align="center" style="padding-bottom: 10px;">
 										<span class="heightlight"><font size="+1">Socios comerciales</font></span>
 									</p>
-									<p class="address-item" align="left">
+									<p class="address-item" align="center">
 										<span class="heightlight">La Gourmetina</span>
 									</p>
-									<p class="address-item" align="left">
+									<p class="address-item" align="center">
 										<span class="heightlight">Biofactory</span>
 									</p>
-									<p class="address-item" align="left">
+									<p class="address-item" align="center">
 										<span class="heightlight">Lo natural</span>
 									</p>
-									<p class="address-item" align="left">
+									<p class="address-item" align="center">
 										<span class="heightlight">Cerámikka</span>
 									</p>
-									<p class="address-item" align="left">
+									<p class="address-item" align="center">
 										<span class="heightlight">In vitromosaicos</span>
 									</p>
 								</address>
@@ -909,26 +914,20 @@
 
 							<div class="footer-item">
 								<address>
-									<p class="address-item" align="left" style="padding-bottom: 10px;">
+									<p class="address-item" align="center" style="padding-bottom: 10px;">
 										<span class="heightlight"><font size="+1">¿Quiéres recibir noticias?</font></span>
 									</p>
-									<p class="address-item" align="left">
+									<p class="address-item" align="center">
 										<span class="heightlight">Unete a nuestro newsletter</span>
 									</p>
-									<p class="address-item" align="left">
-										<input type="text" id="name" class="contact-field required" name="name_field" placeholder="E-mail">
+									<p class="address-item" align="center">
+										<span class="heightlight"><input type="text" id="name" class="contact-field required" name="name_field" placeholder="E-mail"></span>
 									</p>
-									<p class="address-item" align="left">
-										<input type="checkbox" name="" value="" class="form-control">
-										<span class="heightlight">&nbsp;Quiero ser miembro de su comunidad</span>
+									<p class="address-item" align="center">
+										<span class="heightlight"><input type="checkbox" name="" value="">&nbsp;Quiero ser miembro de su comunidad</span>
 									</p>
-									<p class="address-item" align="left">
-										<div class="checkit-btn-block"><span class="checkit-btn l-dis-ib button" style="background-color:#263770">Suscribirme</span></div>
-									</p>
-									<p class="address-item" align="right">
-										<img src="assets/images/icons/facebook_icon.png" style="width:26px;height:26px">
-										<img src="assets/images/icons/pinterest.png" style="width:26px;height:26px">
-										<img src="assets/images/icons/instagram.png" style="width:26px;height:26px">
+									<p class="address-item" align="center">
+										<span class="heightlight"><div class="checkit-btn-block"><span class="checkit-btn l-dis-ib button" style="background-color:#263770">Suscribirme</span></div></span>
 									</p>
 								</address>
 							</div>
@@ -942,19 +941,22 @@
 						<div class="footer-container">
 
 							<div class="footer-item">
-								<p class="address-item" align="left" style="padding-bottom: 10px;">
+								<p class="address-item" align="center" style="padding-bottom: 10px;">
 									<img src="images/logoFooter.png" style="height: 65px; width: auto;">
 								</p>
 							</div>
 					
 							<div class="footer-item">
-								<p class="address-item" align="left">
+								<p class="address-item" align="center">
 									<span class="heightlight">Todos los Derechos Reservados Artezannal 2025.</span>
 								</p>
 							</div>
 
 							<div class="footer-item">
-								<p class="address-item" align="left">
+								<p class="address-item" align="center">
+									<img src="assets/images/icons/facebook_icon.png" style="width:26px;height:26px">
+									<img src="assets/images/icons/pinterest.png" style="width:26px;height:26px">
+									<img src="assets/images/icons/instagram.png" style="width:26px;height:26px">
 								</p>
 							</div>
 
@@ -1076,7 +1078,18 @@
 	<a href="https://wa.me/5211234567890?text=Me%20gustaría%20más%20información%20de%20sus%20productos" class="whatsapp" target="_blank"><img src="images/chat.png"></i></a>
 
 	<span class="carrito">
-		<img src="images/user_block.png" style="width:60%;cursor:pointer" data-toggle="modal" data-target="#accessModal"><br><br>
+		<?php
+			if($_SESSION['tipo'] == "Administrador"){
+		?>
+				<img src="images/user_admin.png" style="width:60%;cursor:pointer" data-toggle="modal" data-target="#accessModal">
+		<?php
+			}else{
+		?>
+				<img src="images/user_block.png" style="width:60%;cursor:pointer" data-toggle="modal" data-target="#accessModal">
+		<?php
+			}
+		?>
+		<br><br>
 		<img src="images/carrito-icono.png" style="cursor:pointer" data-toggle="modal" data-target="#myModal2" onclick="listarProductosCarrito()">
 	</span>
 
@@ -1086,7 +1099,9 @@
 
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-					<h4 class="modal-title" id="myModalLabel2">Añadido al carrito</h4>
+					<center>
+						<h4 class="modal-title" id="myModalLabel2">Añadido al carrito</h4>
+					</center>
 				</div>
 
 				<div class="modal-body" id="divCarrito">
@@ -1107,18 +1122,37 @@
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 					<center>
-						<h4 class="modal-title" id="myModalLabel2">Inicio de sesión</h4>
+						<?php
+							if($_SESSION['tipo'] == "Administrador"){
+						?>
+								<h4 class="modal-title" id="myModalLabel2">Hola <?php echo $_SESSION['nombre']; ?></h4>
+						<?php
+							}else{
+						?>
+								<h4 class="modal-title" id="myModalLabel2">Inicio de sesión</h4>
+						<?php
+							}
+						?>
 					</center>
 				</div>
 
 				<div class="modal-body">
-					<input type="text" id="usuario" class="contact-field required" name="usuario" placeholder="E-mail" style="border-radius: 30px;">
-					<br>
-					<input type="password" id="password" class="contact-field required" name="password" placeholder="Contraseña" style="border-radius: 30px;">
-					<br>
-					<center>
-						<div class="checkit-btn-block" style="border-radius: 30px;"><span class="checkit-btn l-dis-ib button" style="background-color:#263770; border-radius: 30px;">Accesar</span></div>
-					</center>
+					<?php
+							if($_SESSION['tipo'] == "Administrador"){
+					?>
+					<?php
+						}else{
+					?>
+							<input type="text" id="usuario" class="contact-field required" name="usuario" placeholder="E-mail" style="border-radius: 30px;">
+							<br>
+							<input type="password" id="password" class="contact-field required" name="password" placeholder="Contraseña" style="border-radius: 30px;">
+							<br>
+							<center>
+								<div class="checkit-btn-block" style="border-radius: 30px;"><span class="checkit-btn l-dis-ib button" style="background-color:#263770; border-radius: 30px;" onclick="accesar()">Accesar</span></div>
+							</center>
+					<?php
+						}
+					?>
 				</div>
 
 			</div><!-- modal-content -->
@@ -1342,6 +1376,29 @@
 		  event.preventDefault();
 		  $(this).ekkoLightbox();
 		});
+
+		function accesar(){
+			var usuario = document.getElementById('usuario').value;
+			var contrasenia = document.getElementById('password').value;
+			if(usuario != "" && contrasenia != ""){
+
+				$.ajax({
+					type:"POST",
+				  url: "scripts/ws.php",
+				  data:{
+				    acc:'validarAcceso',
+				    usuario: usuario,
+				    contrasenia: contrasenia
+				  },
+				  success: function(datos) {
+				    if(datos == "OK"){
+				    	self.location = "index.php";
+				    }
+				  }
+			 	});
+
+			}
+		}
 
 	</script>
 

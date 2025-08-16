@@ -3,6 +3,17 @@
 	include('config/config.php');
 	include('config/db.php');
 
+	if(isset($_POST['acc'])){
+
+		if($_POST['acc'] == "accesar"){
+
+			
+
+		}
+
+		exit;
+	}
+
 	if(isset($_GET['u'])){
 
 		$sql = "SELECT * FROM usuarios WHERE id = '".base64_decode($_GET['u'])."' and estatus = 'PendienteVerificar' ";
