@@ -724,9 +724,10 @@
 			</section>
 
 			<section class="why-we" id="quienes-somos">
-				<div class="row">
-					<div class="columns large-6">
-						<span class="title-text" style="color:#fff;font-size:24px">Quiénes somos</span>
+				<div class="row" style="max-width: 90%;">
+					<div class="columns large-8">
+						<br><br>
+						<span class="title-text" style="color:#fff;font-size:24px;">Quiénes somos</span>
 						<p style="text-align:justify; color: #fff; font-size: 16px;line-height: 1.8em; margin-top: 20px;">
 							Bienvenidos a nuestra plataforma, donde nos dedicamos a promover a las empresas que elaboran y comercializan productos artesanales mexicanos de la más calidad. Creemos en el valor de hacer las cosas a mano y en el talento de nuestros artesanos. Únete a nosotros para descubrir y apoyar lo mejor de la producción local y ¡Juntos hagámos crecer a nuestra comunidad!
 						</p>
@@ -734,7 +735,7 @@
 							Los invitamos a conocer los productos, a confiar y creer en la calidad de lo nacional y compartir con otros el gusto por la riqueza que existe en nuesto pais.
 						</p>
 					</div>
-					<div class="columns large-6">
+					<div class="columns large-4">
 
 						<div class="why-us-image" style="width:100% !important">
 								<div class="left-image" style="background-image: url(images/nosotros/01.png); border-radius: 50%; max-width: 400px; max-height: 400px;"></div>
@@ -791,6 +792,7 @@
 				<div class="title-block">
 					<div class="row">
 						<div class="columns large-12">
+							<br>
 							<h2 class="l-section-title">
 								<span class="title-text" style="font-size: 24px;font-weight: bold; letter-spacing: 0.25em; color: #130a56;">
 									contacto
@@ -1079,14 +1081,12 @@
 
 	<span class="carrito">
 		<?php
-			if($_SESSION['tipo'] == "Administrador"){
-		?>
-				<img src="images/user_admin.png" style="width:60%;cursor:pointer" data-toggle="modal" data-target="#accessModal">
-		<?php
+			if(isset($_SESSION['tipo'])){
+				if($_SESSION['tipo'] == "Administrador"){
+					echo '<img src="images/user_admin.png" style="width:60%;cursor:pointer" data-toggle="modal" data-target="#accessModal">';
+				}
 			}else{
-		?>
-				<img src="images/user_block.png" style="width:60%;cursor:pointer" data-toggle="modal" data-target="#accessModal">
-		<?php
+				echo '<img src="images/user_block.png" style="width:60%;cursor:pointer" data-toggle="modal" data-target="#accessModal">';
 			}
 		?>
 		<br><br>
@@ -1123,10 +1123,12 @@
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 					<center>
 						<?php
-							if($_SESSION['tipo'] == "Administrador"){
+							if(isset($_SESSION['tipo'])){
+								if($_SESSION['tipo'] == "Administrador"){
 						?>
-								<h4 class="modal-title" id="myModalLabel2">Hola <?php echo $_SESSION['nombre']; ?></h4>
+									<h4 class="modal-title" id="myModalLabel2">Hola <?php echo $_SESSION['nombre']; ?></h4>
 						<?php
+								}
 							}else{
 						?>
 								<h4 class="modal-title" id="myModalLabel2">Inicio de sesión</h4>
@@ -1138,18 +1140,55 @@
 
 				<div class="modal-body">
 					<?php
-							if($_SESSION['tipo'] == "Administrador"){
+							if(isset($_SESSION['tipo'])){
+								if($_SESSION['tipo'] == "Administrador"){
 					?>
-					<?php
-						}else{
-					?>
-							<input type="text" id="usuario" class="contact-field required" name="usuario" placeholder="E-mail" style="border-radius: 30px;">
-							<br>
-							<input type="password" id="password" class="contact-field required" name="password" placeholder="Contraseña" style="border-radius: 30px;">
-							<br>
+
 							<center>
-								<div class="checkit-btn-block" style="border-radius: 30px;"><span class="checkit-btn l-dis-ib button" style="background-color:#263770; border-radius: 30px;" onclick="accesar()">Accesar</span></div>
+								<div class="checkit-btn-block" style="border-radius: 30px;"><span class="checkit-btn l-dis-ib button" style="background-color:#263770; border-radius: 30px;" onclick="cerrarSesion()">Cerrar sesión</span></div>
 							</center>
+
+					<?php
+								}
+							}else{
+					?>
+							<div id="controlesAcceso">
+								<input type="text" id="usuario" class="contact-field required" name="usuario" placeholder="E-mail" style="border-radius: 30px;">
+								<br>
+								<input type="password" id="password" class="contact-field required" name="password" placeholder="Contraseña" style="border-radius: 30px;">
+								<br>
+								<center>
+									<div class="checkit-btn-block" style="border-radius: 30px;"><span class="checkit-btn l-dis-ib button" style="background-color:#263770; border-radius: 30px;" onclick="accesar()">Accesar</span></div>
+									<br>
+									<a href="javascript:void(0)" onclick="mostrarCrearCuenta()">
+										<span style="font-size:18px;color:#130a56;">
+											Si aún no se ha registrado, clic aquí para crear una cuenta
+										</span>
+									</a>
+								</center>
+							</div>
+							<div id="controlesAltaUsuario" style="display:none">
+								<h4 class="modal-title" id="myModalLabel2">Por favor ingrese la siguiente información para registrarse</h4>
+								<br><br>
+								<div class="centered-block">
+									<input type="text" id="nombre_alta" class="contact-field required" name="nombre_alta" placeholder="Ingrese su nombre completo" style="border-radius: 30px;">
+								</div>
+																	<div class="centered-block">
+																		<input type="email" id="correo_alta" class="contact-field required" name="correo_alta" placeholder="Ingrese su correo electrónico">
+																	</div>
+																	<div class="centered-block">
+																		<input type="password" id="contrasenia_alta" class="contact-field required" name="contrasenia_alta" placeholder="Ingrese su contraseña">
+																	</div>
+																	<div class="centered-block">
+																		<input type="password" id="verificar_contrasenia_alta" class="contact-field required" name="verificar_contrasenia_alta" placeholder="Verificar contraseña">
+																	</div>
+																	<div class="centered-block">
+																		<input type="text" id="telefono_alta" class="contact-field required" name="telefono_alta" placeholder="Ingrese su número telefónico">
+																	</div>
+																	<div class="checkit-btn-block">
+											            	<input type="submit" class="checkit-btn l-dis-ib button" style="width:100%; border-width: 1px;background:transparent;color: #130a56;" value="Crear cuenta" onclick="crearCuenta()" id="btnCrearCuenta">
+											           	</div>
+							</div>
 					<?php
 						}
 					?>
@@ -1398,6 +1437,13 @@
 			 	});
 
 			}
+		}
+
+		function mostrarCrearCuenta(){
+
+			document.getElementById('controlesAcceso').style.display = "none";
+			document.getElementById('controlesAltaUsuario').style.display = "block";
+
 		}
 
 	</script>
