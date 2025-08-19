@@ -43,12 +43,20 @@
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 
 	<style type="text/css">
+
+		.menu-wrapper {
+  		top: 0px;
+  		background-image: url(images/fondoFooter.png);
+			background-size: cover;
+			background-position: 50% 50%;
+		}
+		
 		.logo-wrapper .logo-image {
-  			width: 150%;
-  			max-width: 150%;
+  			width: 120%;
+  			max-width: 120%;
 		}
 		.menu-item a {
-  			color: #fff;
+  			color: #130a56;
   			font-weight: 800;
 		}
 		.menu-item a:hover{
@@ -86,8 +94,9 @@
   			min-height: 300px;
 		}
 		.footer-wrapper {
-			/*background-image: url(images/fondoFooter.png);*/
-			background-color: #182371;
+			background-image: url(images/fondoFooter.png);
+			background-size: cover;
+			background-position: 50% 50%;
 		}
 		.get-in-touch form .contact-field {
 		  color: #000;
@@ -98,7 +107,7 @@
 		}
 		.img-banner{
 			position: absolute;
-			right: 50px;
+			right: 150px;
 			bottom: 0px;
 			width: 20%;
 		}
@@ -125,7 +134,7 @@
 		  position: fixed;
 		  width: 60px;
 		  height: 60px;
-		  top: 40px;
+		  top: 20px;
 		  right: 40px;
 		  /*background-color: #25d366;*/
 		  color: #fff;
@@ -354,8 +363,15 @@
   }
 }
 
-.menu-wrapper {
-  top: 0px;
+
+#Layer_1 {
+  width: 10%;
+  height: 10%;
+}
+
+.footer-item {
+  vertical-align: top;
+  margin-top: 30px;
 }
 
 	</style>
@@ -364,33 +380,44 @@
 	<span class="theme-bg-c"></span>
 	<div class="preloader-block">
 		<div class="preloader-container">
-			<img src="images/logoIndex.png" alt="" class="logo-image">
+			<img src="images/logoFooter.png" alt="" class="logo-image">
 		</div>
 	</div>
 	<div class="page-content" style="background-color: #182371;">
 		<header class="header">
-			<div class="menu-wrapper" style="background-color: #182371;">
-				<br><br>
-				<div class="row">
+			
+			<div class="menu-wrapper">
+				<div class="row" style="max-width: 90%; visibility: hidden;">
+					<div class="column large-12" style="display: flex; justify-content: right; margin-top: -30px; margin-left: -20px">
+						<form role="search" name="formbuscar" id="formbuscar" style="width: 350px; height: 44px; border-radius: 5px; display: flex; flex-direction: row; align-items: center;" method="POST" action="searchResults.php">
+		  				<input type="search" id="query" name="q" placeholder="Buscador..." aria-label="Search through site content" style="all: unset; font: 16px system-ui; color: #fff; height: 100%; width: 90%; padding: 6px 10px;border:none;border-bottom: 1px solid #fff;">
+		  				<button style="all: unset; cursor: pointer; width: 44px; height: 44px;" onclick="buscarForm()">
+		    				<svg viewBox="0 0 1024 1024" style="color: #fff;	fill: currentColor; width: 24px;	height: 24px;"><path class="path1" d="M848.471 928l-263.059-263.059c-48.941 36.706-110.118 55.059-177.412 55.059-171.294 0-312-140.706-312-312s140.706-312 312-312c171.294 0 312 140.706 312 312 0 67.294-24.471 128.471-55.059 177.412l263.059 263.059-79.529 79.529zM189.623 408.078c0 121.364 97.091 218.455 218.455 218.455s218.455-97.091 218.455-218.455c0-121.364-103.159-218.455-218.455-218.455-121.364 0-218.455 97.091-218.455 218.455z"></path></svg>
+		  				</button>
+						</form>
+					</div>
+				</div>
+				<br>
+				<div class="row" style="max-width: 90%;">
 					<div class="column large-2">
-						<div class="logo-wrapper" onclick="javascript:window.location='index.php'" style="cursor:pointer">
-							<img src="images/logo_artezannal_bco.png" alt="" class="logo-image">
+						<div class="logo-wrapper">
+							<img src="images/logoFooter.png" alt="" class="logo-image">
 						</div>
 					</div>
 					<div class="column large-10">
 						<nav class="js-navs-list">
 							<ul class="menu-page">
 								<li class="menu-item">
-									<a href="/"><font size="+1">Inicio</font></a>
+									<a href="/"><font size="+1" style="color: white;">Inicio</font></a>
 								</li>
 								<li class="menu-item">
-									<a href="#productos"><font size="+1">Productos</font></a>
+									<a href="#productos"><font size="+1" style="color: white;">Productos</font></a>
 								</li>
 								<li class="menu-item">
-									<a href="#quienes-somos"><font size="+1">Quiénes somos</font></a>
+									<a href="#quienes-somos"><font size="+1" style="color: white;">Quiénes somos</font></a>
 								</li>
 								<li class="menu-item">
-									<a href="#contacto"><font size="+1">Contacto</font></a>
+									<a href="#contacto"><font size="+1" style="color: white;">Contacto</font></a>
 								</li>
 							</ul>
 						</nav>
@@ -469,11 +496,11 @@
 												</div>
 												<div class="row" id="divCodigoDescuento" style="display: none;">
 													<div class="col-lg-4">
-														<input type="text" class="form-control" style="width:100%;background:transparent;">
+														<input type="text" class="form-control" style="width:100%;background:transparent;border-radius: 30px;">
 													</div>
 													<div class="col-lg-2">
 														<div class="checkit-btn-block">
-            									<span class="checkit-btn l-dis-ib button" style="border-width: 1px;background-color:transparent;color: #130a56;">Aplicar</span>
+            									<span class="checkit-btn l-dis-ib button" style="border-width: 1px;background-color:transparent;color: #130a56; border-radius: 30px;">Aplicar</span>
             								</div>
 													</div>
 												</div>
@@ -483,7 +510,7 @@
 															<svg xmlns="http://www.w3.org/2000/svg" width="12" height="13" viewBox="0 0 12 13" class="bqcF4y"><g fill="none" fill-rule="evenodd" stroke="none" stroke-width="1"><g transform="translate(-515 -882)"><g transform="translate(515 882)"><path stroke="currentColor" d="M.5.5h7.778L11.5 3.737V12.5H.5V.5z"></path><path stroke="currentColor" d="M10.793 3.5H8.5V1.207L10.793 3.5z"></path><path fill="currentColor" d="M3 3H6V4H3z"></path><path fill="currentColor" d="M3 6H9V7H3z"></path><path fill="currentColor" d="M3 9H9V10H3z"></path></g></g></g></svg>
 															Agregar una nota: 
 														</p>
-														<textarea class="form-control" rows="4" style="width:300px;background:transparent;"></textarea>
+														<textarea class="form-control" rows="4" style="width:300px;background:transparent;border-radius: 30px;"></textarea>
 													</div>
 												</div>
 											</div>
@@ -503,7 +530,7 @@
 											<p class="team-post" style="font-size:16px; line-height: 24px; color:#130a56; margin-bottom:30px">Total: $<span id="carritoTotal"><?php echo number_format($total,2); ?></span></p>
 										</div>
 										<div class="checkit-btn-block">
-					            	<span class="checkit-btn l-dis-ib button" style="width:100%; border-width: 1px;background-color:#fff;color: #130a56;" data-toggle="modal" data-target="#modalVerificar">Pagar</span>
+					            	<span class="checkit-btn l-dis-ib button" style="width:100%; border-width: 1px;background-color:#fff;color: #130a56; border-radius: 30px;" data-toggle="modal" data-target="#modalVerificar">Pagar</span>
 					           </div>
 									</div>
 								</div>
@@ -514,6 +541,7 @@
 			</section>
 
 		</section>
+
 		<footer>
 			
 			<div class="footer-wrapper l-section-padding">
@@ -524,22 +552,22 @@
 
 							<div class="footer-item">
 								<address>
-									<p class="address-item" align="left" style="padding-bottom: 10px;">
+									<p class="address-item" align="center" style="padding-bottom: 10px;">
 										<span class="heightlight"><font size="+1">Artezannal</font></span>
 									</p>
-									<p class="address-item" align="left">
-										<span class="heightlight">Quiénes somos</span>
+									<p class="address-item" align="center">
+										<span class="heightlight"><a href="#quienes-somos" style="text-decoration: none;color: white;">Quiénes somos</a></span>
 									</p>
-									<p class="address-item" align="left">
-										<span class="heightlight">Productos</span>
+									<p class="address-item" align="center">
+										<span class="heightlight"><a href="#productos" style="text-decoration: none;color: white;">Productos</a></span>
 									</p>
-									<p class="address-item" align="left">
-										<span class="heightlight">Contacto</span>
+									<p class="address-item" align="center">
+										<span class="heightlight"><a href="#contacto" style="text-decoration: none;color: white;">Contacto</a></span>
 									</p>
-									<p class="address-item" align="left">
+									<p class="address-item" align="center">
 										<span class="heightlight">Términos y Condiciones de uso</span>
 									</p>
-									<p class="address-item" align="left">
+									<p class="address-item" align="center">
 										<span class="heightlight">Políticas de envío y devolución</span>
 									</p>
 								</address>
@@ -547,22 +575,22 @@
 
 							<div class="footer-item">
 								<address>
-									<p class="address-item" align="left" style="padding-bottom: 10px;">
+									<p class="address-item" align="center" style="padding-bottom: 10px;">
 										<span class="heightlight"><font size="+1">Socios comerciales</font></span>
 									</p>
-									<p class="address-item" align="left">
+									<p class="address-item" align="center">
 										<span class="heightlight">La Gourmetina</span>
 									</p>
-									<p class="address-item" align="left">
+									<p class="address-item" align="center">
 										<span class="heightlight">Biofactory</span>
 									</p>
-									<p class="address-item" align="left">
+									<p class="address-item" align="center">
 										<span class="heightlight">Lo natural</span>
 									</p>
-									<p class="address-item" align="left">
+									<p class="address-item" align="center">
 										<span class="heightlight">Cerámikka</span>
 									</p>
-									<p class="address-item" align="left">
+									<p class="address-item" align="center">
 										<span class="heightlight">In vitromosaicos</span>
 									</p>
 								</address>
@@ -570,23 +598,20 @@
 
 							<div class="footer-item">
 								<address>
-									<p class="address-item" align="left" style="padding-bottom: 10px;">
+									<p class="address-item" align="center" style="padding-bottom: 10px;">
 										<span class="heightlight"><font size="+1">¿Quiéres recibir noticias?</font></span>
 									</p>
-									<p class="address-item" align="left">
+									<p class="address-item" align="center">
 										<span class="heightlight">Unete a nuestro newsletter</span>
 									</p>
-									<p class="address-item" align="left">
-										<input type="text" id="name" class="contact-field required" name="name_field" placeholder="E-mail">
+									<p class="address-item" align="center">
+										<span class="heightlight"><input type="text" id="name" class="contact-field required" name="name_field" placeholder="E-mail" style="border-radius: 30px;"></span>
 									</p>
-									<p class="address-item" align="left">
-										<input type="checkbox" name="" value="" class="form-control">
-										<span class="heightlight">&nbsp;Quiero ser miembro de su comunidad</span>
+									<p class="address-item" align="center">
+										<span class="heightlight"><input type="checkbox" name="" value="">&nbsp;Quiero ser miembro de su comunidad</span>
 									</p>
-									<p class="address-item" align="left">
-										<div class="checkit-btn-block"><span class="checkit-btn l-dis-ib button" style="background-color:#263770">Suscribirme</span></div>
-									</p>
-									<p class="address-item" align="left">
+									<p class="address-item" align="center">
+										<span class="heightlight"><div class="checkit-btn-block"><span class="checkit-btn l-dis-ib button" style="background-color:#263770;border-radius: 30px;">Suscribirme</span></div></span>
 									</p>
 								</address>
 							</div>
@@ -600,19 +625,22 @@
 						<div class="footer-container">
 
 							<div class="footer-item">
-								<p class="address-item" align="left" style="padding-bottom: 10px;">
+								<p class="address-item" align="center" style="padding-bottom: 10px;">
 									<img src="images/logoFooter.png" style="height: 65px; width: auto;">
 								</p>
 							</div>
 					
 							<div class="footer-item">
-								<p class="address-item" align="left">
+								<p class="address-item" align="center">
 									<span class="heightlight">Todos los Derechos Reservados Artezannal 2025.</span>
 								</p>
 							</div>
 
 							<div class="footer-item">
-								<p class="address-item" align="left">
+								<p class="address-item" align="center">
+									<img src="assets/images/icons/facebook_icon.png" style="width:26px;height:26px">
+									<img src="assets/images/icons/pinterest.png" style="width:26px;height:26px">
+									<img src="assets/images/icons/instagram.png" style="width:26px;height:26px">
 								</p>
 							</div>
 

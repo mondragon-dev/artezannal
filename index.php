@@ -403,53 +403,6 @@
 								<li class="menu-item">
 									<a href="#contacto"><font size="+1">Contacto</font></a>
 								</li>
-								<?php
-									if(isset($_SESSION['tipo'])){
-										if($_SESSION['tipo'] == "Usuario"){
-								?>
-											<li class="menu-item">
-												<div class="dropdown">
-			  									<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: transparent;margin-top: -10px;">
-			    									<img src="images/login_512.png" style="width:40px;cursor:pointer">
-			  									</button>
-													  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="text-align: center;">
-													    <a class="dropdown-item" href="#">Mi cuenta</a>
-													    <a class="dropdown-item" href="#" onclick="cerrarSesion()">Cerrar sesión</a>
-													  </div>
-													</div>
-											</li>
-								<?php
-										}
-										if($_SESSION['tipo'] == "Administrador"){
-								?>
-											<!--<li class="menu-item">
-												<div class="dropdown">
-			  									<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: transparent;margin-top: -10px;">
-			    									<img src="images/admin_512.png" style="width:40px;cursor:pointer">
-			  									</button>
-													  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="text-align: center;">
-													    <a class="dropdown-item" href="#" onclick="javascript:self.location='productManager.php'">Productos</a>
-													    <a class="dropdown-item" href="#" onclick="cerrarSesion()">Cerrar sesión</a>
-													  </div>
-													</div>
-											</li>-->
-								<?php
-										}
-									}else{
-								?>
-										<!--<li class="menu-item">
-											<div class="dropdown">
-		  									<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: transparent;margin-top: -10px;">
-		    									<img src="images/acceso_512.png" style="width:40px;cursor:pointer">
-		  									</button>
-												  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="text-align: center;">
-												    <a class="dropdown-item" href="login.php" onclick="self.location='login.php'">Iniciar sesión</a>
-												  </div>
-												</div>
-										</li>-->
-								<?php
-									}
-								?>
 							</ul>
 						</nav>
 					</div>
@@ -809,19 +762,19 @@
 								<div class="align-center-small">
 									<div class="centered-block">
 										<label for="name" class="contact-label" style="color:white">Nombre <span style="color:#D54212">*</span></label>
-										<input type="text" id="name" class="contact-field required" name="name_field">
+										<input type="text" id="name" class="contact-field required" name="name_field" style="border-radius: 30px;">
 									</div>
 									<div class="centered-block">
 										<label for="name" class="contact-label" style="color:white">Apellidos <span style="color:#D54212">*</span></label>
-										<input type="text" id="name" class="contact-field required" name="name_field">
+										<input type="text" id="name" class="contact-field required" name="name_field" style="border-radius: 30px;">
 									</div>
 									<div class="centered-block">
 										<label for="mail" class="contact-label" style="color:white">E-mail <span style="color:#D54212">*</span></label>
-										<input type="text" id="mail" class="contact-field required" name="mail_field">
+										<input type="text" id="mail" class="contact-field required" name="mail_field" style="border-radius: 30px;">
 									</div>
 									<div class="centered-block">
 										<label for="subject" class="contact-label" style="color:white">Título <span style="color:#D54212">*</span></label>
-										<input type="text" id="subject" class="contact-field required" name="subject_field">
+										<input type="text" id="subject" class="contact-field required" name="subject_field" style="border-radius: 30px;">
 									</div>
 								</div>
 							</div>
@@ -829,7 +782,7 @@
 								<div class="align-center-small">
 									<div class="centered-block">
 										<label for="message" class="contact-label" style="color:white">Mensaje <span style="color:#D54212">*</span></label>
-										<textarea id="message" class="contact-field textarea-contact required" name="message_field"></textarea>
+										<textarea id="message" class="contact-field textarea-contact required" name="message_field" style="border-radius: 30px;"></textarea>
 
 										<span class="checkout">
 											<span>Enviar</span>
@@ -923,13 +876,13 @@
 										<span class="heightlight">Unete a nuestro newsletter</span>
 									</p>
 									<p class="address-item" align="center">
-										<span class="heightlight"><input type="text" id="name" class="contact-field required" name="name_field" placeholder="E-mail"></span>
+										<span class="heightlight"><input type="text" id="name" class="contact-field required" name="name_field" placeholder="E-mail" style="border-radius: 30px;"></span>
 									</p>
 									<p class="address-item" align="center">
 										<span class="heightlight"><input type="checkbox" name="" value="">&nbsp;Quiero ser miembro de su comunidad</span>
 									</p>
 									<p class="address-item" align="center">
-										<span class="heightlight"><div class="checkit-btn-block"><span class="checkit-btn l-dis-ib button" style="background-color:#263770">Suscribirme</span></div></span>
+										<span class="heightlight"><div class="checkit-btn-block"><span class="checkit-btn l-dis-ib button" style="background-color:#263770;border-radius: 30px;">Suscribirme</span></div></span>
 									</p>
 								</address>
 							</div>
@@ -1084,6 +1037,8 @@
 			if(isset($_SESSION['tipo'])){
 				if($_SESSION['tipo'] == "Administrador"){
 					echo '<img src="images/user_admin.png" style="width:60%;cursor:pointer" data-toggle="modal" data-target="#accessModal">';
+				}elseif($_SESSION['tipo'] == "Usuario"){
+					echo '<img src="images/user_user.png" style="width:60%;cursor:pointer" data-toggle="modal" data-target="#accessModal">';
 				}
 			}else{
 				echo '<img src="images/user_block.png" style="width:60%;cursor:pointer" data-toggle="modal" data-target="#accessModal">';
@@ -1129,6 +1084,11 @@
 									<h4 class="modal-title" id="myModalLabel2">Hola <?php echo $_SESSION['nombre']; ?></h4>
 						<?php
 								}
+								if($_SESSION['tipo'] == "Usuario"){
+						?>
+								<h4 class="modal-title" id="myModalLabel2">Hola <?php echo $_SESSION['nombre']; ?></h4>
+						<?php
+								}
 							}else{
 						?>
 								<h4 class="modal-title" id="myModalLabel2">Inicio de sesión</h4>
@@ -1160,11 +1120,11 @@
 								<center>
 									<div class="checkit-btn-block" style="border-radius: 30px;"><span class="checkit-btn l-dis-ib button" style="background-color:#263770; border-radius: 30px;" onclick="accesar()">Accesar</span></div>
 									<br>
-									<a href="javascript:void(0)" onclick="mostrarCrearCuenta()">
-										<span style="font-size:18px;color:#130a56;">
+									<span style="font-size:18px;color:#130a56;">
+										<a href="javascript:void(0)" onclick="mostrarCrearCuenta()">
 											Si aún no se ha registrado, clic aquí para crear una cuenta
-										</span>
-									</a>
+										</a>
+									</span>
 								</center>
 							</div>
 							<div id="controlesAltaUsuario" style="display:none">
@@ -1173,21 +1133,30 @@
 								<div class="centered-block">
 									<input type="text" id="nombre_alta" class="contact-field required" name="nombre_alta" placeholder="Ingrese su nombre completo" style="border-radius: 30px;">
 								</div>
-																	<div class="centered-block">
-																		<input type="email" id="correo_alta" class="contact-field required" name="correo_alta" placeholder="Ingrese su correo electrónico">
-																	</div>
-																	<div class="centered-block">
-																		<input type="password" id="contrasenia_alta" class="contact-field required" name="contrasenia_alta" placeholder="Ingrese su contraseña">
-																	</div>
-																	<div class="centered-block">
-																		<input type="password" id="verificar_contrasenia_alta" class="contact-field required" name="verificar_contrasenia_alta" placeholder="Verificar contraseña">
-																	</div>
-																	<div class="centered-block">
-																		<input type="text" id="telefono_alta" class="contact-field required" name="telefono_alta" placeholder="Ingrese su número telefónico">
-																	</div>
-																	<div class="checkit-btn-block">
-											            	<input type="submit" class="checkit-btn l-dis-ib button" style="width:100%; border-width: 1px;background:transparent;color: #130a56;" value="Crear cuenta" onclick="crearCuenta()" id="btnCrearCuenta">
-											           	</div>
+								<div class="centered-block">
+									<input type="email" id="correo_alta" class="contact-field required" name="correo_alta" placeholder="Ingrese su correo electrónico" style="border-radius: 30px;">
+								</div>
+								<div class="centered-block">
+									<input type="password" id="contrasenia_alta" class="contact-field required" name="contrasenia_alta" placeholder="Ingrese su contraseña" style="border-radius: 30px;">
+								</div>
+								<div class="centered-block">
+									<input type="password" id="verificar_contrasenia_alta" class="contact-field required" name="verificar_contrasenia_alta" placeholder="Verificar contraseña" style="border-radius: 30px;">
+								</div>
+								<div class="centered-block">
+									<input type="text" id="telefono_alta" class="contact-field required" name="telefono_alta" placeholder="Ingrese su número telefónico" style="border-radius: 30px;">
+								</div>
+								<div class="checkit-btn-block">
+									<input type="submit" class="checkit-btn l-dis-ib button" style="width:100%; border-radius: 30px;background-color: #263770;" value="Crear cuenta" onclick="crearCuenta()" id="btnCrearCuenta">
+								</div>
+							</div>
+							<div id="divTablaCrearCuenta" style="display:none">
+								<center>
+									<span style="font-size:18px;color:#130a56;">
+										Se envío un mensaje a la cuenta de correo registrada.<br><br>
+										Es necesario confirmar el mensaje para continuar con el proceso de registro<br><br>
+										<a href="index.php">Clic para seguir navegando</a>
+									</span>
+								</center>
 							</div>
 					<?php
 						}
@@ -1215,7 +1184,30 @@
 					</center>
 					<br>
 					<div class="checkit-btn-block">
-					  <span class="checkit-btn l-dis-ib button" style="width:100%; border-width: 1px;background-color:#130a56;color: #fff;">Contactar</span>
+					  <span class="checkit-btn l-dis-ib button" style="width:100%; border-width: 1px;background-color:#130a56;color: #fff; border-radius: 30px;">Contactar</span>
+					</div>
+				</div>
+
+			</div><!-- modal-content -->
+		</div><!-- modal-dialog -->
+	</div>
+
+	<div class="modal fade" id="modalVerificarCuenta" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="modalLabelVerificar">Aviso</h4>
+				</div>
+
+				<div class="modal-body">
+					<span class="title-text" style="color:red;font-size:14px;font-weight:bold;">Es necesario revisar lo siguiente:</span>
+					<br><br>
+					<span class="title-text" style="color:red;font-size:14px" id="spanValidacionCuenta"></span>
+					<br>
+					<div class="checkit-btn-block">
+					  <span class="checkit-btn l-dis-ib button" style="width:100%; border-width: 1px;background-color:#130a56;color: #fff;" onclick="cerrarModal('modalVerificarCuenta');activarBoton('btnCrearCuenta')">Aceptar</span>
 					</div>
 				</div>
 
@@ -1443,6 +1435,113 @@
 
 			document.getElementById('controlesAcceso').style.display = "none";
 			document.getElementById('controlesAltaUsuario').style.display = "block";
+
+		}
+
+		function crearCuenta(){
+
+			document.getElementById('btnCrearCuenta').disabled = true;
+
+			var falta = "";
+
+			var nombre = document.getElementById('nombre_alta').value;
+			var correo = document.getElementById('correo_alta').value;
+			var contrasenia = document.getElementById('contrasenia_alta').value;
+			var verificar_contrasenia = document.getElementById('verificar_contrasenia_alta').value;
+			var telefono = document.getElementById('telefono_alta').value;
+
+			if(nombre == ""){
+				falta = falta + "Ingresar nombre completo<br>";
+			}
+			if(correo == ""){
+				falta = falta + "Ingresar correo electrónico<br>";
+			}
+			if(contrasenia.length < 8){
+				falta = falta + "La contraseña debe contener minimo 8 caracteres<br>";
+			}else{
+				if(contrasenia != verificar_contrasenia){
+					falta = falta + "La verificación de la contraseña no es correcta<br>";
+				}
+			}
+			if(telefono == ""){
+				falta = falta + "Ingresar teléfono<br>";
+			}
+
+			if(falta != ""){
+				$('#modalVerificarCuenta').modal('show');
+				document.getElementById('spanValidacionCuenta').innerHTML = falta;
+			}else{
+
+				$.ajax({
+			    type:"POST",
+			    url: "scripts/ws.php",
+			    data:{
+			      acc:'altaCuenta',
+			      nombre:nombre,
+			      correo:correo,
+			      contrasenia:contrasenia,
+			      telefono:telefono
+			    },
+			    success: function(datos){
+
+			    	if(datos == "si"){
+			    		document.getElementById('controlesAcceso').style.display = "none";
+			    		document.getElementById('controlesAltaUsuario').style.display = "none";
+			    		document.getElementById('divTablaCrearCuenta').style.display = 'block';
+			    	}
+
+			    }
+			  });
+
+			}
+
+		}
+
+		function cerrarModal(modal,boton){
+			$('#'+modal).modal('hide');
+		}
+
+		function activarBoton(boton){
+			document.getElementById(""+boton).disabled = false;
+		}
+
+		<?php 
+			if(isset($_GET['u'])){
+		?>
+				$('#accessModal').modal('show');
+				document.getElementById('controlesAcceso').style.display = "none";
+			  document.getElementById('controlesAltaUsuario').style.display = "none";
+			  document.getElementById('divTablaCrearCuenta').style.display = 'block';
+
+			  var usuario = "<?php echo $_GET['u']; ?>";
+			  if(usuario != ""){
+
+			  	$.ajax({
+				    type:"POST",
+				    url: "scripts/ws.php",
+				    data:{
+				      acc:'validarCuenta',
+				      usuario:usuario,
+				    },
+				    success: function(datos){
+
+				    	document.getElementById('divTablaCrearCuenta').innerHTML = datos;
+
+				    }
+				  });
+
+			  }
+
+		<?php
+			}
+		?>
+
+		function iniciarSesion(){
+
+			$('#accessModal').modal('show');
+			document.getElementById('controlesAcceso').style.display = "block";
+			document.getElementById('controlesAltaUsuario').style.display = "none";
+			document.getElementById('divTablaCrearCuenta').style.display = 'none';
 
 		}
 

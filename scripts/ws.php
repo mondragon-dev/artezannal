@@ -67,10 +67,10 @@
 									 	<div class="col-lg-12">
 									 		<br>
 									 		<div class="checkit-btn-block">
-					            	<span class="checkit-btn l-dis-ib button" style="width:100%; border-width: 1px;background-color:#130a56;color: #fff;" data-toggle="modal" data-target="#modalVerificar">Verificar</span>
+					            	<span class="checkit-btn l-dis-ib button" style="width:100%; border-width: 1px;background-color:#130a56;color: #fff; border-radius: 30px;" data-toggle="modal" data-target="#modalVerificar">Verificar</span>
 					            </div>
 									 		<div class="checkit-btn-block">
-					            	<span class="checkit-btn l-dis-ib button" style="width:100%; border-width: 1px;background-color:#fff;color: #130a56;" onclick="verCarrito()">Ver carrito</span>
+					            	<span class="checkit-btn l-dis-ib button" style="width:100%; border-width: 1px;background-color:#fff;color: #130a56; border-radius: 30px;" onclick="verCarrito()">Ver carrito</span>
 					            </div>
 					          </div>
 									 </div>
@@ -152,30 +152,38 @@
 		$mail->FromName = "Artezannal";
 		$mail->Subject = utf8_decode("Artezannal - Alta de cuenta");
 
-		$mensaje = "<center>
-									<table style='background:url(https://qa.artezannal.com/images/back_bright.png);background-size:cover;background-position:50% 50%'>
-										<tr>
-											<td>Gracias por registrarte con nosotros</td>
-										</tr>
-										<tr>
-											<td>
-												<br>
-												<strong>Tus datos:</strong><br><br>
-												<strong>Nombre:</strong> ".$_POST['nombre']."<br>
-												<strong>Correo electrónico (usuario):</strong> ".$_POST['correo']."<br>
-												<strong>Teléfono:</strong> ".$_POST['telefono']."<br>
-												<strong>Fecha de registro:</strong> ".date("Y-m-d H:i:s")."<br>
-											</td>
-										</tr>
-										<tr>
-											<td>
-												<br>
-												<strong>Para activar tu cuenta es necesario verificarla dando clic en la siguiente liga:</strong><br><br>
-												https://qa.artezannal.com/login.php?u=".base64_encode($userId)."
-											</td>
-										</tr>
-									</table>
-								</center>";
+		$mensaje = "<html>
+									<head><title></title></head>
+									<body style='background:url(https://qa.artezannal.com/images/back_bright.png);background-size:cover;background-position:50% 50%;'>
+										<!--<center>-->
+											<table style='font-size:14px'>
+												<tr>
+													<td><img src='https://qa.artezannal.com/images/logoIndex.png' style='width:70%;max-width:70%'></td>
+												</tr>
+												<tr>
+													<td><br>Gracias por registrarte con nosotros</td>
+												</tr>
+												<tr>
+													<td valign='top'>
+														<br>
+														<strong>Tus datos:</strong><br><br>
+														<strong>Nombre:</strong> ".$_POST['nombre']."<br>
+														<strong>Correo electrónico (usuario):</strong> ".$_POST['correo']."<br>
+														<strong>Teléfono:</strong> ".$_POST['telefono']."<br>
+														<strong>Fecha de registro:</strong> ".date("Y-m-d H:i:s")."<br>
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<br>
+														<strong>Para activar tu cuenta es necesario verificarla dando clic en la siguiente liga:</strong><br><br>
+														https://qa.artezannal.com/index.php?u=".base64_encode($userId)."
+													</td>
+												</tr>
+											</table>
+										<!--</center>-->
+									</body>
+								</html>";
 
 		$mail->Body = utf8_decode($mensaje);
 		$mail->AltBody = utf8_decode($mensaje);
@@ -229,6 +237,29 @@
 		session_start();
 		session_destroy();
 		echo "OK";
+	}
+
+	if($_POST['acc'] == "validarCuenta"){
+
+		$sql = "SELECT * FROM usuarios WHERE id = '".base64_decode($_POST['usuario'])."' and estatus = 'PendienteVerificar' ";
+		$res = mysqli_query($link,$sql);
+		$ex = mysqli_num_rows($res);
+
+		if($ex == 1){
+
+			$sql = "UPDATE usuarios SET estatus = 'Verificado' WHERE id = '".base64_decode($_POST['usuario'])."' and estatus = 'PendienteVerificar' ";
+			$res = mysqli_query($link,$sql);
+
+			$msgCuenta = '<center><span style="font-size:18px;color:#130a56;"><br><br>Su cuenta ha sido verificada con exito.<br><br><a href="javascript:void(0)" onclick="iniciarSesion()">Clic para iniciar sesión</a><br><br><a href="index.php">Clic para seguir navegando</a></span></center>';
+
+		}else{
+
+			$msgCuenta = '<center><span style="font-size:18px;color:#130a56;"><br><br>No se encontraron datos relacionados al link de verificación.<br><br><a href="login.php">Clic para iniciar sesión</a><br><br><a href="index.php">Clic para seguir navegando</a></span></center>';
+
+		}
+
+		echo $msgCuenta;
+
 	}
 
 ?>
