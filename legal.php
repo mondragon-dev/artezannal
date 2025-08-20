@@ -448,138 +448,428 @@
 									<div class="about-team">
 
 										<div class="team-member-info" style="text-align:center;">
-											<h3 class="team-name" style="font-size:24px; color:#130a56; margin-bottom:30px">
-												Aviso de Privacidad Integral
-											</h3>
-											<p style="text-align:justify;">
-												El presente documento constituye el "Aviso de Privacidad" el cual establece los términos bajo los que se manejará su información por parte de <span style="font-weight:bold">ARTEZANNAL</span> quien funge como titular de la página de la marca <span style="font-weight:bold">ARTEZANNAL</span>, de conformidad con lo dispuesto en los artículos 15 y 16 de la Ley Federal de Protección de Datos Personales en Posesión de los Particulares.
-											</p>
-											<br>
- 											<p style="text-align:justify;">
- 												Este aviso describe la finalidad para la cual se ha recabado su información, así como el tipo de datos que se están tratando y las opciones disponibles para limitar su uso. Además, se detalla el procedimiento para ejercer sus derechos en materia de protección de datos, en cumplimiento de los principios de Licitud, Consentimiento, Calidad, Información, Finalidad, Lealtad, Proporcionalidad y Responsabilidad que establece la citada ley.
- 											</p>
- 											<br>
- 											<p style="text-align:justify;">
- 												<span style="font-weight:bold">ARTEZANNAL</span> reconoce y respeta su derecho a la privacidad y protección de datos personales, incluidos los datos personales sensibles, como los datos financieros o patrimoniales, los cuales están protegidos por la Ley. La responsabilidad sobre la base de datos que contiene su información recae en <span style="font-weight:bold">ARTEZANNAL</span>, cuyo domicilio es el ubicado en Tecorral número 15, Col. Club de Golf México, Tlalpan, Ciudad de México, C.P. 14620.
- 											</p>
- 											<br>
- 											<p style="text-align:justify;">
- 												Además, se garantiza que su información se encuentra debidamente resguardada, cumpliendo con las disposiciones de seguridad administrativa, técnica y física establecidas en la Ley de la materia. Esto se realiza con el fin de protegerla de posibles daños, pérdidas, alteraciones o accesos no autorizado.
- 											</p>
- 											<br>
- 											<p style="text-align:justify;">
- 												El titular de la información reconoce y acepta que al proporcionar sus Datos a través de este "Aviso de Privacidad", o mediante cualquier medio electrónico, como lo es el correo electrónico <a href="mailto:contacto@artezannal.com">contacto@artezannal.com</a>, otorga su consentimiento expreso para que <span style="font-weight:bold">ARTEZANNAL</span> lleve a cabo el tratamiento de sus Datos, de conformidad con lo establecido en este Aviso de Privacidad.
-											</p>
-											<br>
- 											<p style="text-align:justify;"> 
-												<span style="font-weight:bold">Datos Personales</span>
-											</p>
-											<br>
- 											<p style="text-align:justify;">
- 												Los datos personales que recabaremos serán aquellos que usted haya incluido en su perfil de usuario, y serán tratados y resguardados con base en los principios establecidos en la Ley y su Reglamento. Para cumplir con las finalidades que se mencionan en el presente Aviso, requerimos que nos proporcione los siguientes datos: nombre completo, número telefónico, correo electrónico, ciudad y estado de residencia.
- 											</p>
- 											<br>
- 											<p style="text-align:justify;">
-												<span style="font-weight:bold">Datos Sensibles</span>
-											</p>
-											<br>
- 											<p style="text-align:justify;">
- 												El Titular de la Información reconoce y acepta que, debido a su relación con <span style="font-weight:bold">ARTEZANNAL</span> no ha proporcionado, ni tendrá que proporcionar “datos personales sensibles”, es decir, aquellos datos personales íntimos o cuya realización debida o indebida pueda dar origen a discriminación o conlleve un riesgo grave para éste. En el supuesto de que el Titular de la Información proporcione datos del tipo de los llamados sensibles, deberá estar de acuerdo en proporcionarlos previamente y dejará a <span style="font-weight:bold">ARTEZANNAL</span> libre de cualquier queja o reclamación respectiva.
- 											</p>
- 											<br>
- 											<p style="text-align:justify;">
- 												<span style="font-weight:bold">Medios para ejercer los Derechos de Acceso, Rectificación, Cancelación u Oposición.</span>
- 											</p>
- 											<br>
- 											<p style="text-align:justify;">
- 												Usted tiene derecho constitucional de Acceder y conocer los datos personales que poseemos y a los detalles del tratamiento y uso de los mismos, así como a Rectificarlos y corregirlos en caso de ser inexactos o incompletos; Cancelarlos y eliminarlos cuando considere que no se requieren para alguna de las finalidades señalados en el presente aviso de privacidad, o que estén siendo utilizados para finalidades no autorizadas por usted o haya finalizado la relación jurídica o de servicio, o bien, Oponerse al tratamiento de los mismos para fines específicos, enviando una solicitud a <span style="font-weight:bold">ARTEZANNAL</span>, a través del sitio web <a href="https://artezannal.com">www.artezannal.com</a> o al correo electrónico <a href="mailto:contacto@artezannal.com">contacto@artezannal.com</a> indicando por lo menos su nombre y domicilio completo o cualquier otro dato o documento que permita su identificación, así como el objeto de su solicitud y/o trámite a efectuar. Lo anterior se deberá realizar en base a la Ley y su Reglamento.
- 											</p>
- 											<br>
- 											<p style="text-align:justify;">
- 												<span style="font-weight:bold">Finalidad</span>
- 											</p>
- 											<br>
- 											<p style="text-align:justify;">
- 												Sus datos personales e historial como cliente serán utilizados por <span style="font-weight:bold">ARTEZANNAL</span> o por cualquiera de sus subsidiaras y/o filiales, y quedarán registrados en nuestra base de datos, así como cualquier otra información personal, sensible o de cualquier otra índole, siempre que se cumpla con lo establecido en la Ley y su Reglamento respecto a cada tipo de información. Esta información puede ser utilizada por <span style="font-weight:bold">ARTEZANNAL</span> para control interno, finalidades comerciales, enviar avisos publicitarios y de mercadotecnia, promociones, avisos de lanzamiento de nuevos productos, entre otros.
- 											</p>
- 											<br>
- 											<p style="text-align:justify;">
- 												Esta información podrá usarse de manera enunciativa mas no limitativa para: (1) ofrecerle productos y servicios, ya sea de manera física, telefónica, electrónica o por cualquier otra tecnología o medio que esté al alcance de <span style="font-weight:bold">ARTEZANNAL</span> (2) hacer de su conocimiento nuevos productos o servicios que puedan ser de interés en relación con el servicio contratado; (3) realizar para su comodidad los cargos facturados de manera automática; (4) emitir órdenes de compra o solicitudes de trabajo, según corresponda; y/o (5) cualquier otra acción que sea necesaria para cumplir con los intereses de <span style="font-weight:bold">ARTEZANNAL</span> respecto al acuerdo que haya llegado con el Titular de la Información.
- 											</p>
- 											<br>
- 											<p style="text-align:justify;">
- 												<span style="font-weight:bold">Transferencia</span>
- 											</p>
- 											<br>
- 											<p style="text-align:justify;">
- 												El Titular de la Información entiende y acepta que <span style="font-weight:bold">ARTEZANNAL</span> y/o cualquiera de sus subsidiarias y/o filiales, podrá transferir sus datos personales a terceros que han sido contratados por <span style="font-weight:bold">ARTEZANNAL</span> para que realicen en su nombre y representación ciertas tareas relacionadas con las actividades comerciales y de promoción de sus productos y/o servicios. Estas terceras partes pueden tratar los datos en cumplimiento de las instrucciones de <span style="font-weight:bold">ARTEZANNAL</span> o tomar decisiones sobre ellos como parte de la prestación de sus servicios. En cualquiera de los dos casos, <span style="font-weight:bold">ARTEZANNAL</span> seleccionará proveedores que considere confiables y que se comprometan, mediante un contrato u otros medios legales aplicables, a implementar las medidas de seguridad necesarias para garantizar un nivel de protección adecuado a sus datos personales. Derivado de lo anterior, <span style="font-weight:bold">ARTEZANNAL</span> exigirá a sus proveedores que cumplan con medidas de seguridad que garanticen los mismos niveles de protección que <span style="font-weight:bold">ARTEZANNAL</span> implementa durante el tratamiento de sus datos como cliente de <span style="font-weight:bold">ARTEZANNAL</span>. Estas terceras partes seleccionadas tendrán acceso a su información con la finalidad de realizar las tareas especificadas en el contrato de servicios aplicable que haya suscrito con <span style="font-weight:bold">ARTEZANNAL</span>. Si <span style="font-weight:bold">ARTEZANNAL</span> determina que un proveedor no está cumpliendo con las obligaciones pactadas, tomará inmediatamente las acciones pertinentes.
- 											</p>
- 											<br>
- 											<p style="text-align:justify;">
- 												Si el titular, no acepta la transmisión de sus datos personales de conformidad con lo estipulado en el párrafo anterior, puede ponerse en contacto con <span style="font-weight:bold">ARTEZANNAL</span> por cualquiera de los medios establecidos en el presente Aviso de Privacidad.
- 											</p>
- 											<br>
- 											<p style="text-align:justify;">
- 												<span style="font-weight:bold">Excepciones</span>
- 											</p>
- 											<br>
- 											<p style="text-align:justify;"> 
- 												Adicionalmente y de conformidad con lo estipulado en los Artículos 10, 37 y demás relativos de la Ley y su Reglamento, <span style="font-weight:bold">ARTEZANNAL</span> quedará exceptuado de las obligaciones referentes al consentimiento para el Tratamiento y Transferencia de sus Datos, cuando:
- 											</p>
- 											<br>
- 											<p style="text-align:left;">
- 												<ul style="text-align: left; margin-left: 30px;">
- 													<li>I. Esté previsto en una Ley;</li>
- 													<li><br>II. Los datos figuren en fuentes de acceso público;</li>
- 													<li><br>III. Los datos personales se sometan a un procedimiento previo de disociación;</li>
- 													<li><br>IV. Tenga el propósito de cumplir obligaciones derivadas de una relación jurídica entre el titular y el responsable;</li>
- 													<li><br>V. Exista una situación de emergencia que potencialmente pueda dañar a un individuo en su persona o en sus bienes;</li>
- 													<li><br>VI. Sean indispensables para la atención médica, la prevención, diagnóstico, la prestación de asistencia sanitaria, tratamientos médicos o la gestión de servicios sanitarios;</li>
- 													<li><br>VII. Se dicte resolución de autoridad competente;</li>
- 													<li><br>VIII. Cuando la transferencia sea precisa para el reconocimiento, ejercicio o defensa de un derecho en un proceso judicial, y</li>
- 													<li><br>IX. Cuando la transferencia sea precisa para el mantenimiento o cumplimiento de una relación jurídica entre el responsable y el titular.</li>
- 												</ul>
- 											</p>
- 											<br>
- 											<p style="text-align:justify;">
- 												<span style="font-weight:bold">Modificaciones</span>
- 											</p>
- 											<br>
- 											<p style="text-align:justify;">
- 												En caso de que se requiera alguna modificación a lo estipulado en el presente Aviso de Privacidad, <span style="font-weight:bold">ARTEZANNAL</span> se obliga a hacer del conocimiento los cambios que en su caso se requieran, por cualquier medio, incluidos los electrónicos, previo aviso que se le dé a usted para que se manifieste por su parte, lo que a su derecho convenga, ya que de no recibir negativa expresa y por escrito de su parte, o bien, respuesta alguna, se entenderá que usted acepta de conformidad los cambios realizados.
- 											</p>
- 											<br>
- 											<p style="text-align:justify;">
- 												<span style="font-weight:bold">Consentimiento del Titular</span>
- 											</p>
- 											<br>
- 											<p style="text-align:justify;"> 
- 												El Titular de la Información reconoce y acepta que en caso de que este “Aviso de Privacidad” esté disponible a través de una página electrónica (sitio web, página de Internet o similar) o algún otro dispositivo electrónico, al hacer clic en “aceptar” o de cualquier otra forma seguir navegando en el sitio, o bien al proporcionar sus Datos a través del mismo o a través de cualquier medio electrónico (correo electrónico, etc.), constituye una manifestación de su consentimiento para que <span style="font-weight:bold">ARTEZANNAL</span> realice el tratamiento de sus Datos, de conformidad con este Aviso de Privacidad.
- 											</p>
- 											<br>
- 											<p style="text-align:justify;">
- 												Asimismo, de igual manera manifiesta que en caso de que este “Aviso de Privacidad” esté disponible por escrito, su firma, rúbrica, nombre o huella o bien al proporcionar sus Datos, constituye una manifestación de su consentimiento para que <span style="font-weight:bold">ARTEZANNAL</span> realice el tratamiento de sus datos, de conformidad con este “Aviso de Privacidad”.
- 											</p>
- 											<br>
- 											<p style="text-align:justify;">
- 												<span style="font-weight:bold">Notificación de cambios del aviso</span>
- 											</p>
- 											<br>
- 											<p style="text-align:justify;">
- 												Si <span style="font-weight:bold">ARTEZANNAL</span> cambia este aviso de privacidad, dichos cambios aparecerán en el sitio web: <a href="https://artezannal.com">www.artezannal.com</a>
- 											</p>
- 											<br>
- 											<p style="text-align:justify;">
- 												Si usted tiene alguna pregunta o desea ejercer algún derecho relacionada con esta declaración de privacidad, por favor comuníquese con <span style="font-weight:bold">ARTEZANNAL</span> y/o sus empresas filiales a la siguiente dirección: <a href="mailto:contacto@artezannal.com">contacto@artezannal.com</a>
- 											</p>
- 											<br>
- 											<p style="text-align:justify;">
- 												<span style="font-weight:bold">Este aviso de privacidad ha sido creado en base a las reglas expedidas por la Ley Federal de Protección de Datos Personales en Posesión de los Particulares con fundamento en los artículos 16, 17 y 36 de la Ley y corresponsales de su Reglamento.</span>
- 											</p>
- 											<br>
- 											<p style="text-align:right;margin-top: 50px;">
- 												Fecha de Actualización 29/01/2025
- 											</p>
+
+											<?php
+												if($_GET['l'] == "ap"){
+											?>
+													<h3 class="team-name" style="font-size:24px; color:#130a56; margin-bottom:30px">
+														Aviso de Privacidad Integral
+													</h3>
+													<p style="text-align:justify;">
+														El presente documento constituye el "Aviso de Privacidad" el cual establece los términos bajo los que se manejará su información por parte de <span style="font-weight:bold">ARTEZANNAL</span> quien funge como titular de la página de la marca <span style="font-weight:bold">ARTEZANNAL</span>, de conformidad con lo dispuesto en los artículos 15 y 16 de la Ley Federal de Protección de Datos Personales en Posesión de los Particulares.
+													</p>
+													<br>
+		 											<p style="text-align:justify;">
+		 												Este aviso describe la finalidad para la cual se ha recabado su información, así como el tipo de datos que se están tratando y las opciones disponibles para limitar su uso. Además, se detalla el procedimiento para ejercer sus derechos en materia de protección de datos, en cumplimiento de los principios de Licitud, Consentimiento, Calidad, Información, Finalidad, Lealtad, Proporcionalidad y Responsabilidad que establece la citada ley.
+		 											</p>
+		 											<br>
+		 											<p style="text-align:justify;">
+		 												<span style="font-weight:bold">ARTEZANNAL</span> reconoce y respeta su derecho a la privacidad y protección de datos personales, incluidos los datos personales sensibles, como los datos financieros o patrimoniales, los cuales están protegidos por la Ley. La responsabilidad sobre la base de datos que contiene su información recae en <span style="font-weight:bold">ARTEZANNAL</span>, cuyo domicilio es el ubicado en Tecorral número 15, Col. Club de Golf México, Tlalpan, Ciudad de México, C.P. 14620.
+		 											</p>
+		 											<br>
+		 											<p style="text-align:justify;">
+		 												Además, se garantiza que su información se encuentra debidamente resguardada, cumpliendo con las disposiciones de seguridad administrativa, técnica y física establecidas en la Ley de la materia. Esto se realiza con el fin de protegerla de posibles daños, pérdidas, alteraciones o accesos no autorizado.
+		 											</p>
+		 											<br>
+		 											<p style="text-align:justify;">
+		 												El titular de la información reconoce y acepta que al proporcionar sus Datos a través de este "Aviso de Privacidad", o mediante cualquier medio electrónico, como lo es el correo electrónico <a href="mailto:contacto@artezannal.com">contacto@artezannal.com</a>, otorga su consentimiento expreso para que <span style="font-weight:bold">ARTEZANNAL</span> lleve a cabo el tratamiento de sus Datos, de conformidad con lo establecido en este Aviso de Privacidad.
+													</p>
+													<br>
+		 											<p style="text-align:justify;"> 
+														<span style="font-weight:bold">Datos Personales</span>
+													</p>
+													<br>
+		 											<p style="text-align:justify;">
+		 												Los datos personales que recabaremos serán aquellos que usted haya incluido en su perfil de usuario, y serán tratados y resguardados con base en los principios establecidos en la Ley y su Reglamento. Para cumplir con las finalidades que se mencionan en el presente Aviso, requerimos que nos proporcione los siguientes datos: nombre completo, número telefónico, correo electrónico, ciudad y estado de residencia.
+		 											</p>
+		 											<br>
+		 											<p style="text-align:justify;">
+														<span style="font-weight:bold">Datos Sensibles</span>
+													</p>
+													<br>
+		 											<p style="text-align:justify;">
+		 												El Titular de la Información reconoce y acepta que, debido a su relación con <span style="font-weight:bold">ARTEZANNAL</span> no ha proporcionado, ni tendrá que proporcionar “datos personales sensibles”, es decir, aquellos datos personales íntimos o cuya realización debida o indebida pueda dar origen a discriminación o conlleve un riesgo grave para éste. En el supuesto de que el Titular de la Información proporcione datos del tipo de los llamados sensibles, deberá estar de acuerdo en proporcionarlos previamente y dejará a <span style="font-weight:bold">ARTEZANNAL</span> libre de cualquier queja o reclamación respectiva.
+		 											</p>
+		 											<br>
+		 											<p style="text-align:justify;">
+		 												<span style="font-weight:bold">Medios para ejercer los Derechos de Acceso, Rectificación, Cancelación u Oposición.</span>
+		 											</p>
+		 											<br>
+		 											<p style="text-align:justify;">
+		 												Usted tiene derecho constitucional de Acceder y conocer los datos personales que poseemos y a los detalles del tratamiento y uso de los mismos, así como a Rectificarlos y corregirlos en caso de ser inexactos o incompletos; Cancelarlos y eliminarlos cuando considere que no se requieren para alguna de las finalidades señalados en el presente aviso de privacidad, o que estén siendo utilizados para finalidades no autorizadas por usted o haya finalizado la relación jurídica o de servicio, o bien, Oponerse al tratamiento de los mismos para fines específicos, enviando una solicitud a <span style="font-weight:bold">ARTEZANNAL</span>, a través del sitio web <a href="https://artezannal.com">www.artezannal.com</a> o al correo electrónico <a href="mailto:contacto@artezannal.com">contacto@artezannal.com</a> indicando por lo menos su nombre y domicilio completo o cualquier otro dato o documento que permita su identificación, así como el objeto de su solicitud y/o trámite a efectuar. Lo anterior se deberá realizar en base a la Ley y su Reglamento.
+		 											</p>
+		 											<br>
+		 											<p style="text-align:justify;">
+		 												<span style="font-weight:bold">Finalidad</span>
+		 											</p>
+		 											<br>
+		 											<p style="text-align:justify;">
+		 												Sus datos personales e historial como cliente serán utilizados por <span style="font-weight:bold">ARTEZANNAL</span> o por cualquiera de sus subsidiaras y/o filiales, y quedarán registrados en nuestra base de datos, así como cualquier otra información personal, sensible o de cualquier otra índole, siempre que se cumpla con lo establecido en la Ley y su Reglamento respecto a cada tipo de información. Esta información puede ser utilizada por <span style="font-weight:bold">ARTEZANNAL</span> para control interno, finalidades comerciales, enviar avisos publicitarios y de mercadotecnia, promociones, avisos de lanzamiento de nuevos productos, entre otros.
+		 											</p>
+		 											<br>
+		 											<p style="text-align:justify;">
+		 												Esta información podrá usarse de manera enunciativa mas no limitativa para: (1) ofrecerle productos y servicios, ya sea de manera física, telefónica, electrónica o por cualquier otra tecnología o medio que esté al alcance de <span style="font-weight:bold">ARTEZANNAL</span> (2) hacer de su conocimiento nuevos productos o servicios que puedan ser de interés en relación con el servicio contratado; (3) realizar para su comodidad los cargos facturados de manera automática; (4) emitir órdenes de compra o solicitudes de trabajo, según corresponda; y/o (5) cualquier otra acción que sea necesaria para cumplir con los intereses de <span style="font-weight:bold">ARTEZANNAL</span> respecto al acuerdo que haya llegado con el Titular de la Información.
+		 											</p>
+		 											<br>
+		 											<p style="text-align:justify;">
+		 												<span style="font-weight:bold">Transferencia</span>
+		 											</p>
+		 											<br>
+		 											<p style="text-align:justify;">
+		 												El Titular de la Información entiende y acepta que <span style="font-weight:bold">ARTEZANNAL</span> y/o cualquiera de sus subsidiarias y/o filiales, podrá transferir sus datos personales a terceros que han sido contratados por <span style="font-weight:bold">ARTEZANNAL</span> para que realicen en su nombre y representación ciertas tareas relacionadas con las actividades comerciales y de promoción de sus productos y/o servicios. Estas terceras partes pueden tratar los datos en cumplimiento de las instrucciones de <span style="font-weight:bold">ARTEZANNAL</span> o tomar decisiones sobre ellos como parte de la prestación de sus servicios. En cualquiera de los dos casos, <span style="font-weight:bold">ARTEZANNAL</span> seleccionará proveedores que considere confiables y que se comprometan, mediante un contrato u otros medios legales aplicables, a implementar las medidas de seguridad necesarias para garantizar un nivel de protección adecuado a sus datos personales. Derivado de lo anterior, <span style="font-weight:bold">ARTEZANNAL</span> exigirá a sus proveedores que cumplan con medidas de seguridad que garanticen los mismos niveles de protección que <span style="font-weight:bold">ARTEZANNAL</span> implementa durante el tratamiento de sus datos como cliente de <span style="font-weight:bold">ARTEZANNAL</span>. Estas terceras partes seleccionadas tendrán acceso a su información con la finalidad de realizar las tareas especificadas en el contrato de servicios aplicable que haya suscrito con <span style="font-weight:bold">ARTEZANNAL</span>. Si <span style="font-weight:bold">ARTEZANNAL</span> determina que un proveedor no está cumpliendo con las obligaciones pactadas, tomará inmediatamente las acciones pertinentes.
+		 											</p>
+		 											<br>
+		 											<p style="text-align:justify;">
+		 												Si el titular, no acepta la transmisión de sus datos personales de conformidad con lo estipulado en el párrafo anterior, puede ponerse en contacto con <span style="font-weight:bold">ARTEZANNAL</span> por cualquiera de los medios establecidos en el presente Aviso de Privacidad.
+		 											</p>
+		 											<br>
+		 											<p style="text-align:justify;">
+		 												<span style="font-weight:bold">Excepciones</span>
+		 											</p>
+		 											<br>
+		 											<p style="text-align:justify;"> 
+		 												Adicionalmente y de conformidad con lo estipulado en los Artículos 10, 37 y demás relativos de la Ley y su Reglamento, <span style="font-weight:bold">ARTEZANNAL</span> quedará exceptuado de las obligaciones referentes al consentimiento para el Tratamiento y Transferencia de sus Datos, cuando:
+		 											</p>
+		 											<br>
+		 											<p style="text-align:left;">
+		 												<ul style="text-align: left; margin-left: 30px;">
+		 													<li>I. Esté previsto en una Ley;</li>
+		 													<li><br>II. Los datos figuren en fuentes de acceso público;</li>
+		 													<li><br>III. Los datos personales se sometan a un procedimiento previo de disociación;</li>
+		 													<li><br>IV. Tenga el propósito de cumplir obligaciones derivadas de una relación jurídica entre el titular y el responsable;</li>
+		 													<li><br>V. Exista una situación de emergencia que potencialmente pueda dañar a un individuo en su persona o en sus bienes;</li>
+		 													<li><br>VI. Sean indispensables para la atención médica, la prevención, diagnóstico, la prestación de asistencia sanitaria, tratamientos médicos o la gestión de servicios sanitarios;</li>
+		 													<li><br>VII. Se dicte resolución de autoridad competente;</li>
+		 													<li><br>VIII. Cuando la transferencia sea precisa para el reconocimiento, ejercicio o defensa de un derecho en un proceso judicial, y</li>
+		 													<li><br>IX. Cuando la transferencia sea precisa para el mantenimiento o cumplimiento de una relación jurídica entre el responsable y el titular.</li>
+		 												</ul>
+		 											</p>
+		 											<br>
+		 											<p style="text-align:justify;">
+		 												<span style="font-weight:bold">Modificaciones</span>
+		 											</p>
+		 											<br>
+		 											<p style="text-align:justify;">
+		 												En caso de que se requiera alguna modificación a lo estipulado en el presente Aviso de Privacidad, <span style="font-weight:bold">ARTEZANNAL</span> se obliga a hacer del conocimiento los cambios que en su caso se requieran, por cualquier medio, incluidos los electrónicos, previo aviso que se le dé a usted para que se manifieste por su parte, lo que a su derecho convenga, ya que de no recibir negativa expresa y por escrito de su parte, o bien, respuesta alguna, se entenderá que usted acepta de conformidad los cambios realizados.
+		 											</p>
+		 											<br>
+		 											<p style="text-align:justify;">
+		 												<span style="font-weight:bold">Consentimiento del Titular</span>
+		 											</p>
+		 											<br>
+		 											<p style="text-align:justify;"> 
+		 												El Titular de la Información reconoce y acepta que en caso de que este “Aviso de Privacidad” esté disponible a través de una página electrónica (sitio web, página de Internet o similar) o algún otro dispositivo electrónico, al hacer clic en “aceptar” o de cualquier otra forma seguir navegando en el sitio, o bien al proporcionar sus Datos a través del mismo o a través de cualquier medio electrónico (correo electrónico, etc.), constituye una manifestación de su consentimiento para que <span style="font-weight:bold">ARTEZANNAL</span> realice el tratamiento de sus Datos, de conformidad con este Aviso de Privacidad.
+		 											</p>
+		 											<br>
+		 											<p style="text-align:justify;">
+		 												Asimismo, de igual manera manifiesta que en caso de que este “Aviso de Privacidad” esté disponible por escrito, su firma, rúbrica, nombre o huella o bien al proporcionar sus Datos, constituye una manifestación de su consentimiento para que <span style="font-weight:bold">ARTEZANNAL</span> realice el tratamiento de sus datos, de conformidad con este “Aviso de Privacidad”.
+		 											</p>
+		 											<br>
+		 											<p style="text-align:justify;">
+		 												<span style="font-weight:bold">Notificación de cambios del aviso</span>
+		 											</p>
+		 											<br>
+		 											<p style="text-align:justify;">
+		 												Si <span style="font-weight:bold">ARTEZANNAL</span> cambia este aviso de privacidad, dichos cambios aparecerán en el sitio web: <a href="https://artezannal.com">www.artezannal.com</a>
+		 											</p>
+		 											<br>
+		 											<p style="text-align:justify;">
+		 												Si usted tiene alguna pregunta o desea ejercer algún derecho relacionada con esta declaración de privacidad, por favor comuníquese con <span style="font-weight:bold">ARTEZANNAL</span> y/o sus empresas filiales a la siguiente dirección: <a href="mailto:contacto@artezannal.com">contacto@artezannal.com</a>
+		 											</p>
+		 											<br>
+		 											<p style="text-align:justify;">
+		 												<span style="font-weight:bold">Este aviso de privacidad ha sido creado en base a las reglas expedidas por la Ley Federal de Protección de Datos Personales en Posesión de los Particulares con fundamento en los artículos 16, 17 y 36 de la Ley y corresponsales de su Reglamento.</span>
+		 											</p>
+		 											<br>
+		 											<p style="text-align:right;margin-top: 50px;">
+		 												Fecha de Actualización 29/01/2025
+		 											</p>
+		 									<?php
+		 										}elseif($_GET['l'] == "tc"){
+		 									?>
+		 											<h3 class="team-name" style="font-size:24px; color:#130a56; margin-bottom:30px">
+		 												TÉRMINOS Y CONDICIONES
+		 											</h3>
+		 											<br>
+		 											<p style="text-align:justify;">
+		 												<span style="font-weight:bold">RESUMEN</span>
+		 											</p>
+		 											<br>
+		 											<p style="text-align:justify;">
+		 												Este sitio web con dominio <a href="https://artezannal.com">www.artezannal.com</a> es operado por <span style="font-weight:bold">ARTEZANNAL</span>. A lo largo de la presente declaración de TÉRMINOS DEL SERVICIO se mencionará "nosotros" y "nuestro" refiriéndose a <span style="font-weight:bold">ARTEZANNAL</span>, quien ofrece este sitio web, incluyendo toda la información, herramientas y servicios disponibles para el usuario, condicionando la aceptación de todos los términos, condiciones, políticas y avisos aquí establecidos.
+		 											</p>
+		 											<br>
+		 											<p style="text-align:justify;">
+		 												Al visitar nuestro sitio, el “USUARIO” participa en nuestro "SERVICIO" y acepta estar sujeto a nuestros “TÉRMINOS DEL SERVICIO”, incluidos términos y condiciones adicionales y políticas accesibles mediante hipervínculos dentro de nuestro sitio web. Estos TÉRMINOS DEL SERVICIO se aplican a todos los usuarios del sitio, incluidos sin limitación, navegadores, vendedores, proveedores, clientes, comerciantes y/o contribuidores de contenido.
+		 											</p>
+		 											<br>
+		 											<p style="text-align:justify;">
+		 												Por favor, revise cuidadosamente la presente información antes de navegar en nuestro sitio web. Al acceder o utilizar cualquier parte de nuestro sitio web, el usuario acepta estar sujeto a los TÉRMINOS DEL SERVICIO. <span style="font-weight:bold">Si no está de acuerdo con los presentes términos y condiciones, deberá abstenerse de acceder o utilizar el sitio</span>.
+		 											</p>
+		 											<br>
+		 											<p style="text-align:justify;">
+		 												Las nuevas características o herramientas que se agreguen al sitio web también estarán sujetas a los TÉRMINOS DEL SERVICIO. Siempre que el usuario lo desee, podrá revisar la versión actualizada en esta página. Nos reservamos el derecho de actualizar, cambiar o reemplazar cualquier parte de nuestros términos, condiciones o políticas mediante la publicación de actualizaciones y/o cambios en nuestro sitio web. Es responsabilidad del usuario revisar esta página periódicamente para verificar si hay cambios. El uso continuo o acceso al sitio web después de la publicación de cualquier cambio constituye la aceptación de estos.
+		 											</p>
+		 											<br>
+		 											<p style="text-align:justify;">
+		 												<span style="font-weight:bold">CONDICIONES GENERALES</span>
+		 											</p>
+		 											<br>
+		 											<p style="text-align:justify;">
+		 												Nos reservamos el derecho de rechazar el servicio a cualquier persona, por cualquier motivo, en cualquier momento.  El usuario se compromete a no reproducir, duplicar, copiar, vender, revender o explotar ninguna parte, producto, contacto o acceso a nuestro servicio, sin el permiso expreso por escrito de parte de nosotros.
+		 											</p>
+		 											<br>
+		 											<p style="text-align:justify;">
+		 												Los encabezados utilizados en este acuerdo se incluyen sólo por conveniencia y no limitarán ni afectarán de ninguna otra manera estos términos.
+		 											</p>
+		 											<br>
+		 											<p style="text-align:justify;">  
+		 												<span style="font-weight:bold">EXACTITUD, INTEGRIDAD Y ACTUALIZACIÓN DE LA INFORMACIÓN (CONTENIDOS DEL SITIO WEB)</span>
+		 											</p>
+		 											<br>
+		 											<p style="text-align:justify;">
+		 												No somos responsables si la información disponible en nuestro sitio web no es exacta, completa o actualizada. El material de este sitio se proporciona únicamente para fines informativos generales. Nos reservamos el derecho de modificar el contenido de este sitio en cualquier momento. El usuario acepta que es su responsabilidad supervisar cualquier cambio que se realice en nuestro sitio.
+		 											</p>
+		 											<br>
+		 											<p style="text-align:justify;">
+		 												<span style="font-weight:bold">INFORMACIÓN PERSONAL</span>
+		 											</p>
+		 											<br>
+		 											<p style="text-align:justify;">
+		 												La información personal del usuario es recopilada, almacenada, utilizada y divulgada por nosotros siguiendo los más altos estándares de seguridad. Los datos proporcionados por el usuario se rigen por nuestro AVISO DE PRIVACIDAD, el cual está disponible en nuestro sitio web para su consulta.
+		 											</p>
+		 											<br>
+		 											<p style="text-align:justify;">
+		 												<span style="font-weight:bold">USOS PROHIBIDOS</span>
+		 											</p>
+		 											<br>
+		 											<p style="text-align:justify;">
+		 												Además de otras prohibiciones establecidas en los TÉRMINOS DEL SERVICIO, está prohibido utilizar el sitio o su contenido: (a) para cualquier propósito ilícito; b) solicitar a otros que realicen o participen en actos ilícitos; (c) violar cualquier reglamento o ley local, internacional, federal o estatal; (d) infringir o violar nuestros derechos de propiedad intelectual o los derechos de propiedad intelectual de terceros; (e) acosar, abusar, insultar, dañar, difamar, calumniar, desacreditar, intimidar o discriminar por motivos de género, orientación sexual, religión, origen étnico, raza, edad, nacionalidad o discapacidad; f) presentar información falsa o engañosa; (g) cargar o transmitir virus o cualquier otro código de tipo malicioso; (h) recopilar o rastrear la información personal de otros; (i) realizar spam, phishing o cualquier otra irregularidad y/o fraude electrónico; (j) para cualquier propósito obsceno o inmoral; (k) interferir o eludir las características de seguridad del Servicio. Nos reservamos el derecho de terminar el uso del servicio a cualquier usuario que viole los usos prohibidos.
+		 											</p>
+		 											<br>
+		 											<p style="text-align:justify;">
+		 												<span style="font-weight:bold">USO Y RESTRICCIONES</span>
+		 											</p>
+		 											<br>
+		 											<p style="text-align:justify;">
+		 												El acceso o utilización del Sitio expresan la plena adhesión del Usuario a los presentes Términos y Condiciones. A través del Sitio, el Usuario podrá acceder, contratar y/o utilizar diversos servicios y contenidos (los “Servicios y Contenidos”), proporcionados por la Empresa. La Empresa se reserva el derecho a negar, restringir o condicionar al Usuario el acceso al Sitio, total o parcialmente, a su entera discreción, así como a modificar los Servicios y Contenidos del Sitio en cualquier momento y sin necesidad de previo aviso. 
+		 											</p>
+		 											<br>
+		 											<p style="text-align:justify;">
+		 												El Usuario reconoce que no todos los Servicios y Contenidos están disponibles en todas las áreas geográficas y que algunos Servicios y Contenidos pueden requerir contratación, activación o registro previo y/o pago. 
+		 											</p>
+		 											<br>
+		 											<p style="text-align:justify;">
+		 												La Empresa no garantiza la disponibilidad y continuidad de la operación del Sitio y de los Servicios y Contenidos, ni la utilidad para alguna actividad específica, independientemente del medio de acceso utilizado por el Usuario. La Empresa no será responsable por cualquier daño o pérdida debido a la falta de disponibilidad o continuidad del Sitio y/o de los Servicios y Contenidos.
+		 											</p>
+		 											<br>
+		 											<p style="text-align:justify;">
+		 												El uso de los Servicios y Contenidos en el Sitio es exclusiva responsabilidad del Usuario, quien deberá utilizarlos conforme a las funcionalidades permitidas en el Sitio y los usos autorizados en los presentes Términos y Condiciones. El Usuario se compromete a no contravenir las buenas costumbres, los derechos de terceros, las normas de uso y convivencia en Internet, las leyes de los Estados Unidos Mexicanos y, la legislación vigente en el país en que el Usuario se encuentre al acceder al Sitio y usar los Servicios y Contenidos. El Sitio es para el uso individual del Usuario por lo que no podrá comercializar de manera alguna los Servicios y Contenidos.
+		 											</p>
+		 											<br>
+		 											<p style="text-align:justify;">
+		 												El Usuario se obliga a dejar en paz y a salvo a la Empresa, a sus accionistas, subsidiarias, afiliadas, funcionarios, directores, empleados, asesores, apoderados, representantes y/o cualquier persona relacionada con ésta, respecto del uso de la información o documentación adquirida por parte del Usuario a través del Sitio, en la inteligencia de que la Empresa no es, ni será responsable de cualquier uso que el Usuario le dé a dicha información o documentación, ni por las consecuencias generadas o que pudieran generarse derivado de su uso.
+		 											</p>
+		 											<br>
+		 											<p style="text-align:justify;">
+		 												El Usuario no tiene el derecho de colocar híper ligas dentro del Sitio, a utilizar las ligas del Sitio, ni el derecho de colocar o utilizar los Servicios y Contenidos en sitios o páginas propias o de terceros sin autorización previa y por escrito de la Empresa. El Usuario no podrá impedir a cualquier otro Usuario el uso del Sitio ni de los Servicios y Contenidos.
+		 											</p>
+		 											<br>
+		 											<p style="text-align:justify;">
+		 												<span style="font-weight:bold">PROPIEDAD INTELECTUAL</span>
+		 											</p>
+		 											<br>
+		 											<p style="text-align:justify;">
+		 												<span style="font-weight:bold">ARTEZANNAL</span> cuenta sus registros marcarios ante el Instituto Mexicano de Propiedad Industrial, así que queda prohibido el uso indebido de ellos bajo ningún tipo de circunstancia. En cuanto a las fotografías, imágenes y videos que se utilicen en la página web de <span style="font-weight:bold">ARTEZANNAL</span> se declara en la presente cláusula que los derechos de autor pertenecen a <span style="font-weight:bold">ARTEZANNAL</span> y se prohíbe hacer un uso con las mismas. Sus logotipos y todo el material que aparece en la página de Internet referida son marcas, nombres de dominio y/o nombres comerciales propiedad de sus respectivos titulares protegidos por los tratados internacionales y leyes aplicables en materia de propiedad intelectual y derechos de autor. 
+		 											</p>
+		 											<br>
+		 											<p style="text-align:justify;">
+		 												Los derechos de propiedad intelectual, derechos de autor, propiedad industrial respecto de los Servicios y Contenidos, los signos distintivos y dominios de las Páginas o del Sitio, así como los derechos de uso y explotación de estos, incluyendo de manera enunciativa más no limitativa, su divulgación, publicación, reproducción, distribución y transformación, son propiedad exclusiva de la Empresa. El Usuario no adquiere ningún derecho de propiedad intelectual, derechos de autor y/o propiedad industrial por el simple uso o acceso de los Servicios y Contenidos del Sitio y, en ningún momento, dicho uso será considerado como una autorización o licencia para utilizar los Servicios y Contenidos con fines distintos a los que se contemplan en los presentes Términos y Condiciones.
+		 											</p>
+		 											<br>
+		 											<p style="text-align:justify;">
+		 												<span style="font-weight:bold">PROPIEDAD INTELECTUAL DE TERCEROS</span>
+		 											</p>
+		 											<br>
+		 											<p style="text-align:justify;">
+		 												El Usuario acuerda que las disposiciones establecidas en las leyes aplicables en materia de propiedad intelectual y derechos de autor, respecto a la titularidad de los derechos de la Empresa, también son aplicables a los derechos de terceros sobre los Servicios y Contenidos de las páginas, dominios o presentación de información o vinculada al Sitio.
+		 											</p>
+		 											<br>
+		 											<p style="text-align:justify;">
+		 												<span style="font-weight:bold">CALIDAD DE LOS SERVICIOS Y CONTENIDOS Y SUS GARANTÍAS</span>
+		 											</p>
+		 											<br>
+		 											<p style="text-align:justify;">
+		 												Los Servicios y Contenidos, así como las recomendaciones y consejos obtenidos a través del Sitio, son de naturaleza general y no deben ser considerados para la toma de decisiones personales, comerciales o profesionales. Para ello, se debe consultar a un profesional adecuado que pueda asesorar al Usuario según sus necesidades específicas. La Empresa ofrece herramientas y materiales a través del Sitio para la preparación de los Servicios.
+		 											</p>
+		 											<br>
+		 											<p style="text-align:justify;">
+		 												Todos los Servicios y Contenidos, incluyendo descripciones, información, definiciones y otros recursos, son estrictamente informativas y generales. La Empresa no garantiza su exactitud o actualización.
+		 											</p>
+		 											<br>
+		 											<p style="text-align:justify;">
+		 												La Empresa ofrece los Servicios y Contenidos con un nivel de competencia y diligencia razonable desde un punto de vista comercial, sin embargo, no ofrece ningún tipo de garantía en relación con estos. El Sitio es proporcionado por la Empresa “tal como está” y “según disponibilidad”. La Empresa no manifiesta ninguna representación o garantía de ningún tipo, expresa o implícita, en relación con la operación del Sitio, información, contenido, materiales, servicios o productos incluidos. El Usuario acepta expresamente que el uso del Sitio bajo su propio riesgo. La Empresa se reserva el derecho a remover o eliminar cualquier información del Sitio, en cualquier momento, a su entera discreción. Ni la Empresa, ni sus proveedores, socios comerciales o distribuidores ofrecen garantías específicas sobre los Servicios y Contenidos; la Empresa excluye todas las garantías en la medida que las leyes vigentes lo permitan.
+		 											</p>
+		 											<br>
+		 											<p style="text-align:justify;">
+		 												De conformidad con los Términos y Condiciones, la Empresa no asume ni asumirá ningún tipo de responsabilidad frente a ninguna persona, derivada o que pudiera derivarse por los Servicios y Contenidos, navegación en el Sitio, consultas, aclaraciones y/o cualquier otra clase de respuesta otorgada por parte de la Empresa por cualquier medio de comunicación.
+		 											</p>
+		 											<br>
+		 											<p style="text-align:justify;">
+		 												El Usuario se obliga a dejar en paz y a salvo a la Empresa, a sus accionistas, subsidiarias, afiliadas, funcionarios, directores, empleados, asesores, apoderados, representantes y/o cualquier persona relacionada con ésta, de cualquier responsabilidad que pudiera imputarse en virtud y/o en relación con el Sitio, la prestación de los Servicios y Contenidos o cualquier otro derivado de los presentes Términos y Condiciones.
+		 											</p>
+		 											<br>
+		 											<p style="text-align:justify;">
+		 												El Usuario entiende y acepta que la Empresa se encontrará limitada por responsabilidad de cualquier tipo, en todos los casos, al monto pagado como contraprestación por los Servicios y Contenidos.
+		 											</p>
+		 											<br>
+		 											<p style="text-align:justify;">
+		 												<span style="font-weight:bold">PAGOS</span>
+		 											</p>
+		 											<br>
+		 											<p style="text-align:justify;">
+		 												La Empresa a su entera discreción podrá cambiar el precio de cada uno de los Servicios y Contenidos dentro del Sitio en cualquier momento.  La empresa únicamente recibirá los pagos que se realicen por medio de tarjetas de crédito, débito y PayPal.
+		 											</p>
+		 											<br>
+		 											<p style="text-align:justify;">
+		 												El usuario puede solicitar la factura a la empresa siempre y cuando envíe sus datos fiscales (Constancia de Situación Fiscal), y esta sea solicitada dentro del mes natural en que realizo su compra, pasada esa fecha la empresa no tiene la responsabilidad de emitir la factura correspondiente.
+		 											</p>
+		 											<br>
+		 											<p style="text-align:justify;">
+		 												En caso de aplicar algún reembolso serán otorgados siempre y cuando se envíe una nota de crédito, una vez que la empresa reciba previa confirmación.
+		 											</p>
+		 											<br>
+		 											<p style="text-align:justify;">
+		 												<span style="font-weight:bold">BIENES Y SERVICIOS DE TERCEROS ENLAZADOS</span>
+		 											</p>
+		 											<br>
+		 											<p style="text-align:justify;">
+		 												El hecho de que se ofrezca información en el Sitio o en otros sitios ligados o vinculados, no implica la recomendación, garantía, patrocinio o aprobación por parte de la Empresa respecto de dicha información, bienes y/o servicios. La disponibilidad de bienes y/o servicios ofertados por terceros o por sitios ligados o vinculados, no es responsabilidad de la Empresa. En virtud de lo anterior, la Empresa no será responsable ante cualquier autoridad de cualquier naturaleza, por cualquier asunto relacionado con la venta, consumo, distribución, entrega, disponibilidad o prestación con respecto de cualquiera de los bienes y/o servicios ofertados por terceros o por sitios ligados o vinculados a través del Sitio. Respecto de los Servicios y Contenidos que prestan terceros dentro o mediante enlaces al Sitio (tales como ligas, banners y botones), la Empresa se limita exclusivamente, para conveniencia del Usuario, a: (i) informar al Usuario sobre los mismos y, (ii) a proporcionar un medio para poner en contacto al Usuario con proveedores o vendedores. Los productos y/o servicios que se comercializan dentro del Sitio y/o en los sitios de terceros enlazados son suministrados por comerciantes independientes y no se entenderá en ningún caso que son responsabilidad de la Empresa. No existe ningún tipo de relación laboral, asociación o sociedad, entre la Empresa y dichos terceros. Toda asesoría, consejo, declaración, información y contenido de las páginas de terceros enlazadas o dentro del Sitio representan las opiniones y juicios de dicho tercero, consecuentemente, la Empresa no será responsable de ningún daño o perjuicio que sufra el Usuario a consecuencia de estos.
+		 											</p>
+		 											<br>
+		 											<p style="text-align:justify;">
+		 												<span style="font-weight:bold">CONFIDENCIALIDAD</span>
+		 											</p>
+		 											<br>
+		 											<p style="text-align:justify;">
+		 												La Empresa se obliga a mantener confidencial la información que reciba del Usuario que tenga dicho carácter conforme a las disposiciones legales aplicables en los Estados Unidos Mexicanos; la Empresa no asume ninguna obligación de mantener confidencial cualquier otra información que el Usuario le proporcione.
+		 											</p>
+		 											<br>
+		 											<p style="text-align:justify;">
+		 												La Empresa podrá divulgar la información del Usuario y de los Servicios y Contenidos adquiridos por éste a aquellos terceros que, en virtud de los servicios y productos ofrecidos y adquiridos, necesiten conocerlos para cumplir cabalmente con los mismos.
+		 											</p>
+		 											<br>
+		 											<p style="text-align:justify;">
+		 												Asimismo, la Empresa puede divulgar su información a las autoridades competentes en términos de la legislación aplicable; cualquier transferencia de sus datos personales sin consentimiento se realizará de acuerdo con el Artículo 37 de la LFPDPPP.
+		 											</p>
+		 											<br>
+		 											<p style="text-align:justify;">
+		 												<span style="font-weight:bold">USO DE LA INFORMACIÓN NO CONFIDENCIAL</span> 
+		 											</p>
+		 											<br>
+		 											<p style="text-align:justify;">
+		 												Mediante el uso del Sitio, el Usuario autoriza a la Empresa, de manera enunciativa más no limitativa, a utilizar, publicar, reproducir, divulgar, comunicar públicamente y transmitir la información no confidencial, en términos de lo establecido en la Ley Federal de Protección de Datos Personales en Posesión de Particulares, en la Ley Federal de los Derechos de Autor, en la Ley Federal de Protección al Consumidor y en cualquiera otra aplicable en la legislación mexicana, para efecto de enviar publicidad, promociones y lanzamientos de nuevos productos.
+		 											</p>
+		 											<br>
+		 											<p style="text-align:justify;">
+		 												<span style="font-weight:bold">COOKIES</span>
+		 											</p>
+		 											<br>
+		 											<p style="text-align:justify;">
+		 												El Usuario que tenga acceso al Sitio, conviene en recibir archivos que les transmitan los servidores de la Empresa. Una “Cookie” es un archivo de datos que se almacena en el disco duro de la computadora del Usuario cuando éste acceda al Sitio. Dichos archivos pueden contener información tal como la identificación proporcionada por el Usuario o información para rastrear las páginas que el Usuario ha visitado. Una Cookie no puede leer los datos o información del disco duro del Usuario ni leer las Cookies creadas por otros sitios o páginas. Generalmente, las Cookies son aceptadas automáticamente, el Usuario puede cambiar la configuración de su navegador en cualquier momento. En caso de que el Usuario decida rechazar las Cookies, es posible que ciertas secciones del Sitio no tengan su funcionamiento óptimo o incluso no funcionen en absoluto.
+		 											</p>
+		 											<br>
+		 											<p style="text-align:justify;">
+		 												<span style="font-weight:bold">AVISO DE PRIVACIDAD DE DATOS PERSONALES</span>
+		 											</p>
+		 											<br>
+		 											<p style="text-align:justify;">
+		 												Toda la información que la Empresa recabe del Usuario es tratada con absoluta confidencialidad conforme las disposiciones legales aplicables en la legislación mexicana. Para conocer más sobre la protección de sus datos personales por favor consulte nuestro Aviso de Privacidad.
+		 											</p>
+		 											<br>
+		 											<p style="text-align:justify;">
+		 												<span style="font-weight:bold">MODIFICACIONES</span>
+		 											</p>
+		 											<br>
+		 											<p style="text-align:justify;">
+		 												La Empresa tendrá el derecho de modificar, en cualquier momento, los Términos y Condiciones, sin previo aviso y/o consentimiento del Usuario. En consecuencia, el Usuario debe leer atentamente los Términos y Condiciones cada vez que pretenda utilizar el Sitio. Ciertos Servicios y Contenidos ofrecidos a los Usuarios en y/o a través del Sitio están sujetos a condiciones particulares propias que sustituyen, completan y/o modifican los presentes Términos y Condiciones. Consiguientemente, el Usuario también debe leer atentamente las correspondientes condiciones particulares antes de acceder a cualquiera de los Servicios y Contenidos.
+		 											</p>
+		 											<br>
+		 											<p style="text-align:justify;">
+		 												<span style="font-weight:bold">SERVICIOS</span>
+		 											</p>
+		 											<br>
+		 											<p style="text-align:justify;">
+		 												Los servicios que se ofrecen al usuario en nuestro sitio web corresponden a la venta y distribución de productos artesanales mexicanos. Los servicios están disponibles en línea a través de nuestro sitio web. Nos reservamos el derecho de limitar las ventas de nuestros servicios a cualquier persona, región geográfica o jurisdicción. También, nos reservamos el derecho de limitar las cantidades y/o suspender la venta de cualquier servicio, y podremos ejercer estos derechos en cualquier momento. Todas las descripciones, precios y ofertas sobre los servicios en nuestro sitio web, están sujetas a cambios sin previo aviso. No podemos garantizar que la calidad de los servicios cumpla con las expectativas exactas de cada cliente, de modo que, si se llega a presentar algún error en nuestros servicios, será evaluado y resuelto por nuestro equipo en <span style="font-weight:bold">ARTEZANNAL</span>. 
+		 											</p>
+		 											<br>
+		 											<p style="text-align:justify;">
+		 												Los envíos, serán dentro de los días hábiles (lunes a viernes), y será por medio de la paquetería asignada, La empresa se deslinda de la responsabilidad por la falta de entrega de los paquetes. Es responsabilidad exclusiva de la paquetería que le fue asignada.
+		 											</p>
+		 											<br>
+		 											<p style="text-align:justify;">
+		 												<span style="font-weight:bold">HERRAMIENTAS OPCIONALES</span>
+		 											</p>
+		 											<br>
+		 											<p style="text-align:justify;">
+		 												En ocasiones, podemos proporcionar al usuario acceso a herramientas de terceros sobre las que no tenemos control. El usuario reconoce y acepta que nuestro sitio web utiliza herramientas de terceros, sin ninguna garantía, representación, condiciones de ningún tipo y sin ningún endoso. No tendremos ninguna responsabilidad derivada o relacionada con el uso de herramientas de terceros. Cualquier uso de dichas herramientas, es bajo el propio riesgo y discreción del usuario, y este debe asegurarse de estar familiarizado con los términos proporcionados por los terceros.
+		 											</p>
+		 											<br>
+		 											<p style="text-align:justify;">
+		 												Podemos ofrecer nuevos servicios y/o características a través del sitio web (incluyendo el lanzamiento de nuevos productos, herramientas y recursos) en cualquier momento, los cuales también estarán sujetos a nuestros TÉRMINOS DEL SERVICIO.
+		 											</p>
+		 											<br>
+		 											<p style="text-align:justify;">
+		 												<span style="font-weight:bold">ENLACES DE TERCEROS</span>
+		 											</p>
+		 											<br>
+		 											<p style="text-align:justify;">
+		 												Ciertos contenidos o productos disponibles a través de nuestro sitio web pueden incluir imágenes, descripciones, recursos o hipervínculos de terceros que pueden dirigirlo a sitios web que no están afiliados con nosotros. No somos responsables de examinar o evaluar la exactitud y veracidad del contenido de terceros, por lo que no garantizamos y no asumiremos ninguna responsabilidad por ningún otro material, producto o servicio de terceros. 
+		 											</p>
+		 											<br>
+		 											<p style="text-align:justify;">
+		 												<span style="font-weight:bold">ACCESO INTERNACIONAL</span>
+		 											</p>
+		 											<br>
+		 											<p style="text-align:justify;">
+		 												A este sitio se puede acceder desde países distintos de los Estados Unidos Mexicanos. Este sitio puede contener productos o referencias a productos que no están disponibles fuera de los Estados Unidos Mexicanos. Cualquiera de esas referencias no implica que estos productos estarán disponibles fuera de los Estados Unidos Mexicanos. Si el usuario accede y usa este sitio fuera de los Estados Unidos Mexicanos él es responsable de cumplir con las leyes y reglamentos locales.
+		 											</p>
+		 											<br>
+		 											<p style="text-align:justify;">
+		 												<span style="font-weight:bold">LEYES APLICABLES Y JURISDICCIÓN</span>
+		 											</p>
+		 											<br>
+		 											<p style="text-align:justify;">
+		 												Toda controversia, diferencia o reclamación que surja de los presentes Términos y Condiciones y de toda enmienda al mismo o relativa a los presentes Términos y Condiciones, incluyendo en particular, su formación, validez, obligatoriedad, interpretación, ejecución, incumplimiento o terminación, así como las reclamaciones extracontractuales, serán sometidas a mediación de conformidad con el Reglamento de Mediación de la OMPI. La mediación tendrá lugar en la Ciudad de México. El idioma que se utilizará en la mediación será el español.
+		 											</p>
+		 											<br>
+		 											<p style="text-align:justify;">
+		 												Si alguna de las disposiciones de los presentes Términos y Condiciones es declarada nula, ilegal o inaplicable, la validez, legalidad y aplicación de las restantes disposiciones continuarán en plena vigencia.
+		 											</p>
+		 											<br>
+		 											<p style="text-align:justify;">
+		 												<span style="font-weight:bold">COMENTARIOS DE LOS USUARIOS</span>
+		 											</p>
+		 											<br>
+		 											<p style="text-align:justify;">
+		 												Si, a petición nuestra, el usuario envía comentarios específicos (por ejemplo, satisfacción en el servicio), éste acepta que podemos, en cualquier momento, sin restricciones, editar, copiar, publicar, distribuir, traducir y de otra manera utilizar cualquier comentario que nos envíe, en cualquier medio. Somos y no estaremos obligados (1) a mantener comentarios confidenciales; (2) a pagar una compensación por cualquier comentario; o (3) responder a cualquier comentario.
+		 											</p>
+		 											<br>
+		 											<p style="text-align:justify;">
+		 												<span style="font-weight:bold">CONTACTO.</span>
+		 											</p>
+		 											<br>
+		 											<p style="text-align:justify;">
+		 												El Usuario puede contactar, en todo momento, al personal de la Empresa para cualquier aclaración, comentario, duda y/o sugerencia relacionada con los Servicios y Contenidos, con el Sitio y/o con los presentes Términos y Condiciones vía correo electrónico a <a href="mailto:contacto@artezannal.com ">contacto@artezannal.com</a>
+		 											</p>
+		 											<br>
+		 											<p style="text-align:right;margin-top: 50px;">
+		 												Fecha de Actualización 29/01/2025
+		 											</p>
+		 									<?php
+		 										}
+		 									?>
+
 										</div>
 
 									</div>
@@ -617,13 +907,13 @@
 										<span class="heightlight"><a href="#contacto" style="text-decoration: none;color: white;">Contacto</a></span>
 									</p>
 									<p class="address-item" align="center">
-										<span class="heightlight">Términos y Condiciones de uso</span>
+										<span class="heightlight"><a href="legal.php?l=tc" style="text-decoration:none; color: white;"><u>Términos y Condiciones de uso</u></a></span>
 									</p>
 									<p class="address-item" align="center">
 										<span class="heightlight">Políticas de envío y devolución</span>
 									</p>
 									<p class="address-item" align="center">
-										<span class="heightlight"><a href="legal.php" style="text-decoration:none; color: white;">Aviso de privacidad</a></span>
+										<span class="heightlight"><a href="legal.php?l=ap" style="text-decoration:none; color: white;"><u>Aviso de privacidad</u></a></span>
 									</p>
 								</address>
 							</div>

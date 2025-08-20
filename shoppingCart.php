@@ -565,13 +565,13 @@
 										<span class="heightlight"><a href="#contacto" style="text-decoration: none;color: white;">Contacto</a></span>
 									</p>
 									<p class="address-item" align="center">
-										<span class="heightlight">Términos y Condiciones de uso</span>
+										<span class="heightlight"><a href="legal.php?l=tc" style="text-decoration:none; color: white;"><u>Términos y Condiciones de uso</u></a></span>
 									</p>
 									<p class="address-item" align="center">
 										<span class="heightlight">Políticas de envío y devolución</span>
 									</p>
 									<p class="address-item" align="center">
-										<span class="heightlight"><a href="legal.php" style="text-decoration:none; color: white;">Aviso de privacidad</a></span>
+										<span class="heightlight"><a href="legal.php?l=ap" style="text-decoration:none; color: white;"><u>Aviso de privacidad</u></a></span>
 									</p>
 								</address>
 							</div>
