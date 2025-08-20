@@ -215,6 +215,7 @@
 			$_SESSION['username'] = $_POST['usuario'];
 			$_SESSION['tipo'] = $dat['tipo'];
 			$_SESSION['nombre'] = $dat['nombre'];
+			$_SESSION['usuario_id'] = $dat['id'];
     	echo 'OK';
 		
 		}else{
@@ -259,6 +260,65 @@
 		}
 
 		echo $msgCuenta;
+
+	}
+
+	if($_POST['acc'] == "misDatos"){
+
+		$sql = "SELECT * FROM usuarios WHERE correo = '".$_POST['usuario']."' ";
+		$res = mysqli_query($link,$sql);
+
+		$dat = $res->fetch_assoc();
+
+		echo json_encode($dat,true);
+
+	}
+
+	if($_POST['acc'] == "editarCuenta"){
+
+		$sql = "UPDATE usuarios SET nombre = '".$_POST['nombre']."', telefono = '".$_POST['telefono']."', estatus = '".$_POST['estatus']."', updated_at = '".date("Y-m-d H:i:s")."' WHERE correo = '".$_POST['correo']."' ";
+		if($res = mysqli_query($link,$sql)){
+			echo "OK";
+		}else{
+			echo "Error";
+		}
+
+	}
+
+	if($_POST['acc'] == "altaDireccion"){
+
+		$sql = "INSERT INTO usuarios_direcciones (usuario_id, calle_numero, colonia, municipio, estado, codigo_postal, descripcion, updated_at, created_at) VALUES('".$_POST['usuario_id']."', '".$_POST['calle_numero']."', '".$_POST['colonia']."', '".$_POST['municipio']."', '".$_POST['estado']."', '".$_POST['codigo_postal']."', '', '".date("Y-m-d H:i:s")."', '".date("Y-m-d H:i:s")."') ";
+		if($res = mysqli_query($link,$sql)){
+			echo "OK";
+		}else{
+			echo "Error";
+		}
+
+	}
+
+	if($_POST['acc'] == "listaDireccion"){
+
+		$sql = "SELECT * FROM usuarios_direcciones WHERE usuario_id = '".$_POST['usuario_id']."' ";
+		$res = mysqli_query($link,$sql);
+
+		$ex = mysqli_num_rows($res);
+
+		if($ex == 0){
+			echo '<div class="col-md-12" style="text-align:right"><span class="checkit-btn l-dis-ib button" style="width:30%; border-width: 1px;background-color:#130a56;color: #fff; border-radius: 30px;" onclick="nuevaDireccion()">Nueva dirección</span></div><center><span style="font-size:18px;color:#130a56;"><br>Sin direcciones registradas.</span></center>';
+		}else{
+
+			echo '<div class="col-md-12" style="text-align:right"><span class="checkit-btn l-dis-ib button" style="width:30%; border-width: 1px;background-color:#130a56;color: #fff; border-radius: 30px;" onclick="nuevaDireccion()">Nueva dirección</span></div>';
+
+			while($dat = mysqli_fetch_array($res)){
+
+				echo "<br>".$dat['calle_numero'].", Col. ".$dat['colonia'];
+				echo "<br>".$dat['municipio'].", ".$dat['estado'].". C.P.".$dat['codigo_postal'];
+				echo "<hr>";
+
+			}
+
+		}
+
 
 	}
 
