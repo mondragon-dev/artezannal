@@ -440,100 +440,152 @@
 			<br><br>
 			<br><br>
 			<section class="members l-section-padding" id="team-members" style="background-image: url(images/back_bright.png); background-size: cover; background-position: 50% 50%;">
-				<div class="row" style="max-width:90%">
+				<div class="row" style="max-width:70%">
 					<div class="column large-12">
 						<div class="for-border-partent">
 							<div class="row">
-								<div class="column large-8 medium-8 small-12">
+								<div class="column large-12 medium-12 small-12">
 									<div class="about-team">
 
-										<div class="team-member-info" style="text-align:left">
+										<div class="team-member-info" style="text-align:center;">
 											<h3 class="team-name" style="font-size:24px; color:#130a56; margin-bottom:30px">
-												Añadido al carrito 
-												<img src="images/carrito-icono.png" style="width:60px">
+												Aviso de Privacidad Integral
 											</h3>
-										</div>
-										<hr>
-
-										<?php
-
-											$total = 0;
-
-											while($dat = mysqli_fetch_array($res)){
-
-												$total += ($dat['cantidad'] * $dat['precio']);
-
-										?>
-										
-											<div class="row">
-												<div class="col-lg-3">
-													<img src="images/products/<?php echo $dat['imagen']; ?>" style="cursor: pointer" onclick='self.location="productDetails.php?p=<?php echo $dat['producto_id']; ?>"'>
-												</div>
-												<div class="col-lg-6">
-													<span style="cursor: pointer" onclick='self.location="productDetails.php?p=<?php echo $dat['producto_id']; ?>"'><?php echo $dat['producto']; ?></span><br><br>
-													$<?php echo $dat['precio']; ?><br><br>
-													<input type="number" class="form-control" onchange="actualizarProductos(this.value,<?php echo $dat['producto_id']; ?>)" min="1" max="10" value="<?php echo $dat['cantidad']; ?>">
-												</div>
-												<div class="col-lg-3">
-													<i class="fa fa-trash" style="font-size:20px;cursor:pointer" onclick="eliminarProductoCarrito(<?php echo $dat['producto_id']; ?>)"></i>
-												</div>
-											 </div>
-											 <hr>
-
-										<?php
-											}
-										?>
-
-										<div class="team-member-info" style="text-align:left">
-											<div class="team-member-info" style="text-align:left">
-												<div class="row">
-													<div class="col-lg-12">
-														<p class="team-post" style="font-size:16px; line-height: 24px; color:#130a56; margin-bottom:30px; cursor: pointer;" onclick="mostrarCodigoDescuento()">
-															<svg viewBox="0 0 14 16" fill="currentColor" width="14" height="16"><g id="final-cart" stroke="none" fill="none" stroke-width="1" fill-rule="evenodd"><g id="general-layout" transform="translate(-515 -839)" fill="currentColor"><g id="coupon-icon" transform="rotate(30 -1300.653 1393.349)"><path d="M1,14.0046024 C0.999339408,13.9996515 9.00460243,14 9.00460243,14 C8.99965149,14.0006606 9,5.41421356 9,5.41421356 L5,1.41421356 L1,5.41421356 L1,14.0046024 Z M-2.72848411e-12,5 L5,-4.66116035e-12 L10,5 L10,14.0046024 C10,14.5543453 9.5443356,15 9.00460243,15 L0.995397568,15 C0.445654671,15 -2.72848411e-12,14.5443356 -2.72848411e-12,14.0046024 L-2.72848411e-12,5 Z" id="Rectangle-6" fill-rule="nonzero"></path><circle id="Oval-2" cx="5" cy="5" r="1"></circle></g></g></g></svg>
-															Introduce código de descuento: 
-														</p>
-													</div>
-												</div>
-												<div class="row" id="divCodigoDescuento" style="display: none;">
-													<div class="col-lg-4">
-														<input type="text" class="form-control" style="width:100%;background:transparent;border-radius: 30px;">
-													</div>
-													<div class="col-lg-2">
-														<div class="checkit-btn-block">
-            									<span class="checkit-btn l-dis-ib button" style="border-width: 1px;background-color:transparent;color: #130a56; border-radius: 30px;">Aplicar</span>
-            								</div>
-													</div>
-												</div>
-												<div class="row">
-													<div class="col-lg-12">
-														<p class="team-post" style="font-size:16px; line-height: 24px; color:#130a56; margin-bottom:30px">
-															<svg xmlns="http://www.w3.org/2000/svg" width="12" height="13" viewBox="0 0 12 13" class="bqcF4y"><g fill="none" fill-rule="evenodd" stroke="none" stroke-width="1"><g transform="translate(-515 -882)"><g transform="translate(515 882)"><path stroke="currentColor" d="M.5.5h7.778L11.5 3.737V12.5H.5V.5z"></path><path stroke="currentColor" d="M10.793 3.5H8.5V1.207L10.793 3.5z"></path><path fill="currentColor" d="M3 3H6V4H3z"></path><path fill="currentColor" d="M3 6H9V7H3z"></path><path fill="currentColor" d="M3 9H9V10H3z"></path></g></g></g></svg>
-															Agregar una nota: 
-														</p>
-														<textarea class="form-control" rows="4" style="width:300px;background:transparent;border-radius: 30px;"></textarea>
-													</div>
-												</div>
-											</div>
+											<p style="text-align:justify;">
+												El presente documento constituye el "Aviso de Privacidad" el cual establece los términos bajo los que se manejará su información por parte de <span style="font-weight:bold">ARTEZANNAL</span> quien funge como titular de la página de la marca <span style="font-weight:bold">ARTEZANNAL</span>, de conformidad con lo dispuesto en los artículos 15 y 16 de la Ley Federal de Protección de Datos Personales en Posesión de los Particulares.
+											</p>
+											<br>
+ 											<p style="text-align:justify;">
+ 												Este aviso describe la finalidad para la cual se ha recabado su información, así como el tipo de datos que se están tratando y las opciones disponibles para limitar su uso. Además, se detalla el procedimiento para ejercer sus derechos en materia de protección de datos, en cumplimiento de los principios de Licitud, Consentimiento, Calidad, Información, Finalidad, Lealtad, Proporcionalidad y Responsabilidad que establece la citada ley.
+ 											</p>
+ 											<br>
+ 											<p style="text-align:justify;">
+ 												<span style="font-weight:bold">ARTEZANNAL</span> reconoce y respeta su derecho a la privacidad y protección de datos personales, incluidos los datos personales sensibles, como los datos financieros o patrimoniales, los cuales están protegidos por la Ley. La responsabilidad sobre la base de datos que contiene su información recae en <span style="font-weight:bold">ARTEZANNAL</span>, cuyo domicilio es el ubicado en Tecorral número 15, Col. Club de Golf México, Tlalpan, Ciudad de México, C.P. 14620.
+ 											</p>
+ 											<br>
+ 											<p style="text-align:justify;">
+ 												Además, se garantiza que su información se encuentra debidamente resguardada, cumpliendo con las disposiciones de seguridad administrativa, técnica y física establecidas en la Ley de la materia. Esto se realiza con el fin de protegerla de posibles daños, pérdidas, alteraciones o accesos no autorizado.
+ 											</p>
+ 											<br>
+ 											<p style="text-align:justify;">
+ 												El titular de la información reconoce y acepta que al proporcionar sus Datos a través de este "Aviso de Privacidad", o mediante cualquier medio electrónico, como lo es el correo electrónico <a href="mailto:contacto@artezannal.com">contacto@artezannal.com</a>, otorga su consentimiento expreso para que <span style="font-weight:bold">ARTEZANNAL</span> lleve a cabo el tratamiento de sus Datos, de conformidad con lo establecido en este Aviso de Privacidad.
+											</p>
+											<br>
+ 											<p style="text-align:justify;"> 
+												<span style="font-weight:bold">Datos Personales</span>
+											</p>
+											<br>
+ 											<p style="text-align:justify;">
+ 												Los datos personales que recabaremos serán aquellos que usted haya incluido en su perfil de usuario, y serán tratados y resguardados con base en los principios establecidos en la Ley y su Reglamento. Para cumplir con las finalidades que se mencionan en el presente Aviso, requerimos que nos proporcione los siguientes datos: nombre completo, número telefónico, correo electrónico, ciudad y estado de residencia.
+ 											</p>
+ 											<br>
+ 											<p style="text-align:justify;">
+												<span style="font-weight:bold">Datos Sensibles</span>
+											</p>
+											<br>
+ 											<p style="text-align:justify;">
+ 												El Titular de la Información reconoce y acepta que, debido a su relación con <span style="font-weight:bold">ARTEZANNAL</span> no ha proporcionado, ni tendrá que proporcionar “datos personales sensibles”, es decir, aquellos datos personales íntimos o cuya realización debida o indebida pueda dar origen a discriminación o conlleve un riesgo grave para éste. En el supuesto de que el Titular de la Información proporcione datos del tipo de los llamados sensibles, deberá estar de acuerdo en proporcionarlos previamente y dejará a <span style="font-weight:bold">ARTEZANNAL</span> libre de cualquier queja o reclamación respectiva.
+ 											</p>
+ 											<br>
+ 											<p style="text-align:justify;">
+ 												<span style="font-weight:bold">Medios para ejercer los Derechos de Acceso, Rectificación, Cancelación u Oposición.</span>
+ 											</p>
+ 											<br>
+ 											<p style="text-align:justify;">
+ 												Usted tiene derecho constitucional de Acceder y conocer los datos personales que poseemos y a los detalles del tratamiento y uso de los mismos, así como a Rectificarlos y corregirlos en caso de ser inexactos o incompletos; Cancelarlos y eliminarlos cuando considere que no se requieren para alguna de las finalidades señalados en el presente aviso de privacidad, o que estén siendo utilizados para finalidades no autorizadas por usted o haya finalizado la relación jurídica o de servicio, o bien, Oponerse al tratamiento de los mismos para fines específicos, enviando una solicitud a <span style="font-weight:bold">ARTEZANNAL</span>, a través del sitio web <a href="https://artezannal.com">www.artezannal.com</a> o al correo electrónico <a href="mailto:contacto@artezannal.com">contacto@artezannal.com</a> indicando por lo menos su nombre y domicilio completo o cualquier otro dato o documento que permita su identificación, así como el objeto de su solicitud y/o trámite a efectuar. Lo anterior se deberá realizar en base a la Ley y su Reglamento.
+ 											</p>
+ 											<br>
+ 											<p style="text-align:justify;">
+ 												<span style="font-weight:bold">Finalidad</span>
+ 											</p>
+ 											<br>
+ 											<p style="text-align:justify;">
+ 												Sus datos personales e historial como cliente serán utilizados por <span style="font-weight:bold">ARTEZANNAL</span> o por cualquiera de sus subsidiaras y/o filiales, y quedarán registrados en nuestra base de datos, así como cualquier otra información personal, sensible o de cualquier otra índole, siempre que se cumpla con lo establecido en la Ley y su Reglamento respecto a cada tipo de información. Esta información puede ser utilizada por <span style="font-weight:bold">ARTEZANNAL</span> para control interno, finalidades comerciales, enviar avisos publicitarios y de mercadotecnia, promociones, avisos de lanzamiento de nuevos productos, entre otros.
+ 											</p>
+ 											<br>
+ 											<p style="text-align:justify;">
+ 												Esta información podrá usarse de manera enunciativa mas no limitativa para: (1) ofrecerle productos y servicios, ya sea de manera física, telefónica, electrónica o por cualquier otra tecnología o medio que esté al alcance de <span style="font-weight:bold">ARTEZANNAL</span> (2) hacer de su conocimiento nuevos productos o servicios que puedan ser de interés en relación con el servicio contratado; (3) realizar para su comodidad los cargos facturados de manera automática; (4) emitir órdenes de compra o solicitudes de trabajo, según corresponda; y/o (5) cualquier otra acción que sea necesaria para cumplir con los intereses de <span style="font-weight:bold">ARTEZANNAL</span> respecto al acuerdo que haya llegado con el Titular de la Información.
+ 											</p>
+ 											<br>
+ 											<p style="text-align:justify;">
+ 												<span style="font-weight:bold">Transferencia</span>
+ 											</p>
+ 											<br>
+ 											<p style="text-align:justify;">
+ 												El Titular de la Información entiende y acepta que <span style="font-weight:bold">ARTEZANNAL</span> y/o cualquiera de sus subsidiarias y/o filiales, podrá transferir sus datos personales a terceros que han sido contratados por <span style="font-weight:bold">ARTEZANNAL</span> para que realicen en su nombre y representación ciertas tareas relacionadas con las actividades comerciales y de promoción de sus productos y/o servicios. Estas terceras partes pueden tratar los datos en cumplimiento de las instrucciones de <span style="font-weight:bold">ARTEZANNAL</span> o tomar decisiones sobre ellos como parte de la prestación de sus servicios. En cualquiera de los dos casos, <span style="font-weight:bold">ARTEZANNAL</span> seleccionará proveedores que considere confiables y que se comprometan, mediante un contrato u otros medios legales aplicables, a implementar las medidas de seguridad necesarias para garantizar un nivel de protección adecuado a sus datos personales. Derivado de lo anterior, <span style="font-weight:bold">ARTEZANNAL</span> exigirá a sus proveedores que cumplan con medidas de seguridad que garanticen los mismos niveles de protección que <span style="font-weight:bold">ARTEZANNAL</span> implementa durante el tratamiento de sus datos como cliente de <span style="font-weight:bold">ARTEZANNAL</span>. Estas terceras partes seleccionadas tendrán acceso a su información con la finalidad de realizar las tareas especificadas en el contrato de servicios aplicable que haya suscrito con <span style="font-weight:bold">ARTEZANNAL</span>. Si <span style="font-weight:bold">ARTEZANNAL</span> determina que un proveedor no está cumpliendo con las obligaciones pactadas, tomará inmediatamente las acciones pertinentes.
+ 											</p>
+ 											<br>
+ 											<p style="text-align:justify;">
+ 												Si el titular, no acepta la transmisión de sus datos personales de conformidad con lo estipulado en el párrafo anterior, puede ponerse en contacto con <span style="font-weight:bold">ARTEZANNAL</span> por cualquiera de los medios establecidos en el presente Aviso de Privacidad.
+ 											</p>
+ 											<br>
+ 											<p style="text-align:justify;">
+ 												<span style="font-weight:bold">Excepciones</span>
+ 											</p>
+ 											<br>
+ 											<p style="text-align:justify;"> 
+ 												Adicionalmente y de conformidad con lo estipulado en los Artículos 10, 37 y demás relativos de la Ley y su Reglamento, <span style="font-weight:bold">ARTEZANNAL</span> quedará exceptuado de las obligaciones referentes al consentimiento para el Tratamiento y Transferencia de sus Datos, cuando:
+ 											</p>
+ 											<br>
+ 											<p style="text-align:left;">
+ 												<ul style="text-align: left; margin-left: 30px;">
+ 													<li>I. Esté previsto en una Ley;</li>
+ 													<li><br>II. Los datos figuren en fuentes de acceso público;</li>
+ 													<li><br>III. Los datos personales se sometan a un procedimiento previo de disociación;</li>
+ 													<li><br>IV. Tenga el propósito de cumplir obligaciones derivadas de una relación jurídica entre el titular y el responsable;</li>
+ 													<li><br>V. Exista una situación de emergencia que potencialmente pueda dañar a un individuo en su persona o en sus bienes;</li>
+ 													<li><br>VI. Sean indispensables para la atención médica, la prevención, diagnóstico, la prestación de asistencia sanitaria, tratamientos médicos o la gestión de servicios sanitarios;</li>
+ 													<li><br>VII. Se dicte resolución de autoridad competente;</li>
+ 													<li><br>VIII. Cuando la transferencia sea precisa para el reconocimiento, ejercicio o defensa de un derecho en un proceso judicial, y</li>
+ 													<li><br>IX. Cuando la transferencia sea precisa para el mantenimiento o cumplimiento de una relación jurídica entre el responsable y el titular.</li>
+ 												</ul>
+ 											</p>
+ 											<br>
+ 											<p style="text-align:justify;">
+ 												<span style="font-weight:bold">Modificaciones</span>
+ 											</p>
+ 											<br>
+ 											<p style="text-align:justify;">
+ 												En caso de que se requiera alguna modificación a lo estipulado en el presente Aviso de Privacidad, <span style="font-weight:bold">ARTEZANNAL</span> se obliga a hacer del conocimiento los cambios que en su caso se requieran, por cualquier medio, incluidos los electrónicos, previo aviso que se le dé a usted para que se manifieste por su parte, lo que a su derecho convenga, ya que de no recibir negativa expresa y por escrito de su parte, o bien, respuesta alguna, se entenderá que usted acepta de conformidad los cambios realizados.
+ 											</p>
+ 											<br>
+ 											<p style="text-align:justify;">
+ 												<span style="font-weight:bold">Consentimiento del Titular</span>
+ 											</p>
+ 											<br>
+ 											<p style="text-align:justify;"> 
+ 												El Titular de la Información reconoce y acepta que en caso de que este “Aviso de Privacidad” esté disponible a través de una página electrónica (sitio web, página de Internet o similar) o algún otro dispositivo electrónico, al hacer clic en “aceptar” o de cualquier otra forma seguir navegando en el sitio, o bien al proporcionar sus Datos a través del mismo o a través de cualquier medio electrónico (correo electrónico, etc.), constituye una manifestación de su consentimiento para que <span style="font-weight:bold">ARTEZANNAL</span> realice el tratamiento de sus Datos, de conformidad con este Aviso de Privacidad.
+ 											</p>
+ 											<br>
+ 											<p style="text-align:justify;">
+ 												Asimismo, de igual manera manifiesta que en caso de que este “Aviso de Privacidad” esté disponible por escrito, su firma, rúbrica, nombre o huella o bien al proporcionar sus Datos, constituye una manifestación de su consentimiento para que <span style="font-weight:bold">ARTEZANNAL</span> realice el tratamiento de sus datos, de conformidad con este “Aviso de Privacidad”.
+ 											</p>
+ 											<br>
+ 											<p style="text-align:justify;">
+ 												<span style="font-weight:bold">Notificación de cambios del aviso</span>
+ 											</p>
+ 											<br>
+ 											<p style="text-align:justify;">
+ 												Si <span style="font-weight:bold">ARTEZANNAL</span> cambia este aviso de privacidad, dichos cambios aparecerán en el sitio web: <a href="https://artezannal.com">www.artezannal.com</a>
+ 											</p>
+ 											<br>
+ 											<p style="text-align:justify;">
+ 												Si usted tiene alguna pregunta o desea ejercer algún derecho relacionada con esta declaración de privacidad, por favor comuníquese con <span style="font-weight:bold">ARTEZANNAL</span> y/o sus empresas filiales a la siguiente dirección: <a href="mailto:contacto@artezannal.com">contacto@artezannal.com</a>
+ 											</p>
+ 											<br>
+ 											<p style="text-align:justify;">
+ 												<span style="font-weight:bold">Este aviso de privacidad ha sido creado en base a las reglas expedidas por la Ley Federal de Protección de Datos Personales en Posesión de los Particulares con fundamento en los artículos 16, 17 y 36 de la Ley y corresponsales de su Reglamento.</span>
+ 											</p>
+ 											<br>
+ 											<p style="text-align:right;margin-top: 50px;">
+ 												Fecha de Actualización 29/01/2025
+ 											</p>
 										</div>
 
 									</div>
 
 								</div>
-								<div class="column large-4 medium-4 small-12">
-									<div class="about-team">
-										<div class="team-member-info" style="text-align:left">
-											<h3 class="team-name" style="font-size:24px; color:#130a56; margin-bottom:30px">Resumen del pedido</h3>
-											<p class="team-post" style="font-size:16px; line-height: 24px; color:#130a56; margin-bottom:30px">Subtotal: $<span id="carritoSubtotal"><?php echo number_format($total,2); ?></span></p>
-										</div>
-										<hr>
-										<div class="team-member-info" style="text-align:left">
-											<p class="team-post" style="font-size:16px; line-height: 24px; color:#130a56; margin-bottom:30px">Total: $<span id="carritoTotal"><?php echo number_format($total,2); ?></span></p>
-										</div>
-										<div class="checkit-btn-block">
-					            	<span class="checkit-btn l-dis-ib button" style="width:100%; border-width: 1px;background-color:#fff;color: #130a56; border-radius: 30px;" data-toggle="modal" data-target="#modalVerificar">Pagar</span>
-					           </div>
-									</div>
-								</div>
+								
 							</div>
 						</div>
 					</div>
