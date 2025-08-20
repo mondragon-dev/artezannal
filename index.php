@@ -365,7 +365,7 @@
 	<span class="theme-bg-c"></span>
 	<div class="preloader-block">
 		<div class="preloader-container">
-			<img src="images/logoIndex.png" alt="" class="logo-image">
+			<img src="images/logo_animado.gif" alt="" class="logo-image">
 		</div>
 	</div>
 	<div class="page-content">
@@ -1104,10 +1104,23 @@
 								if($_SESSION['tipo'] == "Administrador"){
 					?>
 
-							<center>
-								<div class="checkit-btn-block" style="border-radius: 30px;"><span class="checkit-btn l-dis-ib button" style="background-color:#263770; border-radius: 30px;" onclick="cerrarSesion()">Cerrar sesión</span></div>
-							</center>
+									<center>
+										<div class="checkit-btn-block" style="border-radius: 30px;"><span class="checkit-btn l-dis-ib button" style="background-color:#263770; border-radius: 30px;" onclick="cerrarSesion()">Cerrar sesión</span></div>
+									</center>
 
+					<?php
+								}
+								if($_SESSION['tipo'] == "Usuario"){
+					?>
+									<center>
+										<div class="checkit-btn-block" style="border-radius: 30px;"><span class="checkit-btn l-dis-ib button" style="background-color:#263770; border-radius: 30px; width: 60%;" onclick="misDatos()">Mis datos personales</span></div>
+									</center>
+									<center>
+										<div class="checkit-btn-block" style="border-radius: 30px;"><span class="checkit-btn l-dis-ib button" style="background-color:#263770; border-radius: 30px; width: 60%;" onclick="misDirecciones()">Mis direcciones</span></div>
+									</center>
+									<center>
+										<div class="checkit-btn-block" style="border-radius: 30px;"><span class="checkit-btn l-dis-ib button" style="background-color:#263770; border-radius: 30px; width: 60%;" onclick="cerrarSesion()">Cerrar sesión</span></div>
+									</center>
 					<?php
 								}
 							}else{
@@ -1202,12 +1215,97 @@
 				</div>
 
 				<div class="modal-body">
-					<span class="title-text" style="color:red;font-size:14px;font-weight:bold;">Es necesario revisar lo siguiente:</span>
+					<span class="title-text" style="color:red;font-size:14px;font-weight:bold;" id="revisarLabel">Es necesario revisar lo siguiente:</span>
 					<br><br>
 					<span class="title-text" style="color:red;font-size:14px" id="spanValidacionCuenta"></span>
-					<br>
+					<br><br>
 					<div class="checkit-btn-block">
-					  <span class="checkit-btn l-dis-ib button" style="width:100%; border-width: 1px;background-color:#130a56;color: #fff;" onclick="cerrarModal('modalVerificarCuenta');activarBoton('btnCrearCuenta')">Aceptar</span>
+					  <span class="checkit-btn l-dis-ib button" style="width:100%; border-width: 1px;background-color:#130a56;color: #fff; border-radius: 30px" onclick="cerrarModal('modalVerificarCuenta');activarBoton('btnCrearCuenta')">Aceptar</span>
+					</div>
+				</div>
+
+			</div><!-- modal-content -->
+		</div><!-- modal-dialog -->
+	</div>
+
+
+	<div class="modal fade" id="misDatosModal" tabindex="-1" role="dialog" aria-labelledby="accessModalLabel">
+		<div class="modal-dialog modal-lg" role="document">
+			<div class="modal-content" style="background-image: url(images/back_bright.png); background-size: cover; background-position: 50% 50%;">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<center>
+						<h4 class="modal-title" id="myModalLabel2">Hola <?php echo $_SESSION['nombre']; ?></h4>
+					</center>
+				</div>
+
+				<div class="modal-body">
+							<div id="controlesDatosUsuario" style="display:block">
+								<div class="centered-block">
+									<input type="text" id="nombre_edit" class="contact-field required" name="nombre_edit" placeholder="Ingrese su nombre completo" style="border-radius: 30px;">
+								</div>
+								<div class="centered-block">
+									<input type="email" id="correo_edit" class="contact-field required" name="correo_edit" placeholder="Ingrese su correo electrónico" style="border-radius: 30px;" disabled>
+								</div>
+								<div class="centered-block">
+									<input type="password" id="contrasenia_edit" class="contact-field required" name="contrasenia_edit" placeholder="Ingrese nueva contraseña" style="border-radius: 30px;">
+								</div>
+								<div class="centered-block">
+									<input type="password" id="verificar_contrasenia_edit" class="contact-field required" name="verificar_contrasenia_edit" placeholder="Verificar nueva contraseña" style="border-radius: 30px;">
+								</div>
+								<div class="centered-block">
+									<input type="text" id="telefono_edit" class="contact-field required" name="telefono_edit" placeholder="Ingrese su número telefónico" style="border-radius: 30px;">
+								</div>
+								<div class="centered-block">
+									<select id="estatus_edit" class="contact-field required" name="estatus_edit" style="border-radius: 30px;">
+										<option value="">::Seleccione::</option>
+										<option value="Verificado">Activo</option>
+										<option value="Inactivo">Inactivo</option>
+									</select>
+								</div>
+								<div class="checkit-btn-block">
+									<input type="submit" class="checkit-btn l-dis-ib button" style="width:100%; border-radius: 30px;background-color: #263770;" value="Actualizar cuenta" onclick="editarCuenta()" id="btnEditarCuenta">
+								</div>
+							</div>
+				</div>
+
+			</div><!-- modal-content -->
+		</div><!-- modal-dialog -->
+	</div>
+
+	<div class="modal fade" id="misDireccionesModal" tabindex="-1" role="dialog" aria-labelledby="misDireccionesModalLabel">
+		<div class="modal-dialog modal-lg" role="document">
+			<div class="modal-content" style="background-image: url(images/back_bright.png); background-size: cover; background-position: 50% 50%;">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<center>
+						<h4 class="modal-title" id="myModalLabel2">Hola <?php echo $_SESSION['nombre']; ?></h4>
+					</center>
+				</div>
+
+				<div class="modal-body">
+					<div id="direccionListaUsuario" style="display:block">
+							
+					</div>
+					<div id="direccionAltaUsuario" style="display:block">
+							<div class="centered-block">
+								<input type="text" id="calle_numero" name="calle_numero" class="contact-field required" placeholder="Ingrese calle y número" style="border-radius: 30px;">
+							</div>
+							<div class="centered-block">
+								<input type="text" id="colonia" name="colonia" class="contact-field required" placeholder="Ingrese colonia" style="border-radius: 30px;">
+							</div>
+							<div class="centered-block">
+								<input type="text" id="municipio" name="municipio" class="contact-field required" placeholder="Ingrese alcaldia o municipio" style="border-radius: 30px;">
+							</div>
+							<div class="centered-block">
+								<input type="text" id="estado" name="estado" class="contact-field required" placeholder="Ingrese ciudad o estado" style="border-radius: 30px;">
+							</div>
+							<div class="centered-block">
+								<input type="text" id="codigo_postal" name="codigo_postal" class="contact-field required" placeholder="Ingrese CP" style="border-radius: 30px;">
+							</div>
+							<div class="checkit-btn-block">
+								<input type="button" class="checkit-btn l-dis-ib button" style="width:100%; border-radius: 30px;background-color: #263770;" value="Agregar dirección" onclick="altaDirección()" id="btnAltaDireccion">
+							</div>
 					</div>
 				</div>
 
@@ -1543,6 +1641,213 @@
 			document.getElementById('controlesAltaUsuario').style.display = "none";
 			document.getElementById('divTablaCrearCuenta').style.display = 'none';
 
+		}
+
+		function misDatos(){
+
+			$('#accessModal').modal('hide');
+			$('#misDatosModal').modal('show');
+
+			<?php
+				if(isset($_SESSION['username'])){
+			?>
+					var usuario = "<?php echo $_SESSION['username']?>";
+			<?php 
+				}else{
+			?>
+					var usuario = "";
+			<?php
+				}
+			?>
+
+			if(usuario != ""){
+
+				$.ajax({
+				    type:"POST",
+				    url: "scripts/ws.php",
+				    data:{
+				      acc:'misDatos',
+				      usuario:usuario,
+				    },
+				    success: function(datos){
+
+				    	var data = JSON.parse(datos);
+				    	document.getElementById('nombre_edit').value = data.nombre;
+				    	document.getElementById('correo_edit').value = data.correo;
+				    	document.getElementById('telefono_edit').value = data.telefono;
+
+				    	if(data.estatus == "Verificado"){
+				    		document.getElementById("estatus_edit").selectedIndex = 1;
+				    	}
+				    	if(data.estatus == "Inactivo"){
+				    		document.getElementById("estatus_edit").selectedIndex = 2;
+				    	}
+
+				    }
+				 });
+
+			}
+
+		}
+
+		function misDirecciones(){
+			$('#accessModal').modal('hide');
+			$('#misDireccionesModal').modal('show');
+
+			<?php
+				if(isset($_SESSION['username'])){
+			?>
+					var usuario = "<?php echo $_SESSION['username']; ?>";
+					var usuario_id = "<?php echo $_SESSION['usuario_id']; ?>";
+			<?php 
+				}else{
+			?>
+					var usuario = "";
+					var usuario_id = "";
+			<?php
+				}
+			?>
+
+			if(usuario_id != ""){
+
+				$.ajax({
+			    type:"POST",
+			    url: "scripts/ws.php",
+			    data:{
+			      acc:'listaDireccion',
+			      usuario:usuario,
+			      usuario_id:usuario_id
+			    },
+			    success: function(datos){
+			    	document.getElementById('direccionListaUsuario').innerHTML = datos;
+			    	document.getElementById('direccionAltaUsuario').style.display = "none";
+			    }
+			  });
+
+			}
+
+		}
+
+		function editarCuenta(){
+
+			document.getElementById('btnEditarCuenta').disabled = true;
+
+			var falta = "";
+
+			var nombre = document.getElementById('nombre_edit').value;
+			var correo = document.getElementById('correo_edit').value;
+			var contrasenia = document.getElementById('contrasenia_edit').value;
+			var verificar_contrasenia = document.getElementById('verificar_contrasenia_edit').value;
+			var telefono = document.getElementById('telefono_edit').value;
+			var estatus = document.getElementById("estatus_edit").value;
+
+			if(nombre == ""){
+				falta = falta + "Ingresar nombre completo<br>";
+			}
+			if(correo == ""){
+				falta = falta + "Ingresar correo electrónico<br>";
+			}
+
+			if(contrasenia != ""){
+				if(contrasenia.length < 8){
+					falta = falta + "La contraseña debe contener minimo 8 caracteres<br>";
+				}else{
+					if(contrasenia != verificar_contrasenia){
+						falta = falta + "La verificación de la contraseña no es correcta<br>";
+					}
+				}
+			}
+			if(telefono == ""){
+				document.getElementById('revisarLabel').innerHTML = "Es necesario revisar lo siguiente:";
+				falta = falta + "Ingresar teléfono<br>";
+			}
+
+			if(falta != ""){
+				$('#misDatosModal').modal('hide');
+				$('#modalVerificarCuenta').modal('show');
+				document.getElementById('spanValidacionCuenta').innerHTML = falta;
+				document.getElementById('btnEditarCuenta').disabled = false;
+			}else{
+
+				$.ajax({
+			    type:"POST",
+			    url: "scripts/ws.php",
+			    data:{
+			      acc:'editarCuenta',
+			      nombre:nombre,
+			      correo:correo,
+			      contrasenia:contrasenia,
+			      telefono:telefono,
+			      estatus:estatus
+			    },
+			    success: function(datos){
+			    	if(datos == "OK"){
+			    		$('#misDatosModal').modal('hide');
+							$('#modalVerificarCuenta').modal('show');
+							document.getElementById('revisarLabel').innerHTML = "Datos actualizados!!";
+							document.getElementById('btnEditarCuenta').disabled = false;
+			    	}
+			    }
+			  });
+
+			}
+
+		}
+
+		function altaDirección(){
+
+			<?php
+				if(isset($_SESSION['username'])){
+			?>
+					var usuario = "<?php echo $_SESSION['username']; ?>";
+					var usuario_id = "<?php echo $_SESSION['usuario_id']; ?>";
+			<?php 
+				}else{
+			?>
+					var usuario = "";
+					var usuario_id = "";
+			<?php
+				}
+			?>
+
+			var calle_numero = document.getElementById('calle_numero').value;
+			var colonia = document.getElementById('colonia').value;
+			var municipio = document.getElementById('municipio').value;
+			var estado = document.getElementById('estado').value;
+			var codigo_postal = document.getElementById("codigo_postal").value;
+
+			if(usuario_id != ""){
+
+				$.ajax({
+			    type:"POST",
+			    url: "scripts/ws.php",
+			    data:{
+			      acc:'altaDireccion',
+			      usuario:usuario,
+			      usuario_id:usuario_id,
+			      calle_numero:calle_numero,
+			      colonia:colonia,
+			      municipio:municipio,
+			      estado:estado,
+			      codigo_postal:codigo_postal
+			    },
+			    success: function(datos){
+			    	if(datos == "OK"){
+			    		$('#misDireccionesModal').modal('hide');
+							$('#modalVerificarCuenta').modal('show');
+							document.getElementById('revisarLabel').innerHTML = "Mis direcciones actualizadas!!";
+							document.getElementById('btnEditarCuenta').disabled = false;
+			    	}
+			    }
+			  });
+
+			}
+
+		}
+
+		function nuevaDireccion(){
+			document.getElementById('direccionListaUsuario').style.display = "none";
+			document.getElementById('direccionAltaUsuario').style.display = "block";
 		}
 
 	</script>

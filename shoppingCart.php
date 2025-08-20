@@ -380,7 +380,7 @@
 	<span class="theme-bg-c"></span>
 	<div class="preloader-block">
 		<div class="preloader-container">
-			<img src="images/logoFooter.png" alt="" class="logo-image">
+			<img src="images/logo_animado.gif" alt="" class="logo-image">
 		</div>
 	</div>
 	<div class="page-content" style="background-color: #182371;">
