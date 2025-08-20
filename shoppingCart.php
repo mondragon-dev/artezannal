@@ -568,7 +568,7 @@
 										<span class="heightlight"><a href="legal.php?l=tc" style="text-decoration:none; color: white;"><u>Términos y Condiciones de uso</u></a></span>
 									</p>
 									<p class="address-item" align="center">
-										<span class="heightlight">Políticas de envío y devolución</span>
+										<span class="heightlight"><a href="legal.php?l=ped" style="text-decoration:none; color: white;"><u>Políticas de envío y devolución</u></a></span>
 									</p>
 									<p class="address-item" align="center">
 										<span class="heightlight"><a href="legal.php?l=ap" style="text-decoration:none; color: white;"><u>Aviso de privacidad</u></a></span>

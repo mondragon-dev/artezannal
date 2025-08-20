@@ -374,6 +374,91 @@
   margin-top: 30px;
 }
 
+
+a {
+      color: #da2020;
+    }
+    a:hover {
+      color: #d6f300;
+    }
+    .wrap > h1 {
+      margin: 26px auto;
+    }
+    #showcase {
+      height: 360px;
+      /*background: #16235e;
+      background: -moz-linear-gradient(top, #16235e 0%, #020223 100%);
+      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#16235e), color-stop(100%,#020223));
+      background: -webkit-linear-gradient(top, #16235e 0%, #020223 100%);
+      background: -o-linear-gradient(top, #16235e 0%, #020223 100%);
+      background: -ms-linear-gradient(top, #16235e 0%, #020223 100%);
+      background: linear-gradient(to bottom, #16235e 0%, #020223 100%);*/
+      /*-webkit-box-shadow: 0px 0px 13px 5px #DB1242;
+      -moz-box-shadow: 0px 0px 13px 5px #DB1242;
+      box-shadow: 0px 0px 13px 5px #DB1242;*/
+      -webkit-border-radius: 8px;
+      -moz-border-radius: 8px;
+      border-radius: 8px;
+    }
+    #showcase2 {
+      height: 360px;
+      /*background: #16235e;
+      background: -moz-linear-gradient(top, #16235e 0%, #020223 100%);
+      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#16235e), color-stop(100%,#020223));
+      background: -webkit-linear-gradient(top, #16235e 0%, #020223 100%);
+      background: -o-linear-gradient(top, #16235e 0%, #020223 100%);
+      background: -ms-linear-gradient(top, #16235e 0%, #020223 100%);
+      background: linear-gradient(to bottom, #16235e 0%, #020223 100%);*/
+      /*-webkit-box-shadow: 0px 0px 13px 5px #DB1242;
+      -moz-box-shadow: 0px 0px 13px 5px #DB1242;
+      box-shadow: 0px 0px 13px 5px #DB1242;*/
+      -webkit-border-radius: 8px;
+      -moz-border-radius: 8px;
+      border-radius: 8px;
+    }
+    #item-title {
+      color: #F31414;
+      font-size: 29px;
+      letter-spacing: 0.13em;
+      text-shadow: 1px 1px 6px #C72B2B;
+      text-align: center;
+      margin-top: 30px;
+      margin-bottom: 22px;
+    }
+    #nav {
+      text-align: center;
+    }
+    #nav > button {
+      width: 64px;
+      height: 36px;
+      color: #666;
+      font: bold 16px arial;
+      text-align: center;
+      margin: 5px;
+      text-shadow: 0px 1px 0px #f5f5f5;
+      background: #f6f6f6;
+      border: solid 2px rgba(0, 0, 0, 0.4);
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      border-radius: 5px;
+      -webkit-box-shadow: 0 0 9px 1px rgba(0, 0, 0, 0.4);
+      -moz-box-shadow: 0 0 9px 1px rgba(0, 0, 0, 0.4);
+      box-shadow: 0 0 9px 1px rgba(0, 0, 0, 0.4);
+      cursor: pointer;
+    }
+    #nav > button:active,
+    #nav > button.down {
+      background: #dfdfdf;
+      border: solid 2px rgba(0, 0, 0, 0.6);
+      box-shadow: none;
+    }
+    #share {
+      top: -9px;
+    }
+    #credits {
+      top: -15px;
+    }
+
 	</style>
 </head>
 <body data-currency="$">
@@ -867,6 +952,83 @@
 		 												Fecha de Actualización 29/01/2025
 		 											</p>
 		 									<?php
+		 										}elseif($_GET['l'] == "ped"){
+		 									?>
+		 											<h3 class="team-name" style="font-size:24px; color:#130a56; margin-bottom:30px">
+		 												Políticas de envío y devolución
+		 											</h3>
+		 											<br><br>
+		 											<p style="text-align:center;">
+		 												<span style="font-weight:bold">Políticas de envío</span>
+		 											</p>
+		 											<br>
+		 											<p style="text-align:justify;">
+		 												Somos una tienda en línea comprometida con ofrecer métodos de envío confiables, empaques seguros y costos transparentes. Nuestro objetivo es que recibas tus productos de manera rápida y segura.
+		 											</p>
+		 											<br>
+		 											<p style="text-align:justify;">
+		 												¡Confía en nosotros para tus compras en línea!
+		 											</p>
+		 											<br><br>
+		 											<div class="wrap">
+												    <div id="showcase" class="noselect">
+												      <img class="cloud9-item" src="images/envio1.png" alt="Envío 1" style="width:20% !important">
+												      <img class="cloud9-item" src="images/envio5.png" alt="Envío 5" style="width:20% !important">
+												      <img class="cloud9-item" src="images/envio4.png" alt="Envío 4" style="width:20% !important">
+												      <img class="cloud9-item" src="images/envio3.png" alt="Envío 3" style="width:20% !important">
+												      <img class="cloud9-item" src="images/envio2.png" alt="Envío 2" style="width:20% !important">
+												    </div>
+												  </div>
+												  <p style="text-align:justify;">
+												  	<ul style="text-align: left; margin-left: 30px;">
+															<li><br><span style="font-weight:bold">1. Ingresa a nuestro sitio web artezannal.com.mx</span></li>
+															<li><br><span style="font-weight:bold">2. Realiza la compra de los productos que desees</span></li>
+															<li><br><span style="font-weight:bold">3. Prepararemos el paquete</span></li>
+															<li><br><span style="font-weight:bold">4. Realizaremos el envío</span></li>
+															<li><br><span style="font-weight:bold">5. Recibirás tu paquete en la puerta de tu casa u oficina</span></li>
+														</ul>
+													</p>
+													<hr style="border-top: dotted 3px;">
+													<h3 class="team-name" style="font-size:24px; color:#130a56; margin-bottom:30px">
+														Políticas de devolución
+													</h3>
+													<br>
+		 											<p style="text-align:justify;">
+		 												Nuestra política de devolución e intercambio está diseñada para brindarte tranquilidad. Si cambias de opinión acerca de tu compra o si no estás satisfecho con un producto, te ofrecemos una forma sencilla de obtener un reembolso o realizar un intercambio. Queremos que compres con confianza y estamos aquí para respaldarte en todo momento.
+		 											</p>
+		 											<br><br>
+		 											<div class="wrap">
+												    <div id="showcase2" class="noselect">
+												      <img class="cloud9-item" src="images/devolucion1.png" alt="Devolución 1" style="width:20% !important">
+												      <img class="cloud9-item" src="images/devolucion6.png" alt="Devolución 6" style="width:20% !important">
+												      <img class="cloud9-item" src="images/devolucion5.png" alt="Devolución 5" style="width:20% !important">
+												      <img class="cloud9-item" src="images/devolucion4.png" alt="Devolución 4" style="width:20% !important">
+												      <img class="cloud9-item" src="images/devolucion3.png" alt="Devolución 3" style="width:20% !important">
+												      <img class="cloud9-item" src="images/devolucion2.png" alt="Devolución 2" style="width:20% !important">
+												    </div>
+												  </div>
+												  <p style="text-align:justify;">
+												  	<ul style="text-align: left; margin-left: 30px;">
+												  		<li><br><span style="font-weight:bold">1. Ingresa a nuestro sitio web y realiza la solicitud de la devolución</span></li>
+												  		<li><br><span style="font-weight:bold">2. A tu correo te llegará una guía la cual debes imprimir y pegar en el paquete</span></li>
+												  		<li><br><span style="font-weight:bold">3. Solicita la recolección del paquete o llévalo a la paquetería</span></li>
+												  		<li><br><span style="font-weight:bold">4. Realizaremos la revisión del o los productos a devolver</span></li>
+												  		<li><br><span style="font-weight:bold">5. Se realizará la devolución de tu dinero</span></li>
+												  	</ul>
+												  </p>
+												  <br>
+												  <br>
+												  <p style="text-align:justify;">
+												  	<ul style="list-style-type: disc; text-align: justify; margin-left: 35px;">
+												  		<li style="margin-top: 20px;">Aplica para cualquier artículo de nuestro sitio.</li>
+												  		<li style="margin-top: 20px;">Asegúrate de empacar los artículos a devolver para que el servicio de paquetería haga la recolección.</li>
+												  		<li style="margin-top: 20px;">Te sugerimos usar el empaque donde los recibiste, así como agregar protección con unicel, plástico burbuja y cartón en las esquinas.</li>
+												  		<li style="margin-top: 20px;">Imprime la guía de recolección y pégala en la caja con los artículos. Si tienes varios paquetes, contáctanos para una guía adicional.</li>
+												  		<li style="margin-top: 20px;">El reembolso está sujeto al cumplimiento de nuestra política de devolución.</li>
+												  		<li style="margin-top: 20px;">Recuerda que cuentas con 7 días naturales a partir del día posterior a tu fecha de solicitud para programar la recolección de la paquetería o bien para llevar tu artículo al mostrador de la paquetería más cercano. De lo contrario, se cancelará el proceso y solo podrás generar una nueva solicitud si la fecha se encuentra dentro de los 30 días naturales después de la entrega.</li>
+												  	</ul>
+												  </p>
+		 									<?php
 		 										}
 		 									?>
 
@@ -910,7 +1072,7 @@
 										<span class="heightlight"><a href="legal.php?l=tc" style="text-decoration:none; color: white;"><u>Términos y Condiciones de uso</u></a></span>
 									</p>
 									<p class="address-item" align="center">
-										<span class="heightlight">Políticas de envío y devolución</span>
+										<span class="heightlight"><a href="legal.php?l=ped" style="text-decoration:none; color: white;"><u>Políticas de envío y devolución</u></a></span>
 									</p>
 									<p class="address-item" align="center">
 										<span class="heightlight"><a href="legal.php?l=ap" style="text-decoration:none; color: white;"><u>Aviso de privacidad</u></a></span>
@@ -1157,6 +1319,9 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
+	<script src="js/lib/jquery.reflection.js"></script>
+  <script src="js/lib/jquery.cloud9carousel.js"></script>
+
 	<script type="text/javascript">
 		new Swiper('.card-wrapper', {
     loop: true,
@@ -1298,6 +1463,116 @@
 		function mostrarCodigoDescuento(){
 			document.getElementById('divCodigoDescuento').style.display = "block";
 		}
+
+		$(function() {
+      var showcase = $("#showcase"), title = $('#item-title')
+
+      showcase.Cloud9Carousel( {
+        yOrigin: 42,
+        yRadius: 48,
+        mirror: {
+          gap: 12,
+          height: 0.2
+        },
+        buttonLeft: $("#nav > .left"),
+        buttonRight: $("#nav > .right"),
+        autoPlay: 1,
+        bringToFront: true,
+        onRendered: rendered,
+        onLoaded: function() {
+          showcase.css( 'visibility', 'visible' )
+          showcase.css( 'display', 'none' )
+          showcase.fadeIn( 1500 )
+        }
+      } )
+
+      function rendered( carousel ) {
+        title.text( carousel.nearestItem().element.alt )
+
+        // Fade in based on proximity of the item
+        var c = Math.cos((carousel.floatIndex() % 1) * 2 * Math.PI)
+        title.css('opacity', 0.5 + (0.5 * c))
+      }
+
+      //
+      // Simulate physical button click effect
+      //
+      $('#nav > button').click( function( e ) {
+        var b = $(e.target).addClass( 'down' )
+        setTimeout( function() { b.removeClass( 'down' ) }, 80 )
+      } )
+
+      $(document).keydown( function( e ) {
+        //
+        // More codes: http://www.javascripter.net/faq/keycodes.htm
+        //
+        switch( e.keyCode ) {
+          /* left arrow */
+          case 37:
+            $('#nav > .left').click()
+            break
+
+          /* right arrow */
+          case 39:
+            $('#nav > .right').click()
+        }
+      } )
+    })
+
+    $(function() {
+      var showcase2 = $("#showcase2"), title = $('#item-title')
+
+      showcase2.Cloud9Carousel( {
+        yOrigin: 42,
+        yRadius: 48,
+        mirror: {
+          gap: 12,
+          height: 0.2
+        },
+        buttonLeft: $("#nav > .left"),
+        buttonRight: $("#nav > .right"),
+        autoPlay: 1,
+        bringToFront: true,
+        onRendered: rendered,
+        onLoaded: function() {
+          showcase2.css( 'visibility', 'visible' )
+          showcase2.css( 'display', 'none' )
+          showcase2.fadeIn( 1500 )
+        }
+      } )
+
+      function rendered( carousel ) {
+        title.text( carousel.nearestItem().element.alt )
+
+        // Fade in based on proximity of the item
+        var c = Math.cos((carousel.floatIndex() % 1) * 2 * Math.PI)
+        title.css('opacity', 0.5 + (0.5 * c))
+      }
+
+      //
+      // Simulate physical button click effect
+      //
+      $('#nav > button').click( function( e ) {
+        var b = $(e.target).addClass( 'down' )
+        setTimeout( function() { b.removeClass( 'down' ) }, 80 )
+      } )
+
+      $(document).keydown( function( e ) {
+        //
+        // More codes: http://www.javascripter.net/faq/keycodes.htm
+        //
+        switch( e.keyCode ) {
+          /* left arrow */
+          case 37:
+            $('#nav > .left').click()
+            break
+
+          /* right arrow */
+          case 39:
+            $('#nav > .right').click()
+        }
+      } )
+    })
 
 	</script>
 
