@@ -841,6 +841,9 @@
 									<p class="address-item" align="center">
 										<span class="heightlight">Políticas de envío y devolución</span>
 									</p>
+									<p class="address-item" align="center">
+										<span class="heightlight"><a href="legal.php" style="text-decoration:none; color: white;">Aviso de privacidad</a></span>
+									</p>
 								</address>
 							</div>
 
