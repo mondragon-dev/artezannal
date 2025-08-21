@@ -1,4 +1,7 @@
 <?php 
+	include('config/config.php');
+	include('config/db.php');
+
 	session_start(); 
 	$sessionID = session_id();
 ?>
@@ -518,9 +521,33 @@
     <div class="card-wrapper">
       <!-- Card slides container -->
       <ul class="card-list swiper-wrapper">
-        <li class="card-item swiper-slide">
+
+      	<?php
+
+      		$sql = "SELECT * FROM productos ORDER BY id ASC ";
+					$res = mysqli_query($link,$sql);
+					while($dat = mysqli_fetch_array($res)){
+				?>
+						<li class="card-item swiper-slide">
+							<span href="javascript:void(0)" class="card-link" style="text-align:center;">
+								<a href="images/products/<?php echo $dat['imagen']; ?>" data-toggle="lightbox" data-gallery="gallery" data-footer="<center><?php echo $dat['producto']; ?><br><?php echo $dat['descripcion']; ?></center>">
+									<img src="images/products/<?php echo $dat['imagen']; ?>" alt="Card Image" class="card-image" style="border-radius: 50%;">
+								</a>
+								<h2 class="card-title"><?php echo $dat['producto']; ?></h2>
+            		<h2 class="card-precio">$<?php echo $dat['precio']; ?></h2>
+            		<br>
+            		<div class="checkit-btn-block">
+            			<span class="checkit-btn l-dis-ib button" style="border-width: 1px;background-color:#fff;color: #130a56; border-radius: 30px;" data-toggle="modal" data-target="#myModal2" onclick="agregarCarrito(<?php echo $dat['id']; ?>)">Agregar al carrito</span>
+            		</div>
+							</span>
+						</li>
+				<?php
+					}
+      	?>
+
+        <!--<li class="card-item swiper-slide">
           <span href="javascript:void(0)" class="card-link" style="text-align:center;">
-          	<a href="images/products/01.jpg" data-toggle="lightbox" data-gallery="gallery">
+          	<a href="images/products/01.jpg" data-toggle="lightbox" data-gallery="gallery" data-footer="">
             	<img src="images/products/01.jpg" alt="Card Image" class="card-image" style="border-radius: 50%;">
             </a>
             <h2 class="card-title">Anillo de plata</h2>
@@ -531,6 +558,7 @@
             </div>
           </span>
         </li>
+
         <li class="card-item swiper-slide">
           <span href="javascript:void(0)" class="card-link" style="text-align:center;">
           	<a href="images/products/02.jpg" data-toggle="lightbox" data-gallery="gallery">
@@ -544,6 +572,7 @@
             </div>
           </span>
         </li>
+
         <li class="card-item swiper-slide">
           <span href="javascript:void(0)" class="card-link" style="text-align:center;">
           	<a href="images/products/03.jpg" data-toggle="lightbox" data-gallery="gallery">
@@ -557,6 +586,7 @@
             </div>
           </span>
         </li>
+
         <li class="card-item swiper-slide">
           <span href="javascript:void(0)" class="card-link" style="text-align:center;">
           	<a href="images/products/04.jpg" data-toggle="lightbox" data-gallery="gallery">
@@ -570,6 +600,7 @@
             </div>
           </span>
         </li>
+
         <li class="card-item swiper-slide">
           <span href="javascript:void(0)" class="card-link" style="text-align:center;">
           	<a href="images/products/05.jpg" data-toggle="lightbox" data-gallery="gallery">
@@ -583,6 +614,7 @@
             </div>
           </span>
         </li>
+
         <li class="card-item swiper-slide">
           <span href="javascript:void(0)" class="card-link" style="text-align:center;">
           	<a href="images/products/06.jpeg" data-toggle="lightbox" data-gallery="gallery">
@@ -596,6 +628,7 @@
             </div>
           </span>
         </li>
+
         <li class="card-item swiper-slide">
           <span href="javascript:void(0)" class="card-link" style="text-align:center;">
           	<a href="images/products/07.jpg" data-toggle="lightbox" data-gallery="gallery">
@@ -608,7 +641,8 @@
             	<span class="checkit-btn l-dis-ib button" style="border-width: 1px;background-color:#fff;color: #130a56;" data-toggle="modal" data-target="#myModal2" onclick="agregarCarrito(7)">Agregar al carrito</span>
             </div>
           </span>
-        </li>
+        </li>-->
+
       </ul>
 
        <!-- Pagination -->
