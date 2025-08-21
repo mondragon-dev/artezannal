@@ -258,7 +258,7 @@
 			$sql = "UPDATE usuarios SET estatus = 'Verificado' WHERE id = '".base64_decode($_POST['usuario'])."' and estatus = 'PendienteVerificar' ";
 			$res = mysqli_query($link,$sql);
 
-			$msgCuenta = '<center><span style="font-size:18px;color:#130a56;"><br><br>Su cuenta ha sido verificada con exito.<br><br><a href="javascript:void(0)" onclick="iniciarSesion()">Clic para iniciar sesión</a><br><br><a href="index.php">Clic para seguir navegando</a></span></center>';
+			$msgCuenta = '<center><span style="font-size:18px;color:#130a56;"><br><br>Su cuenta ha sido verificada con éxito.<br><br><a href="javascript:void(0)" onclick="iniciarSesion()">Clic para iniciar sesión</a><br><br><a href="index.php">Clic para seguir navegando</a></span></center>';
 
 		}else{
 
