@@ -844,6 +844,9 @@
 									<p class="address-item" align="center">
 										<span class="heightlight"><a href="legal.php?l=ap" style="text-decoration:none; color: white;"><u>Aviso de privacidad</u></a></span>
 									</p>
+									<p class="address-item" align="center">
+										<span class="heightlight"><a href="legal.php?l=pc" style="text-decoration:none; color: white;"><u>Política de cookies</u></a></span>
+									</p>
 								</address>
 							</div>
 

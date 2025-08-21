@@ -1029,6 +1029,28 @@ a {
 												  	</ul>
 												  </p>
 		 									<?php
+		 										}elseif($_GET['l'] == "pc"){
+		 									?>
+		 											<h3 class="team-name" style="font-size:24px; color:#130a56; margin-bottom:30px">
+		 												Política de Cookies
+		 											</h3>
+		 											<br>
+		 											<p style="text-align:justify;">
+		 												Esta web de <span style="font-weight:bold">ARTEZANNAL</span> utiliza cookies propias y de terceros para mejorar la eficiencia de sus sitios web y elaboración de perfiles basados en los hábitos de navegación del usuario y ofrecer contenidos adaptados a sus intereses.
+		 											</p>
+		 											<br>
+		 											<p style="text-align:justify;">
+		 												Las cookies son el Archivo de datos que se almacena en el disco duro del equipo de cómputo o del dispositivo de comunicaciones electrónicas de un usuario al navegar en un sitio de internet específico, el cual permite intercambiar información de estado entre dicho sitio y el navegador del usuario. La información de estado puede revelar medios de identificación de sesión, autenticación o preferencias del usuario, así como cualquier dato almacenado por el navegador respecto al sitio de internet.
+		 											</p>
+		 											<br>
+		 											<p style="text-align:justify;">
+		 												<span style="font-weight:bold">ARTEZANNAL</span> utiliza cookies para facilitar la navegación por su Portal, por motivos de seguridad y para obtener una mayor eficacia y personalización de los servicios ofrecidos a los Usuarios mediante el análisis de navegación.
+		 											</p>
+		 											<br>
+		 											<p style="text-align:justify;">
+		 												Si quisiese retirar en cualquier momento su consentimiento relacionado con la presente Política de Cookies, deberá eliminar las cookies almacenadas a través de los ajustes y configuraciones de su navegador de Internet.
+		 											</p>
+		 									<?php
 		 										}
 		 									?>
 
@@ -1076,6 +1098,9 @@ a {
 									</p>
 									<p class="address-item" align="center">
 										<span class="heightlight"><a href="legal.php?l=ap" style="text-decoration:none; color: white;"><u>Aviso de privacidad</u></a></span>
+									</p>
+									<p class="address-item" align="center">
+										<span class="heightlight"><a href="legal.php?l=pc" style="text-decoration:none; color: white;"><u>Política de cookies</u></a></span>
 									</p>
 								</address>
 							</div>
