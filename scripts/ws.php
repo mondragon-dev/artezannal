@@ -158,7 +158,7 @@
 										<!--<center>-->
 											<table style='font-size:14px'>
 												<tr>
-													<td><img src='https://qa.artezannal.com/images/logoIndex.png' style='width:70%;max-width:70%'></td>
+													<td align='right'><img src='https://qa.artezannal.com/images/logoIndex.png' style='width:25%;max-width:25%'></td>
 												</tr>
 												<tr>
 													<td><br>Gracias por registrarte con nosotros</td>
@@ -178,6 +178,13 @@
 														<br>
 														<strong>Para activar tu cuenta es necesario verificarla dando clic en la siguiente liga:</strong><br><br>
 														https://qa.artezannal.com/index.php?u=".base64_encode($userId)."
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<br><br><br>
+														<p style='text-align:justify'><i>\"IMPORTANTE/CONFIDENCIAL: Este mensaje contiene información de <strong>ARTEZANNAL</strong>, la cual es de carácter privilegiada, confidencial y de acceso restringido conforme a la ley aplicable. Si el lector de este mensaje no es el destinatario previsto, empleado o agente responsable de la transmisión del mensaje al destinatario, se le notifica por este medio que cualquier divulgación, difusión, distribución, retransmisión, reproducción, alteración y/o copiado, total o parcial, de este mensaje y su contenido está expresamente prohibido. Si usted ha recibido esta comunicación por error, notifique por favor inmediatamente al remitente del presente correo electrónico, y posteriormente elimine el mismo.\"</p></i>
+														<p style='text-align:justify'><i>\"IMPORTANT/CONFIDENTIAL: This message contains information from <strong>ARTEZANNAL</strong>, which is privileged, confidential and restricted access in accordance with applicable law. If the reader of this message is not the intended recipient, employee or agent responsible for the transmission of the message to the recipient, you are hereby notified that any disclosure, dissemination, distribution, retransmission, reproduction, alteration and/or copying, in whole or in part, of this message and its contents is expressly prohibited. If you have received this communication in error, please notify the sender of this e-mail immediately, and subsequently delete it\".</i></p> 
 													</td>
 												</tr>
 											</table>
