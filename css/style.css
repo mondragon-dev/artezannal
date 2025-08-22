@@ -6375,7 +6375,7 @@ Copyright (c) 2013 Daniel Eden
 }
 /*==========  Team section styles  ==========*/
 #team-members {
-  box-shadow: 0 0 9px rgba(162, 162, 162, 0.5);
+  /*box-shadow: 0 0 9px rgba(162, 162, 162, 0.5);*/
 }
 #team-members .l-section-title {
   margin-bottom: 76px;
