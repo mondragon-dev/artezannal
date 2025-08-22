@@ -717,11 +717,17 @@
 					<div class="columns large-8">
 						<br><br>
 						<span class="title-text" style="color:#fff;font-size:24px;">Quiénes somos</span>
-						<p style="text-align:justify; color: #fff; font-size: 16px;line-height: 1.8em; margin-top: 20px;">
-							Bienvenidos a nuestra plataforma, donde nos dedicamos a promover a las empresas que elaboran y comercializan productos artesanales mexicanos de la más calidad. Creemos en el valor de hacer las cosas a mano y en el talento de nuestros artesanos. Únete a nosotros para descubrir y apoyar lo mejor de la producción local y ¡Juntos hagámos crecer a nuestra comunidad!
+						<p style="text-align:justify; color: #fff; font-size: 16px;line-height: 1.8em; margin-top: 20px; margin-right: 80px;">
+							Nacimos con una idea clara: dar voz y espacio al talento mexicano.
 						</p>
-						<p style="text-align:justify; color: #fff; font-size: 16px;line-height: 1.8em; margin-top: 20px;">
-							Los invitamos a conocer los productos, a confiar y creer en la calidad de lo nacional y compartir con otros el gusto por la riqueza que existe en nuesto pais.
+						<p style="text-align:justify; color: #fff; font-size: 16px;line-height: 1.8em; margin-top: 20px; margin-right: 80px;">
+							Cada producto que encuentras aquí refleja tradición, creatividad y la historia de quienes lo elaboran con sus manos y su pasión.
+						</p>
+						<p style="text-align:justify; color: #fff; font-size: 16px;line-height: 1.8em; margin-top: 20px; margin-right: 80px;">
+							No solo vendemos artesanías, impulsamos sueños. Queremos que más personas descubran la riqueza de nuestro país y que los artesanos y emprendedores tengan la oportunidad de crecer, llegar más lejos y compartir lo que hacen con orgullo.
+						</p>
+						<p style="text-align:justify; color: #fff; font-size: 16px;line-height: 1.8em; margin-top: 20px; margin-right: 80px;">
+							Más que una tienda, somos un puente entre quienes crean y quienes valoran lo hecho con alma.
 						</p>
 					</div>
 					<div class="columns large-4">
