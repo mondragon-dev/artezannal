@@ -517,10 +517,7 @@
 		</header>
 
 		<section role="main">	
-			<br><br>
-			<br><br>
-			<br><br>
-			<br><br>
+			
 			<section class="members l-section-padding" id="team-members" style="background-image: url(images/back_bright.png); background-size: cover; background-position: 50% 50%;">
 				<div class="row" style="max-width:70%">
 					<div class="column large-12">
@@ -530,7 +527,10 @@
 									<div class="about-team">
 
 										<div class="team-member-info" style="text-align:center;">
-
+											<br><br>
+											<br><br>
+											<br><br>
+											<br><br>
 											<?php
 												if($_GET['l'] == "ap"){
 											?>

@@ -437,10 +437,6 @@
 		</header>
 
 		<section role="main">	
-			<br><br>
-			<br><br>
-			<br><br>
-			<br><br>
 			<section class="members l-section-padding" id="team-members" style="background-image: url(images/back_bright.png); background-size: cover; background-position: 50% 50%;">
 				<div class="row" style="max-width:90%">
 					<div class="column large-12">
@@ -448,7 +444,10 @@
 							<div class="row">
 								<div class="column large-8 medium-8 small-12">
 									<div class="about-team">
-
+										<br><br>
+										<br><br>
+										<br><br>
+										<br><br>
 										<div class="team-member-info" style="text-align:left">
 											<h3 class="team-name" style="font-size:24px; color:#130a56; margin-bottom:30px">
 												Añadido al carrito 
