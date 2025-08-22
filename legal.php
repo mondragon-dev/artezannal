@@ -375,12 +375,7 @@
 }
 
 
-a {
-      color: #da2020;
-    }
-    a:hover {
-      color: #d6f300;
-    }
+
     .wrap > h1 {
       margin: 26px auto;
     }
@@ -486,23 +481,25 @@ a {
 				<div class="row" style="max-width: 90%;">
 					<div class="column large-2">
 						<div class="logo-wrapper">
-							<img src="images/logoFooter.png" alt="" class="logo-image">
+							<a href="index.php">
+								<img src="images/logoFooter.png" alt="" class="logo-image">
+							</a>
 						</div>
 					</div>
 					<div class="column large-10">
 						<nav class="js-navs-list">
 							<ul class="menu-page">
-								<li class="menu-item">
-									<a href="/"><font size="+1" style="color: white;">Inicio</font></a>
+								<li class="menu-item" onclick="self.location='index.php'">
+									<a href="javascript:void(0)"><font size="+1" style="color: white;">Inicio</font></a>
 								</li>
-								<li class="menu-item">
-									<a href="#productos"><font size="+1" style="color: white;">Productos</font></a>
+								<li class="menu-item" onclick="self.location='index.php?s=productos'">
+									<a href="javascript:void(0)"><font size="+1" style="color: white;">Productos</font></a>
 								</li>
-								<li class="menu-item">
-									<a href="#quienes-somos"><font size="+1" style="color: white;">Quiénes somos</font></a>
+								<li class="menu-item" onclick="self.location='index.php?s=quienes-somos'">
+									<a href="javascript:void(0)"><font size="+1" style="color: white;">Quiénes somos</font></a>
 								</li>
-								<li class="menu-item">
-									<a href="#contacto"><font size="+1" style="color: white;">Contacto</font></a>
+								<li class="menu-item" onclick="self.location='index.php?s=contacto'">
+									<a href="javascript:void(0)"><font size="+1" style="color: white;">Contacto</font></a>
 								</li>
 							</ul>
 						</nav>
@@ -1082,13 +1079,13 @@ a {
 										<span class="heightlight"><font size="+1">Artezannal</font></span>
 									</p>
 									<p class="address-item" align="center">
-										<span class="heightlight"><a href="#quienes-somos" style="text-decoration: none;color: white;">Quiénes somos</a></span>
+										<span class="heightlight"><a href="index.php?s=quienes-somos" style="text-decoration: none;color: white;"><u>Quiénes somos</u></a></span>
 									</p>
 									<p class="address-item" align="center">
-										<span class="heightlight"><a href="#productos" style="text-decoration: none;color: white;">Productos</a></span>
+										<span class="heightlight"><a href="index.php?s=productos" style="text-decoration: none;color: white;"><u>Productos</u></a></span>
 									</p>
 									<p class="address-item" align="center">
-										<span class="heightlight"><a href="#contacto" style="text-decoration: none;color: white;">Contacto</a></span>
+										<span class="heightlight"><a href="index.php?s=contacto" style="text-decoration: none;color: white;"><u>Contacto</u></a></span>
 									</p>
 									<p class="address-item" align="center">
 										<span class="heightlight"><a href="legal.php?l=tc" style="text-decoration:none; color: white;"><u>Términos y Condiciones de uso</u></a></span>

@@ -388,14 +388,16 @@
 				<div class="row" style="max-width: 90%;">
 					<div class="column large-2">
 						<div class="logo-wrapper">
-							<img src="images/logoIndex.png" alt="" class="logo-image">
+							<a href="index.php">
+								<img src="images/logoIndex.png" alt="" class="logo-image">
+							</a>
 						</div>
 					</div>
 					<div class="column large-10">
 						<nav class="js-navs-list">
 							<ul class="menu-page">
 								<li class="menu-item">
-									<a href="/"><font size="+1">Inicio</font></a>
+									<a href="index.php"><font size="+1">Inicio</font></a>
 								</li>
 								<li class="menu-item">
 									<a href="#productos"><font size="+1">Productos</font></a>
@@ -861,13 +863,13 @@
 										<span class="heightlight"><font size="+1">Artezannal</font></span>
 									</p>
 									<p class="address-item" align="center">
-										<span class="heightlight"><a href="#quienes-somos" style="text-decoration: none;color: white;">Quiénes somos</a></span>
+										<span class="heightlight"><a href="#quienes-somos" style="text-decoration: none;color: white;"><u>Quiénes somos</u></a></span>
 									</p>
 									<p class="address-item" align="center">
-										<span class="heightlight"><a href="#productos" style="text-decoration: none;color: white;">Productos</a></span>
+										<span class="heightlight"><a href="#productos" style="text-decoration: none;color: white;"><u>Productos</u></a></span>
 									</p>
 									<p class="address-item" align="center">
-										<span class="heightlight"><a href="#contacto" style="text-decoration: none;color: white;">Contacto</a></span>
+										<span class="heightlight"><a href="#contacto" style="text-decoration: none;color: white;"><u>Contacto</u></a></span>
 									</p>
 									<p class="address-item" align="center">
 										<span class="heightlight"><a href="legal.php?l=tc" style="text-decoration:none; color: white;"><u>Términos y Condiciones de uso</u></a></span>
@@ -1890,6 +1892,20 @@
 			document.getElementById('direccionAltaUsuario').style.display = "block";
 		}
 
+
+		window.onload = function() {
+
+			setTimeout(function() {
+				<?php
+					if(isset($_GET['s'])){
+				?>
+						window.location.hash = "<?php echo $_GET["s"]?>";
+				<?
+					}
+				?>
+			}, 1000);
+
+		};
 	</script>
 
 </body>
