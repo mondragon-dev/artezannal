@@ -40,8 +40,8 @@
 
 	<style type="text/css">
 		.logo-wrapper .logo-image {
-  			width: 120%;
-  			max-width: 120%;
+  			width: 90%;
+  			max-width: 90%;
 		}
 		.menu-item a {
   			color: #130a56;
@@ -362,6 +362,99 @@
   margin-top: 30px;
 }
 
+.menu-wrapper {
+  top: 0px;
+}
+
+	/*buscador*/
+	.form-search {
+	  position: relative;
+	  top: 50%;
+	  left: 50%;
+	  transform: translate(-50%, -50%);
+	  transition: all 1s;
+	  width: 50px;
+	  height: 50px;
+	  background: white;
+	  box-sizing: border-box;
+	  border-radius: 4px;
+	  border: 4px solid white;
+	  padding: 5px;
+	}
+
+	.input-search {
+	  position: absolute;
+	  top: 0;
+	  left: 0;
+	  width: 0;
+	  height: 42.5px;
+	  line-height: 30px;
+	  outline: 0;
+	  border: 0;
+	  font-size: 1em;
+	  border-radius: 20px;
+	  padding: 0 20px;
+	}
+
+	.fa-search {
+	  box-sizing: border-box;
+	  padding: 10px;
+	  width: 42.5px;
+	  height: 42.5px;
+	  position: absolute;
+	  top: 0;
+	  right: 0;
+	  border-radius: 4px;
+	  color: #07051a;
+	  text-align: center;
+	  font-size: 1.2em;
+	  transition: all 1s;
+	}
+
+	.form-search:focus-within,
+	.form-search:hover,
+	.form-search:valid {
+	  width: 200px;
+	  cursor: pointer;
+	}
+
+	.form-search:hover .input-search,
+	.form-search:focus-within .input-search,
+	.form-search:valid .input-search {
+	  width: 100%;
+	}
+
+	.form-search:hover .fa,
+	.form-search:focus-within .fa,
+	.form-search:valid .fa {
+	  background: #07051a;
+	  color: white;
+	}
+
+	.button-search {
+	  display: none;
+	  position: absolute;
+	  top: 70px;
+	  bottom: 0;
+	  left: 0;
+	  right: 0;
+	  font-size: 20px;
+	  color: white;
+	  padding: 4px;
+	  min-height: max-content;
+	  background: transparent;
+	  outline: 0;
+	  border: 1px solid #303030;
+	  border-radius: 4px;
+	  text-align: center;
+	  width: 100%;
+	  cursor: pointer;
+	}
+
+	.form-search:valid .button-search {
+	  display: block;
+	}
+
 	</style>
 </head>
 <body data-currency="$">
@@ -374,17 +467,18 @@
 	<div class="page-content">
 		<header class="header">
 			<div class="menu-wrapper">
-				<div class="row" style="max-width: 90%;">
-					<div class="column large-12" style="display: flex; justify-content: right; margin-top: -30px; margin-left: -20px">
+				<br>
+				<!--<div class="row" style="max-width: 90%;">
+					<div class="column large-12" style="display: flex; justify-content: right; margin-top: -50px; margin-left: -20px">
 						<form role="search" name="formbuscar" id="formbuscar" style="width: 350px; height: 44px; border-radius: 5px; display: flex; flex-direction: row; align-items: center;" method="POST" action="searchResults.php">
-		  				<input type="search" id="query" name="q" placeholder="Buscador..." aria-label="Search through site content" style="all: unset; font: 16px system-ui; color: #fff; height: 100%; width: 90%; padding: 6px 10px;border:none;border-bottom: 1px solid #fff;">
+		  				<input type="search" id="query" name="q" placeholder="Buscador..." aria-label="Search through site content" style="all: unset; font: 16px system-ui; color: #000; height: 100%; width: 90%; padding: 6px 10px;border:none;border-bottom: 1px solid #fff;">
 		  				<button style="all: unset; cursor: pointer; width: 44px; height: 44px;" onclick="buscarForm()">
 		    				<svg viewBox="0 0 1024 1024" style="color: #fff;	fill: currentColor; width: 24px;	height: 24px;"><path class="path1" d="M848.471 928l-263.059-263.059c-48.941 36.706-110.118 55.059-177.412 55.059-171.294 0-312-140.706-312-312s140.706-312 312-312c171.294 0 312 140.706 312 312 0 67.294-24.471 128.471-55.059 177.412l263.059 263.059-79.529 79.529zM189.623 408.078c0 121.364 97.091 218.455 218.455 218.455s218.455-97.091 218.455-218.455c0-121.364-103.159-218.455-218.455-218.455-121.364 0-218.455 97.091-218.455 218.455z"></path></svg>
 		  				</button>
 						</form>
 					</div>
 				</div>
-				<br>
+				<br>-->
 				<div class="row" style="max-width: 90%;">
 					<div class="column large-2">
 						<div class="logo-wrapper">
@@ -393,7 +487,7 @@
 							</a>
 						</div>
 					</div>
-					<div class="column large-10">
+					<div class="column large-8">
 						<nav class="js-navs-list">
 							<ul class="menu-page">
 								<li class="menu-item">
@@ -407,6 +501,14 @@
 								</li>
 								<li class="menu-item">
 									<a href="#contacto"><font size="+1">Contacto</font></a>
+								</li>
+								<li class="menu-item">
+									<form action="" class="form-search">
+										<br>
+									  <input class="input-search" type="search" required>
+									  <i class="fa fa-search"></i>
+									  <!--<button onclick="clearInput()" class="button-search">Clear</a>-->
+									</form>
 								</li>
 							</ul>
 						</nav>
@@ -433,7 +535,7 @@
 			<div>
 				<div class="video-bg-wrapper">
 					<video autoplay loop muted playsinline class="video-bg js-video-bg" poster="images/bg-preview.jpg">
-				        <source src="video/artezannal.mp4" type="video/mp4">
+				        <source src="video/artezanal25.mp4" type="video/mp4">
 				    </video>
 				</div>
 				<!--<img src="assets/images/circulo_grande.png" class="img-banner">-->
@@ -1911,6 +2013,11 @@
 				?>
 			}, 1000);
 
+		};
+
+		const clearInput = () => {
+  		const input = document.getElementsByTagName("input")[0];
+  		input.value = "";
 		};
 	</script>
 
