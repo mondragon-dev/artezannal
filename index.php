@@ -1276,7 +1276,7 @@
 							}else{
 					?>
 							<div id="controlesAcceso">
-								<input type="text" id="usuario" class="contact-field required" name="usuario" placeholder="E-mail" style="border-radius: 30px;">
+								<input type="text" id="usuario" class="contact-field required" name="usuario" placeholder="E-mail" style="border-radius: 30px;" autocomplete="off">
 								<br>
 								<input type="password" id="password" class="contact-field required" name="password" placeholder="Contraseña" style="border-radius: 30px;">
 								<br>
@@ -1516,22 +1516,23 @@
                     session_id:'<?php echo $sessionID; ?>'
                 },
                 success: function(datos) {
+
+                	$.ajax({
+						        type:"POST",
+						                url: "scripts/ws.php",
+						                data:{
+						                    acc:'listarProductosCarrito',
+						                    session_id:'<?php echo $sessionID; ?>'
+						                },
+						                success: function(datos) {
+						                	document.getElementById('divCarrito').innerHTML = datos;
+						                }
+						      });
+                	
                 }
          });
 
 			}
-
-			$.ajax({
-        type:"POST",
-                url: "scripts/ws.php",
-                data:{
-                    acc:'listarProductosCarrito',
-                    session_id:'<?php echo $sessionID; ?>'
-                },
-                success: function(datos) {
-                	document.getElementById('divCarrito').innerHTML = datos;
-                }
-      });
 
 		}
 

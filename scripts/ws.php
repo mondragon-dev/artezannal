@@ -66,7 +66,7 @@
 									 <div class="row">
 									 	<div class="col-lg-12">
 									 		<br>
-									 		<div class="checkit-btn-block">
+									 		<div class="checkit-btn-block" style="display:none">
 					            	<span class="checkit-btn l-dis-ib button" style="width:100%; border-width: 1px;background-color:#130a56;color: #fff; border-radius: 30px;" data-toggle="modal" data-target="#modalVerificar">Verificar</span>
 					            </div>
 									 		<div class="checkit-btn-block">
@@ -326,6 +326,63 @@
 
 		}
 
+
+	}
+
+	if($_POST['acc'] == "conectaPaypal"){
+
+    $data = openssl_random_pseudo_bytes(16);
+    
+    $data[6] = chr(ord($data[6]) & 0x0f | 0x40); 
+    $data[8] = chr(ord($data[8]) & 0x3f | 0x80);
+
+    $idempotency_key = vsprintf('%s%s-%s-%s-%s-%s%s%s', str_split(bin2hex($data), 4));
+
+		$curl = curl_init();
+
+		curl_setopt_array($curl, array(
+		  CURLOPT_URL => 'https://conecta.xperanto.com.mx/api/payments',
+		  CURLOPT_RETURNTRANSFER => true,
+		  CURLOPT_ENCODING => '',
+		  CURLOPT_MAXREDIRS => 10,
+		  CURLOPT_TIMEOUT => 0,
+		  CURLOPT_FOLLOWLOCATION => true,
+		  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+		  CURLOPT_CUSTOMREQUEST => 'POST',
+		  CURLOPT_POSTFIELDS =>'{
+		  "client_id": 1,
+		  "provider_slug": "paypal",
+		  "amount": '.$_POST['total'].',
+		  "currency": "MXN",
+		  "description": "Orden de pago desde Artezannal",
+		  "idempotency_key": "'.$idempotency_key.'",
+		  "metadata": {
+		    "order_id": "'.$_POST['session_id'].'"
+		  },
+		  "success_url": "https://localhost/artezannal/payments.php?r=success",
+		  "cancel_url": "https://localhost/artezannal/payments.php?r=cancel"
+		}',
+		  CURLOPT_HTTPHEADER => array(
+		    'Content-Type: application/json'
+		  ),
+		));
+
+		$response = curl_exec($curl);
+
+		curl_close($curl);
+
+		$respuesta = json_decode($response,true);
+
+		if(isset($respuesta['success'])){
+
+			session_start();
+
+			$sql = "INSERT INTO pagos (idempotency_key, session_id, conecta_id, provider_reference_id, conecta_status, metodo, total, fecha_captura, usuario_captura) VALUES('".$idempotency_key."', '".$_POST['session_id']."', '".$respuesta['payment']['id']."', '".$respuesta['payment']['provider_reference_id']."', '".$respuesta['payment']['status']."', 'paypal', '".$_POST['total']."', '".date("Y-m-d H:i:s")."', '".$_SESSION['username']."')";
+			$res = mysqli_query($link,$sql);
+
+		}
+
+		echo $response;
 
 	}
 
