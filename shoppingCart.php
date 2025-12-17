@@ -3,6 +3,8 @@
 	include('config/config.php');
 	include('config/db.php');
 
+	session_start();
+
 	$sessionID = session_id();
 
 	$sql = "SELECT * FROM carrito_compras AS C 
@@ -468,7 +470,7 @@
 										
 											<div class="row">
 												<div class="col-lg-3">
-													<img src="images/products/<?php echo $dat['imagen']; ?>" style="cursor: pointer" onclick='self.location="productDetails.php?p=<?php echo $dat['producto_id']; ?>"'>
+													<img src="images/products/<?php echo $dat['imagen']; ?>" style="cursor: pointer; max-height: 100px; width: auto !important;" onclick='self.location="productDetails.php?p=<?php echo $dat['producto_id']; ?>"'>
 												</div>
 												<div class="col-lg-6">
 													<span style="cursor: pointer" onclick='self.location="productDetails.php?p=<?php echo $dat['producto_id']; ?>"'><?php echo $dat['producto']; ?></span><br><br>
@@ -511,7 +513,7 @@
 															<svg xmlns="http://www.w3.org/2000/svg" width="12" height="13" viewBox="0 0 12 13" class="bqcF4y"><g fill="none" fill-rule="evenodd" stroke="none" stroke-width="1"><g transform="translate(-515 -882)"><g transform="translate(515 882)"><path stroke="currentColor" d="M.5.5h7.778L11.5 3.737V12.5H.5V.5z"></path><path stroke="currentColor" d="M10.793 3.5H8.5V1.207L10.793 3.5z"></path><path fill="currentColor" d="M3 3H6V4H3z"></path><path fill="currentColor" d="M3 6H9V7H3z"></path><path fill="currentColor" d="M3 9H9V10H3z"></path></g></g></g></svg>
 															Agregar una nota: 
 														</p>
-														<textarea class="form-control" rows="4" style="width:300px;background:transparent;border-radius: 30px;"></textarea>
+														<textarea class="form-control" rows="4" style="width:100%;background:transparent;border-radius: 30px;"></textarea>
 													</div>
 												</div>
 											</div>
@@ -530,8 +532,14 @@
 										<div class="team-member-info" style="text-align:left">
 											<p class="team-post" style="font-size:16px; line-height: 24px; color:#130a56; margin-bottom:30px">Total: $<span id="carritoTotal"><?php echo number_format($total,2); ?></span></p>
 										</div>
+										<div class="centered-block">
+											<select id="metodo_pago" class="contact-field required" name="metodo_pago" style="border-radius: 30px;">
+												<option value="">::Seleccione método de pago::</option>
+												<option value="Paypal">🅿️ Paypal</option>
+											</select>
+										</div>
 										<div class="checkit-btn-block">
-					            	<span class="checkit-btn l-dis-ib button" style="width:100%; border-width: 1px;background-color:#fff;color: #130a56; border-radius: 30px;" data-toggle="modal" data-target="#modalVerificar">Pagar</span>
+					            	<span class="checkit-btn l-dis-ib button" style="width:100%; border-width: 1px;background-color:#fff;color: #130a56; border-radius: 30px;" onclick="pagar()">Pagar</span>
 					           </div>
 									</div>
 								</div>
@@ -797,7 +805,7 @@
 					<h4 class="modal-title" id="modalLabelVerificar">Aviso</h4>
 				</div>
 
-				<div class="modal-body">
+				<div class="modal-body" style="display:none" id="bodyNoDisponible">
 					<center>
 						<span class="title-text" style="color:#130a56;font-size:24px">No podemos aceptar pedidos en línea en este momento.</span>
 						<br><br>
@@ -807,6 +815,144 @@
 					<div class="checkit-btn-block">
 					  <span class="checkit-btn l-dis-ib button" style="width:100%; border-width: 1px;background-color:#130a56;color: #fff;">Contactar</span>
 					</div>
+				</div>
+
+				<div class="modal-body" style="display:none" id="bodyPaypal">
+					<center>
+						<span class="title-text" style="color:#130a56;font-size:14px">Generando pedido y conectando con plataforma de pago.</span>
+						<video autoplay loop>
+						  <source src="assets/videos/conectando.mp4" type="video/mp4" />
+						</video>
+					</center>
+				</div>
+
+				<div class="modal-body" style="display:none" id="bodyAccesar">
+					<center>
+						<span class="title-text" style="color:#130a56;font-size:24px">¡Hola! Para comprar, ingresa a tu cuenta</span>
+					</center>
+					<br>
+					<div class="checkit-btn-block">
+					  <span class="checkit-btn l-dis-ib button" style="width:100%; border-width: 1px;background-color:#130a56;color: #fff;border-radius: 30px;">Crear cuenta</span>
+					  <span class="checkit-btn l-dis-ib button" style="width:100%; border-width: 1px;background-color:#fff;color: #130a56; border-radius: 30px;" onclick="iniciarSesion()">Ingresar</span>
+					</div>
+				</div>
+
+				<div class="modal-body" style="display:none" id="bodySinMetodo">
+					<center>
+						<span class="title-text" style="color:#130a56;font-size:24px">Es necesario seleccionar metodo de pago.</span>
+					</center>
+				</div>
+
+			</div><!-- modal-content -->
+		</div><!-- modal-dialog -->
+	</div>
+
+	<div class="modal right fade" id="accessModal" tabindex="-1" role="dialog" aria-labelledby="accessModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content" style="background-image: url(images/back_bright.png);
+  background-size: cover;
+  background-position: 50% 50%;">
+
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<center>
+						<?php
+							if(isset($_SESSION['tipo'])){
+								if($_SESSION['tipo'] == "Administrador"){
+						?>
+									<h4 class="modal-title" id="myModalLabel2">Hola <?php echo $_SESSION['nombre']; ?></h4>
+						<?php
+								}
+								if($_SESSION['tipo'] == "Usuario"){
+						?>
+								<h4 class="modal-title" id="myModalLabel2">Hola <?php echo $_SESSION['nombre']; ?></h4>
+						<?php
+								}
+							}else{
+						?>
+								<h4 class="modal-title" id="myModalLabel2">Inicio de sesión</h4>
+						<?php
+							}
+						?>
+					</center>
+				</div>
+
+				<div class="modal-body">
+					<?php
+							if(isset($_SESSION['tipo'])){
+								if($_SESSION['tipo'] == "Administrador"){
+					?>
+
+									<center>
+										<div class="checkit-btn-block" style="border-radius: 30px;"><span class="checkit-btn l-dis-ib button" style="background-color:#263770; border-radius: 30px;" onclick="cerrarSesion()">Cerrar sesión</span></div>
+									</center>
+
+					<?php
+								}
+								if($_SESSION['tipo'] == "Usuario"){
+					?>
+									<center>
+										<div class="checkit-btn-block" style="border-radius: 30px;"><span class="checkit-btn l-dis-ib button" style="background-color:#263770; border-radius: 30px; width: 60%;" onclick="misDatos()">Mis datos personales</span></div>
+									</center>
+									<center>
+										<div class="checkit-btn-block" style="border-radius: 30px;"><span class="checkit-btn l-dis-ib button" style="background-color:#263770; border-radius: 30px; width: 60%;" onclick="misDirecciones()">Mis direcciones</span></div>
+									</center>
+									<center>
+										<div class="checkit-btn-block" style="border-radius: 30px;"><span class="checkit-btn l-dis-ib button" style="background-color:#263770; border-radius: 30px; width: 60%;" onclick="cerrarSesion()">Cerrar sesión</span></div>
+									</center>
+					<?php
+								}
+							}else{
+					?>
+							<div id="controlesAcceso">
+								<input type="text" id="usuario" class="contact-field required" name="usuario" placeholder="E-mail" style="border-radius: 30px;" autocomplete="off">
+								<br>
+								<input type="password" id="password" class="contact-field required" name="password" placeholder="Contraseña" style="border-radius: 30px;">
+								<br>
+								<center>
+									<div class="checkit-btn-block" style="border-radius: 30px;"><span class="checkit-btn l-dis-ib button" style="background-color:#263770; border-radius: 30px;" onclick="accesar()">Accesar</span></div>
+									<br>
+									<span style="font-size:18px;color:#130a56;">
+										<a href="javascript:void(0)" onclick="mostrarCrearCuenta()">
+											Si aún no se ha registrado, clic aquí para crear una cuenta
+										</a>
+									</span>
+								</center>
+							</div>
+							<div id="controlesAltaUsuario" style="display:none">
+								<h4 class="modal-title" id="myModalLabel2">Por favor ingrese la siguiente información para registrarse</h4>
+								<br><br>
+								<div class="centered-block">
+									<input type="text" id="nombre_alta" class="contact-field required" name="nombre_alta" placeholder="Ingrese su nombre completo" style="border-radius: 30px;">
+								</div>
+								<div class="centered-block">
+									<input type="email" id="correo_alta" class="contact-field required" name="correo_alta" placeholder="Ingrese su correo electrónico" style="border-radius: 30px;">
+								</div>
+								<div class="centered-block">
+									<input type="password" id="contrasenia_alta" class="contact-field required" name="contrasenia_alta" placeholder="Ingrese su contraseña" style="border-radius: 30px;">
+								</div>
+								<div class="centered-block">
+									<input type="password" id="verificar_contrasenia_alta" class="contact-field required" name="verificar_contrasenia_alta" placeholder="Verificar contraseña" style="border-radius: 30px;">
+								</div>
+								<div class="centered-block">
+									<input type="text" id="telefono_alta" class="contact-field required" name="telefono_alta" placeholder="Ingrese su número telefónico" style="border-radius: 30px;">
+								</div>
+								<div class="checkit-btn-block">
+									<input type="submit" class="checkit-btn l-dis-ib button" style="width:100%; border-radius: 30px;background-color: #263770;" value="Crear cuenta" onclick="crearCuenta()" id="btnCrearCuenta">
+								</div>
+							</div>
+							<div id="divTablaCrearCuenta" style="display:none">
+								<center>
+									<span style="font-size:18px;color:#130a56;">
+										Se envío un mensaje a la cuenta de correo registrada.<br><br>
+										Es necesario confirmar el mensaje para continuar con el proceso de registro<br><br>
+										<a href="index.php">Clic para seguir navegando</a>
+									</span>
+								</center>
+							</div>
+					<?php
+						}
+					?>
 				</div>
 
 			</div><!-- modal-content -->
@@ -959,6 +1105,92 @@
 
 		function mostrarCodigoDescuento(){
 			document.getElementById('divCodigoDescuento').style.display = "block";
+		}
+
+		function pagar(){
+
+			document.getElementById('bodyAccesar').style.display = 'none';
+			document.getElementById('bodySinMetodo').style.display = 'none';
+			document.getElementById('bodyNoDisponible').style.display = 'none';
+			document.getElementById('bodyPaypal').style.display = 'none';
+
+
+			$('#modalVerificar').modal('show');
+
+			var metodo = document.getElementById('metodo_pago').value;
+			var username = "<?php echo $_SESSION['username']; ?>";
+
+			if(username == ""){
+				document.getElementById('bodyAccesar').style.display = 'block';
+			}else{
+
+				if(metodo == ""){
+					document.getElementById('bodySinMetodo').style.display = 'block';
+				}else{
+
+					document.getElementById('bodyPaypal').style.display = 'block';
+
+					var total = document.getElementById('carritoTotal').innerHTML.replace(",","");
+					var session_id = "<?php echo $sessionID; ?>";
+
+					setTimeout(function() {
+
+						if(metodo == "Paypal"){
+
+							$.ajax({
+								type:"POST",
+							  url: "scripts/ws.php",
+							  data:{
+							    acc:'conectaPaypal',
+							    total: total,
+							    session_id:session_id
+							  },
+							  success: function(datos){
+
+							    var jsonString = JSON.parse(datos);
+							    window.location = jsonString.paypal_order.links[1].href;
+
+							  }
+						 	});
+
+						}
+
+						}, 1000);
+
+				}
+
+			}
+
+		}
+
+		function iniciarSesion(){
+			$('#modalVerificar').modal('hide');
+			$('#accessModal').modal('show');
+		}
+
+		function accesar(){
+			var usuario = document.getElementById('usuario').value;
+			var contrasenia = document.getElementById('password').value;
+			
+			if(usuario != "" && contrasenia != ""){
+
+				$.ajax({
+					type:"POST",
+				  url: "scripts/ws.php",
+				  data:{
+				    acc:'validarAcceso',
+				    usuario: usuario,
+				    contrasenia: contrasenia
+				  },
+				  success: function(datos) {
+				    if(datos == "OK"){
+				    	location.reload();
+				    }
+				  }
+			 	});
+
+			}
+
 		}
 
 	</script>
