@@ -14,6 +14,8 @@
 			define('DB_USER', 'qaartezannal');
 			define('DB_PASSWORD', '*8bl9Gt74');
 			define('DB_DATABASE', 'qaartezannal');
+			define('URL_SUCCESS', 'https://qa.artezannal.com/payments.php?r=success');
+			define('URL_CANCEL', 'https://qa.artezannal.com/payments.php?r=cancel');
 
 		break;
 
@@ -22,6 +24,8 @@
 			define('DB_USER', 'root');
 			define('DB_PASSWORD', '');
 			define('DB_DATABASE', 'artezannal_ecommerce');
+			define('URL_SUCCESS', 'https://localhost/artezannal/payments.php?r=success');
+			define('URL_CANCEL', 'https://localhost/artezannal/payments.php?r=cancel');
 
 		break;
 

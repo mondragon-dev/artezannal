@@ -359,8 +359,8 @@
 		  "metadata": {
 		    "order_id": "'.$_POST['session_id'].'"
 		  },
-		  "success_url": "https://localhost/artezannal/payments.php?r=success",
-		  "cancel_url": "https://localhost/artezannal/payments.php?r=cancel"
+		  "success_url": "'.URL_SUCCESS.'",
+		  "cancel_url": "'.URL_CANCEL.'"
 		}',
 		  CURLOPT_HTTPHEADER => array(
 		    'Content-Type: application/json'
