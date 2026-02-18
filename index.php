@@ -535,7 +535,7 @@
 			<div>
 				<div class="video-bg-wrapper">
 					<video autoplay loop muted playsinline class="video-bg js-video-bg" poster="images/bg-preview.jpg">
-				        <source src="video/artezanal25.mp4" type="video/mp4">
+				        <source src="video/artezanal26.mp4" type="video/mp4">
 				    </video>
 				</div>
 				<!--<img src="assets/images/circulo_grande.png" class="img-banner">-->
